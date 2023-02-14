@@ -1,11 +1,38 @@
 <!DOCTYPE html>
-<head></head>
+<head>
+	<script type="text/javascript" src="main.js"></script>
+	<link rel="stylesheet" href="Styles/mainPage.css" />
+</head>
 <body>
-	<h1>Random Main Page Thing</h1>
-	<div>
-		<h3>Projects</h3>
-		<ul>
-			<li><a href="Projects/ImageCollage/index.html">Image Collage</a></li>
+	<div id="navDiv" class="hidden">
+		<!--Nav Bar-->
+		<img id="navBtn" class="navHidden" src="Icons/NavBarIcon.png" onclick="MinMaxNav()" />
+		<ul class="navBar">
+			<li><a href="#TITEL">Image Collage 1</a></li>
+			<li><a href="#TITEL2">Image Collage 2</a></li>
+			<li><a href="#TITEL">Image Collage 3</a></li>
+			<li><a href="#TITEL">Image Collage 4</a></li>
 		</ul>
 	</div>
+
+	<div id="TITEL" class="fullHeight">
+		<h1>Random Main Page Thing</h1>
+		<div>
+			<h3 >Projects</h3>
+			<ul>
+				<li><a href="Projects/ImageCollage/index.html">Image Collage</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div id="TITEL2" class="fullHeight">
+		<h1>Random Second Page Thing</h1>
+		<div>
+			<h3 >Projects</h3>
+			<ul>
+				<li><a href="Projects/ImageCollage/index.html">Image Collage</a></li>
+			</ul>
+		</div>
+	</div>
+
 </body>
