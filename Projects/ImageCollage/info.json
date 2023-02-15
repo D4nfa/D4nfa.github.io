@@ -1,0 +1,14 @@
+{
+  "GENERAL": {
+    "TITLE": "Image Collage",
+    "IMG": "URL GOES HERE"
+  },
+  "EN": {
+    "DESCRIPTION": "This is a test project",
+    "INFO": "this is some info"
+  },
+  "DK": {
+    "DESCRIPTION": "Dette er et test projekt",
+    "INFO": "detter er noget info"
+  }
+}

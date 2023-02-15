@@ -1,38 +1,48 @@
 <!DOCTYPE html>
 <head>
+	<script type="text/javascript" src="templates.js"></script>
+	<script type="text/javascript" src="localization.js"></script>
 	<script type="text/javascript" src="main.js"></script>
 	<link rel="stylesheet" href="Styles/mainPage.css" />
 </head>
 <body>
+	<script type="text/javascript">const $ = id => document.getElementById(id);</script>
+
+	<!--Nav Bar-->
 	<div id="navDiv" class="hidden">
-		<!--Nav Bar-->
 		<img id="navBtn" class="navHidden" src="Icons/NavBarIcon.png" onclick="MinMaxNav()" />
 		<ul class="navBar">
-			<li><a href="#TITEL">Image Collage 1</a></li>
-			<li><a href="#TITEL2">Image Collage 2</a></li>
-			<li><a href="#TITEL">Image Collage 3</a></li>
-			<li><a href="#TITEL">Image Collage 4</a></li>
+			<li><a href="#Section 1">Projects</a></li>
+			<li><a href="#Section 2">Section 2</a></li>
+			<li><a href="#TITEL">Section 3</a></li>
+			<li><a href="#TITEL">Section 4</a></li>
 		</ul>
 	</div>
 
-	<div id="TITEL" class="fullHeight">
-		<h1>Random Main Page Thing</h1>
-		<div>
-			<h3 >Projects</h3>
-			<ul>
-				<li><a href="Projects/ImageCollage/index.html">Image Collage</a></li>
+	<!--Projects Section-->
+	<div id="Section 1" class="fullHeight">
+		<h1>Projects</h1>
+		<div id="projectDiv">
+			<ul id="projectList">
+				<li>
+					<div id="project">
+						<p>{TITLE}</p>
+						<p>{DESCRIPTION}</p>
+						<p>{INFO}</p>
+					</div>
+				</li>
+				<li><a id="project" href="Projects/ImageCollage/index.html">Image Collage</a></li>
 			</ul>
 		</div>
 	</div>
 
-	<div id="TITEL2" class="fullHeight">
+	<div id="Section 2" class="fullHeight">
 		<h1>Random Second Page Thing</h1>
 		<div>
-			<h3 >Projects</h3>
+			<h3>Projects</h3>
 			<ul>
 				<li><a href="Projects/ImageCollage/index.html">Image Collage</a></li>
 			</ul>
 		</div>
 	</div>
-
 </body>

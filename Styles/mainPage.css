@@ -11,11 +11,12 @@ body {
     visibility: hidden;
 }
 
-.navHidden {
-    visibility: visible;
-    left: 70%;
+.fullHeight {
+    height: 100%;
+    background-color: rgba(0,0,0, 0.25);
 }
 
+/* Nav Bar */
 #navDiv {
     position: fixed;
     right: 0px;
@@ -25,19 +26,6 @@ body {
     width: 200px;
     height: 100%;
     background-color: rgba(115, 105, 103, 0.5);
-}
-
-#navBtn {
-    position: relative;
-    width: 50px;
-    height: auto;
-    display: block;
-    padding: 0;
-    margin: 0;
-}
-
-#navBtn:hover {
-    background-color: #555;
 }
 
 .navBar {
@@ -66,7 +54,39 @@ body {
     color: white;
 }
 
-.fullHeight {
-    height: 100%;
-    background-color: rgba(0,0,0, 0.25);
+/*Nav Button*/
+#navBtn {
+    position: relative;
+    width: 50px;
+    height: auto;
+    display: block;
+    padding: 0;
+    margin: 0;
 }
+
+#navBtn:hover {
+    background-color: #555;
+}
+
+.navHidden {
+    visibility: visible;
+    left: 70%;
+}
+
+/*Project Section*/
+.projectDiv{
+
+}
+
+#projectList{
+    list-style-type: none;
+    width: 200px;
+}
+
+    #projectList #project {
+        height: 200px;
+        margin: 2px 0;
+        padding: 0;
+        display: block;
+        background-color: #736967;
+    }

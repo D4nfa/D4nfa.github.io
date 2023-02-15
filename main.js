@@ -1,9 +1,13 @@
 var isHidden = true;
+var project = fetch('./Projects/ImageCollage/info.json');
+
+console.log(project);
+//console.log(subKey(projectTemplate, ));
 
 function MinMaxNav()
 {
-    var btn = document.getElementById("navBtn");
-    var div = document.getElementById("navDiv");
+    var btn = $("navBtn");
+    var div = $("navDiv");
     switch (isHidden) {
         case true:
             btn.classList.remove("navHidden");
