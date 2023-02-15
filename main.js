@@ -1,8 +1,25 @@
 var isHidden = true;
-var project = fetch('./Projects/ImageCollage/info.json');
+var lang = 'DK';
+var project;
 
-console.log(project);
-//console.log(subKey(projectTemplate, ));
+onLoad();
+
+
+function onLoad(){
+    fetch(`./Projects/projects.json`).then((response) => response.json().then((json) => loadProjects(json)));
+    
+}
+
+function loadProjects(projectPaths){
+    for(let path in projectPaths){
+        fetch(`./Projects/${path}/info.json`).then((response) => response.json().then((json) => projectLoaded(json)));
+    }
+}
+
+function projectLoaded(json){
+    json = subKeys(projectTemplate, [json[lang], json['GENERAL']]);
+    $('projectList').innerHTML += json;
+}
 
 function MinMaxNav()
 {

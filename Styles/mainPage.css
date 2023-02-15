@@ -74,19 +74,18 @@ body {
 }
 
 /*Project Section*/
-.projectDiv{
 
-}
 
 #projectList{
     list-style-type: none;
     width: 200px;
 }
 
-    #projectList #project {
-        height: 200px;
-        margin: 2px 0;
-        padding: 0;
-        display: block;
-        background-color: #736967;
-    }
+#projectList #project {
+    height: 200px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    padding: 0;
+    display: block;
+    background-color: #736967;
+}
