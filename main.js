@@ -15,7 +15,10 @@ function onLoad(){
 }
 
 
-
+function scrollTo(anchor)
+{
+    window.scrollTo(0, $(anchor).offset().top-85);
+}
 
 function MinMaxNav()
 {

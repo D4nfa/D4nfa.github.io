@@ -7,19 +7,17 @@
 </head>
 <body onload="onLoad()">
 	<script type="text/javascript">const $ = id => document.getElementById(id);</script>
-	<script type="text/javascript">
-		$(document).ready(function () {
-		
-			if (localStorage.getItem("lilfa-portfolio-scroll") != null) {
-				$(window).scrollTop(localStorage.getItem("lilfa-portfolio-scroll"));
-			}
-		
-			$(window).on("scroll", function() {
-				localStorage.setItem("lilfa-portfolio-scroll", $(window).scrollTop());
-			});
-		
-		  });
-		</script>
+	<script>
+        document.addEventListener("DOMContentLoaded", function(event) { 
+            var scrollpos = localStorage.getItem('scrollpos');
+			localStorage.removeItem('scrollpos');
+            if (scrollpos) window.scrollTo(0, scrollpos);
+        });
+
+        window.onbeforeunload = function(e) {
+            localStorage.setItem('scrollpos', window.scrollY);
+        };
+    </script>
 
 
 	<div id="outgradbck"><div id="gradientbckg"></div></div>
@@ -29,8 +27,8 @@
 	<div id="navDiv" class="hidden">
 		<img id="navBtn" class="navHidden" src="Icons/NavBarIcon.png" onclick="MinMaxNav()" />
 		<ul class="navBar">
-			<li><a href="#about">{ABOUT-TITLE}</a></li>
-			<li><a href="#projects">{PROJECTS}</a></li>
+			<li><a href="" onclick="scrollTo('#about')">{ABOUT-TITLE}</a></li>
+			<li><a href="" onclick="scrollTo('#projects')">{PROJECTS}</a></li>
 			<li><a href="#TITEL">Section 3</a></li>
 			<li><a href="#TITEL">Section 4</a></li>
 		</ul>
