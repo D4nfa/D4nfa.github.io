@@ -3,9 +3,11 @@
         "TEST": "TEST"
     },
     "DK":{
-        "PROJECTS": "Projekter"
+        "PROJECTS": "Projekter",
+        "ABOUT-TITLE": "Omkring mig"
     },
     "EN":{
-        "PROJECTS": "Projects"
+        "PROJECTS": "Projects",
+        "ABOUT-TITLE": "About me"
     }
 }

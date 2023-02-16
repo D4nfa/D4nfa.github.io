@@ -7,13 +7,16 @@
 </head>
 <body onload="onLoad()">
 	<script type="text/javascript">const $ = id => document.getElementById(id);</script>
+	
+	<div id="outergradientbck"><div id="gradientbckg"></div></div>
+	
 
 	<!--Nav Bar-->
 	<div id="navDiv" class="hidden">
 		<img id="navBtn" class="navHidden" src="Icons/NavBarIcon.png" onclick="MinMaxNav()" />
 		<ul class="navBar">
-			<li><a href="#Section 1">{PROJECTS}</a></li>
-			<li><a href="#Section 2">Section 2</a></li>
+			<li><a href="#about">{ABOUT-TITLE}</a></li>
+			<li><a href="#projects">{PROJECTS}</a></li>
 			<li><a href="#TITEL">Section 3</a></li>
 			<li><a href="#TITEL">Section 4</a></li>
 		</ul>
@@ -27,8 +30,17 @@
 		</ul>
 	</div>
 
+	<!--About me section-->
+	<div id="about" class="fullScreen section">
+		<h1>{ABOUT-TITLE}</h1>
+		<div id="aboutDiv">
+			
+		</div>
+	</div>
+
+
 	<!--Projects Section-->
-	<div id="Section 1" class="fullHeight">
+	<div id="projects" class="fullScreen section">
 		<h1>{PROJECTS}</h1>
 		<div id="projectDiv">
 			<ul id="projectList">
@@ -37,7 +49,7 @@
 		</div>
 	</div>
 
-	<div id="Section 2" class="fullHeight">
+	<div id="Section 2" class="fullScreen section	">
 		<h1>Random Second Page Thing</h1>
 		<div>
 			<h3>Projects</h3>
