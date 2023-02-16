@@ -66,6 +66,7 @@ function changeLang(nLang){
     for(let param of urlParam.entries()){
         switch(param[0]){
             case 'lang':
+                localStorage.setItem('scrollpos', window.scrollY);
                 window.location.href = window.location.href.replaceAll(`${param[0]}=${param[1]}&`, `${param[0]}=${nLang}&`);
                 break;
         }
