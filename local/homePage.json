@@ -1,0 +1,11 @@
+{
+    "GENERAL":{
+        "TEST": "TEST"
+    },
+    "DK":{
+        "PROJECTS": "Projekter"
+    },
+    "EN":{
+        "PROJECTS": "Projects"
+    }
+}

@@ -5,23 +5,31 @@
 	<script type="text/javascript" src="main.js"></script>
 	<link rel="stylesheet" href="Styles/mainPage.css" />
 </head>
-<body>
+<body onload="onLoad()">
 	<script type="text/javascript">const $ = id => document.getElementById(id);</script>
 
 	<!--Nav Bar-->
 	<div id="navDiv" class="hidden">
 		<img id="navBtn" class="navHidden" src="Icons/NavBarIcon.png" onclick="MinMaxNav()" />
 		<ul class="navBar">
-			<li><a href="#Section 1">Projects</a></li>
+			<li><a href="#Section 1">{PROJECTS}</a></li>
 			<li><a href="#Section 2">Section 2</a></li>
 			<li><a href="#TITEL">Section 3</a></li>
 			<li><a href="#TITEL">Section 4</a></li>
 		</ul>
 	</div>
 
+	<!--Languages-->
+	<div id="langDiv">
+		<ul id="langBar">
+			<li id="langList"><img id="DK-FLAG" class="langImg" src="Icons/DK-flag.png" onclick="changeLang('DK')"></li>
+			<li id="langList"><img id="EN-FLAG" class="langImg" src="Icons/EN-flag.png" onclick="changeLang('EN')"></li>
+		</ul>
+	</div>
+
 	<!--Projects Section-->
 	<div id="Section 1" class="fullHeight">
-		<h1>Projects</h1>
+		<h1>{PROJECTS}</h1>
 		<div id="projectDiv">
 			<ul id="projectList">
 				

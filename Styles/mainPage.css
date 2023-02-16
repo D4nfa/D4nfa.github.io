@@ -73,19 +73,60 @@ body {
     left: 70%;
 }
 
+/*language*/
+#langDiv{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+#langBar{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#langList{
+    float: left;
+}
+
+.langImg{
+    position: relative;
+    display: block;
+    margin: 2px;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    opacity: 0.3;
+}
+
+.langImg:hover{
+    opacity: 0.8;
+}
+
+.langImg.selected{
+    opacity: 1;
+}
+
 /*Project Section*/
-
-
 #projectList{
     list-style-type: none;
-    width: 200px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#projectList #projectLi{
+    float: left;
 }
 
 #projectList #project {
-    height: 200px;
-    margin-top: 2px;
-    margin-bottom: 2px;
-    padding: 0;
     display: block;
+    margin: 2px;
+    width: 200px;
+    height: 200px;
+    padding: 0;
+    text-align: center;
     background-color: #736967;
 }

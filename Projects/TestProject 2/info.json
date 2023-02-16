@@ -1,14 +1,14 @@
 {
   "GENERAL": {
-    "TITLE": "Test Project 2",
+    "TITLE": "TestProject 2",
     "IMG": "URL GOES HERE"
   },
   "EN": {
-    "description": "This is a test project",
-    "info": "this is some info"
+    "DESCRIPTION": "This is a test project",
+    "INFO": "this is some info"
   },
   "DK": {
-    "description": "Dette er et test projekt",
-    "info": "detter er noget info"
+    "DESCRIPTION": "Dette er et test projekt",
+    "INFO": "dette er er noget info"
   }
 }
