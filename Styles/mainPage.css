@@ -97,11 +97,11 @@ body {
 /*Nav Button*/
 #navBtn {
     position: relative;
-    width: 50px;
+    width: 40px;
     height: auto;
     display: block;
     padding: 0;
-    margin: 0;
+    margin-right: 4px;
 }
 
 #navBtn:hover {
@@ -110,7 +110,7 @@ body {
 
 .navHidden {
     visibility: visible;
-    left: 70%;
+    float: right;
 }
 
 /*language*/
@@ -151,6 +151,7 @@ body {
 
 /*Project Section*/
 #projectList{
+    text-align: center;
     list-style-type: none;
     margin: 0;
     padding: 0;

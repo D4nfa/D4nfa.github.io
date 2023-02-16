@@ -3,10 +3,12 @@
         "TEST": "TEST"
     },
     "DK":{
+        "PAGE-TITLE": "Lilfa Portfolio",
         "PROJECTS": "Projekter",
         "ABOUT-TITLE": "Omkring mig"
     },
     "EN":{
+        "PAGE-TITLE": "Lilfa Portfolio",
         "PROJECTS": "Projects",
         "ABOUT-TITLE": "About me"
     }
