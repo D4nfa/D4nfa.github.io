@@ -74,21 +74,23 @@ body {
     margin: 0;
 }
 
-.navBar > li a {
+.navBar > li button {
     color: white;
     display: block;
-    padding: 8px 16px;
+    border: none;
+    width: 200px;
+    height: 35px;
     background-color: #736967;
     text-align: center;
 }
 
-.navBar > li a:hover {
+.navBar > li button:hover {
     background-color: #555;
     color: white;
 }
 
-.navBar > li a > .active {
-    background-color: #04AA6D;
+.navBar > li button:active {
+    background-color: #303030;
     color: white;
 }
 

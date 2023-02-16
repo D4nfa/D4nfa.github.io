@@ -27,10 +27,9 @@
 	<div id="navDiv" class="hidden">
 		<img id="navBtn" class="navHidden" src="Icons/NavBarIcon.png" onclick="MinMaxNav()" />
 		<ul class="navBar">
-			<li><a href="" onclick="scrollTo('#about')">{ABOUT-TITLE}</a></li>
-			<li><a href="" onclick="scrollTo('#projects')">{PROJECTS}</a></li>
-			<li><a href="#TITEL">Section 3</a></li>
-			<li><a href="#TITEL">Section 4</a></li>
+			<li><button onclick="scrollToAnchor('about')">{ABOUT-TITLE}</button></li>
+			<li><button onclick="scrollToAnchor('projects')">{PROJECTS}</button></li>
+			<li><button onclick="scrollToAnchor('rndPage')">Random Page</button></li>
 		</ul>
 	</div>
 
@@ -61,7 +60,7 @@
 		</div>
 	</div>
 
-	<div id="Section 2" class="fullScreen section	">
+	<div id="rndPage" class="fullScreen section	">
 		<h1>Random Second Page Thing</h1>
 		<div>
 			<h3>Projects</h3>
