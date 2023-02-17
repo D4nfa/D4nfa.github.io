@@ -28,9 +28,11 @@ function MinMaxNav()
         case true:
             btn.classList.remove("navHidden");
             div.classList.remove("hidden");
+            div.classList.add("visible");
             break;
 
         case false:
+            div.classList.remove("visible");
             btn.classList.add("navHidden");
             div.classList.add("hidden");
             break;

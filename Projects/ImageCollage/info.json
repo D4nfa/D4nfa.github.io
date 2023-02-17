@@ -1,14 +1,17 @@
 {
   "GENERAL": {
     "TITLE": "Image Collage",
-    "IMG": "URL GOES HERE"
+    "IMG": "URL GOES HERE",
+    "PRJCTLINK":"URL GOES HERE"
   },
   "EN": {
     "DESCRIPTION": "This is a test project",
-    "INFO": "this is some info"
+    "INFO": "this is some info",
+    "MOREINFO": "See more"
   },
   "DK": {
     "DESCRIPTION": "Dette er et test projekt",
-    "INFO": "dette er er noget info"
+    "INFO": "dette er er noget info",
+    "MOREINFO": "Se mere"
   }
 }

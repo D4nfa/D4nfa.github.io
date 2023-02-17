@@ -1,5 +1,6 @@
 html{
     height: 100%;
+    scroll-behavior: smooth;
 }
 html, body{
     margin: 0;
@@ -8,7 +9,7 @@ html, body{
 
 body {
     height: 100%;
-    
+    overflow-x: hidden;
 }
 
 
@@ -40,6 +41,8 @@ body {
     visibility: hidden;
 }
 
+
+
 .fullScreen {
     height: 100%;
     overflow: auto;
@@ -55,6 +58,8 @@ body {
 
 /* Nav Bar */
 #navDiv {
+    -webkit-transition-duration: 600ms;
+    transition-duration: 600ms;
     position: fixed;
     right: 0px;
     top: 0px;
@@ -63,6 +68,18 @@ body {
     width: 200px;
     height: 100%;
     background-color: rgba(115, 105, 103, 0.5);
+}
+
+#navDiv.visible{
+    transform: translate(-0%);
+    -webkit-transform: translate(-0%);
+}
+
+#navDiv.hidden{
+    visibility: hidden;
+    
+    transform: translate(100%);
+    -webkit-transform: translate(100%);
 }
 
 .navBar {
@@ -75,6 +92,8 @@ body {
 }
 
 .navBar > li button {
+    -webkit-transition-duration: 700ms;
+    transition-duration: 700ms;
     color: white;
     display: block;
     border: none;
@@ -96,6 +115,10 @@ body {
 
 /*Nav Button*/
 #navBtn {
+    -webkit-transition-duration: 600ms;
+    transition-duration: 600ms;
+    transform: translate(-0%);
+    -webkit-transform: translate(-0%);
     position: relative;
     width: 40px;
     height: auto;
@@ -108,9 +131,10 @@ body {
     background-color: #555;
 }
 
-.navHidden {
+#navBtn.navHidden {
     visibility: visible;
-    float: right;
+    transform: translate(-100%);
+    -webkit-transform: translate(-100%);
 }
 
 /*language*/
@@ -151,7 +175,7 @@ body {
 
 /*Project Section*/
 #projectList{
-    text-align: center;
+    
     list-style-type: none;
     margin: 0;
     padding: 0;
