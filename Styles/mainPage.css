@@ -92,8 +92,6 @@ body {
 }
 
 .navBar > li button {
-    -webkit-transition-duration: 700ms;
-    transition-duration: 700ms;
     color: white;
     display: block;
     border: none;
@@ -101,6 +99,11 @@ body {
     height: 35px;
     background-color: #736967;
     text-align: center;
+}
+
+.navBar > li button {
+    -webkit-transition: transform 700ms;
+    transition: transform 700ms;
 }
 
 .navBar > li button:hover {
@@ -115,16 +118,20 @@ body {
 
 /*Nav Button*/
 #navBtn {
-    -webkit-transition-duration: 600ms;
-    transition-duration: 600ms;
-    transform: translate(-0%);
-    -webkit-transform: translate(-0%);
     position: relative;
     width: 40px;
     height: auto;
     display: block;
     padding: 0;
     margin-right: 4px;
+}
+
+#navBtn{
+    -webkit-transition: transform 600ms;
+    transition: transform 600ms;
+
+    transform: translate(-0%);
+    -webkit-transform: translate(-0%);
 }
 
 #navBtn:hover {
@@ -174,8 +181,15 @@ body {
 }
 
 /*Project Section*/
-#projectList{
+#projectDiv{
+    border: black 1px solid;
+    height: 800px;
+    width:100%;
+    display: flex;
+    justify-content: center;
     
+}
+#projectList{
     list-style-type: none;
     margin: 0;
     padding: 0;

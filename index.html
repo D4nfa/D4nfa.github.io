@@ -10,13 +10,13 @@
 	<script type="text/javascript">const $ = id => document.getElementById(id);</script>
 	<script>
         document.addEventListener("DOMContentLoaded", function(event) { 
-            var scrollpos = localStorage.getItem('scrollpos');
-			localStorage.removeItem('scrollpos');
+            var scrollpos = sessionStorage.getItem('scrollpos');
+			sessionStorage.removeItem('scrollpos');
             if (scrollpos) window.scrollTo(0, scrollpos);
         });
 
         window.onbeforeunload = function(e) {
-            localStorage.setItem('scrollpos', window.scrollY);
+            sessionStorage.setItem('scrollpos', window.scrollY);
         };
     </script>
 
