@@ -1,0 +1,21 @@
+.text{
+    color: white;
+}
+#gameWindow{
+    float: left;
+}
+
+.btn{
+    margin-top: 15px;
+}
+
+#inputs{
+    margin-left: 10px;
+    display: block;
+    position: relative;
+    float: left;
+}
+
+#boardLayout{
+    margin-top: 50px;
+}

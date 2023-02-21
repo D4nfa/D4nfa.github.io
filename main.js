@@ -1,19 +1,18 @@
 var isHidden = true;
 var lang = 'DK';
-var project;
-
+var projects;
 
 
 
 function onLoad(){
     getLang();
-    localizePage();
-    loadProjects();
+    loadProjects().then((e) => localizePage());
     //Add selected class to img depicting currently selected language
     
     $(lang + '-FLAG').classList.add('selected');
     
 }
+
 
 function getLang(){
     let _lang = localStorage.getItem('lang');
@@ -52,10 +51,12 @@ function deleteProjects(){
 }
 
 function loadProjects(){
-    fetch(`./Projects/projects.json`).then((response) => response.json().then((json) => {
+    return fetch(`./Projects/projects.json`).then((response) => response.json().then((json) => {
         for(let path of json){
             console.log(`fetching file ${path}`);
-            fetch(`./Projects/${path}/info.json`).then((response) => response.json().then((json) => projectLoaded(json)));
+            fetch(`./Projects/${path}/info.json`)
+            .then((response) => response.json()
+            .then((json) => projectLoaded(json)));
         }
     }));
 }
@@ -74,13 +75,14 @@ function changeLang(nLang){
 }
 
 function localizePage(){
-    fetch(`./local/homePage.json`).then((response) => response.json().then((json) => {
+    fetch(`./local/homePage.json`)
+    .then((response) => response.json()
+    .then((json) => 
+    {
         let page = document.getElementsByTagName('html')[0].innerHTML
         page = subKeys(page, [json[lang], 'GENERAL']); 
         document.getElementsByTagName('html')[0].innerHTML = page;
     }));
-
-    
 }
 
 

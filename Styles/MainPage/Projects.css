@@ -1,0 +1,62 @@
+/*Project Section*/
+
+#projectDiv{
+    height: 800px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#projectList{
+    display: flex;
+
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+}
+
+#projectList #projectInner {
+    display: flex;
+
+    scroll-snap-align: start;
+    flex-shrink: 0;
+
+    border-radius: 25px;
+
+    transform-origin: center center;
+    transform: scale(1);
+    transition: transform 0.5s;
+    position: relative;
+
+    margin: 2px;
+    width: 600px;
+    height: 600px;
+    
+    justify-content: center;
+    align-items: center;
+
+}
+
+#projectList #projectInner {
+    display:block;
+    text-align: center;
+    background-color: #736967;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+#projectInner #projectTitle{
+    font-size: 34px;
+}
+
+#projectInner #projectDesc{
+    
+    font-size: 20px;
+}

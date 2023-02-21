@@ -1,0 +1,16 @@
+{
+    "GENERAL": {
+      "TITLE": "Conway's Game of Life",
+      "IMG": "URL",
+      "PRJCTLINK":"Projects/Games/ConwaysGoL/index.html"
+    },
+    "EN": {
+      "DESCRIPTION": "Conway's Game of Life, is a..."
+    },
+    "DK": {
+      "DESCRIPTION": "Conway's Game of Life, er et..."
+    },
+    "NL": {
+      "DESCRIPTION": "Test projecteren"
+    }
+  }

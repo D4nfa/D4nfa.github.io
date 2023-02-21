@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="style.css"></link>
+    <link rel="stylesheet" href="/Styles/Language.css"></link>
+</head>
+<body onload="load()" style="background-color: rgb(37, 36, 36);">
+    <canvas id="gameWindow" width="800px" height="800px" style="border: 1px solid black;"></canvas>
+    <div id="inputs">
+        <div>
+            <p class="text">Cell Size</p>
+            <input type="text" id="sizeInput" onblur="updateSize()">
+        </div>
+        <div>
+            <p class="text">Tick Speed (ms)</p>
+            <input type="text" id="tickInput" onblur="updateTickRate()">
+        </div>
+        <div>
+            <button id="gameStateBtn" onclick="changeState()" class="btn">Start</button>
+        </div>
+        <div id="boardLayout">
+            <p class="text">Board</p>
+            <input type="text" id="boardLink">
+            <div>
+                <button onclick="loadBoard()" class="btn">Load board</button>
+                <button onclick="saveBoard()" class="btn">Copy board</button>
+            </div>
+            
+        </div>
+
+    </div>
+    
+    <script type="text/javascript" src="script.js"></script>
+</body>

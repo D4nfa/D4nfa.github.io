@@ -1,0 +1,87 @@
+/* Nav Bar */
+#navDiv {
+    -webkit-transition-duration: 600ms;
+    transition-duration: 600ms;
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    padding: 0;
+    margin: 0;
+    width: 200px;
+    height: 100%;
+    background-color: rgba(115, 105, 103, 0.5);
+}
+
+#navDiv.visible{
+    transform: translate(-0%);
+    -webkit-transform: translate(-0%);
+}
+
+#navDiv.hidden{
+    visibility: hidden;
+    
+    transform: translate(100%);
+    -webkit-transform: translate(100%);
+}
+
+.navBar {
+    position: relative;
+    list-style-type: none;
+    background-color: black;
+    width: 200px;
+    padding: 0;
+    margin: 0;
+}
+
+.navBar > li button {
+    color: white;
+    display: block;
+    border: none;
+    width: 200px;
+    height: 35px;
+    background-color: #736967;
+    text-align: center;
+}
+
+.navBar > li button {
+    -webkit-transition: transform 700ms;
+    transition: transform 700ms;
+}
+
+.navBar > li button:hover {
+    background-color: #555;
+    color: white;
+}
+
+.navBar > li button:active {
+    background-color: #303030;
+    color: white;
+}
+
+/*Nav Button*/
+#navBtn {
+    position: relative;
+    width: 40px;
+    height: auto;
+    display: block;
+    padding: 0;
+    margin-right: 4px;
+}
+
+#navBtn{
+    -webkit-transition: transform 600ms;
+    transition: transform 600ms;
+
+    transform: translate(-0%);
+    -webkit-transform: translate(-0%);
+}
+
+#navBtn:hover {
+    background-color: #555;
+}
+
+#navBtn.navHidden {
+    visibility: visible;
+    transform: translate(-100%);
+    -webkit-transform: translate(-100%);
+}

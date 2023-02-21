@@ -1,0 +1,56 @@
+html{
+    height: 100%;
+    scroll-behavior: smooth;
+}
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+
+#gradientbckg{
+    height: 100%;
+    width: 200%;
+    background: rgb(146,0,244);
+    background: linear-gradient(-45deg, rgba(146,0,244,1) 0%, rgba(146,0,244,1) 10%, rgba(253,29,29,1) 25%, rgba(255,149,0,1) 45%, rgba(255,139,2,1) 55%, rgba(253,29,29,1) 75%, rgba(146,0,244,1) 90%, rgba(146,0,244,1) 100%);
+    position: fixed;
+	background-size: 600% 600%;
+	animation: gradient 60s ease infinite;
+    z-index: -1;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+
+.hidden{
+    visibility: hidden;
+}
+
+.fullScreen {
+    height: 100%;
+    overflow: auto;
+}
+
+.fullHeight {
+    width: 100%;
+}
+
+.section{
+    border: 1px solid black;
+}
+

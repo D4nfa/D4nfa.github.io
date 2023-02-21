@@ -10,5 +10,9 @@
   "DK": {
     "DESCRIPTION": "Dette er et test projekt",
     "INFO": "dette er er noget info"
+  },
+  "NL":{
+    "DESCRIPTION": "test projecteren",
+    "INFO": "WIP"
   }
 }
