@@ -1,0 +1,43 @@
+body{
+    background-color: rgb(37, 36, 36);
+}
+
+#markdownInput{
+    color: silver;
+    background-color: rgb(37, 36, 36);
+    border-color: white;
+}
+
+#rawInput{
+    color: silver;
+    background-color: rgb(37, 36, 36);
+    border-color: white;
+    height: 20px;
+    width: 400px;
+}
+
+#main{
+    color: white;
+    float:left;
+}
+
+#parsedDiv{
+    color: white;
+    float: left;
+    margin-left: 20px;
+}
+
+#parsedPara{
+    float: left;
+    display: block;
+    border: 1px solid white;
+    width: 400px;
+    height: auto;
+    padding: 0px;
+}
+
+#parsedOut{
+    color: white;
+    margin: 0px;
+    padding: 5px;
+}

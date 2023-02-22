@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-	<title>{PAGE-TITLE}</title>
+	<title localize>{PAGE-TITLE}</title>
 	<script type="text/javascript" src="/templates.js"></script>
 	<script type="text/javascript" src="/localization.js"></script>
 	<script type="text/javascript" src="/main.js"></script>
@@ -29,29 +29,22 @@
 	<div id="navDiv" class="hidden">
 		<img id="navBtn" class="navHidden" src="/Icons/NavBarIcon.png" onclick="MinMaxNav()" />
 		<ul class="navBar">
-			<li><button onclick="scrollToAnchor('about')">{ABOUT-TITLE}</button></li>
-			<li><button onclick="scrollToAnchor('projects')">{PROJECTS}</button></li>
-			<li><button onclick="scrollToAnchor('rndPage')">Random Page</button></li>
+			<li><button onclick="scrollToAnchor('about')" localize>{ABOUT-TITLE}</button></li>
+			<li><button onclick="scrollToAnchor('projects')" localize>{PROJECTS}</button></li>
+			<li><button onclick="scrollToAnchor('rndPage')" >Random Page</button></li>
 		</ul>
 	</div>
 
-	<!--Languages-->
-	<link rel="stylesheet" href="/Styles/Language.css" />
-	<div id="langDiv">
-		<ul id="langBar">
-			<li id="langList"><img id="DK-FLAG" class="langImg" src="/Icons/DK-flag.png" onclick="changeLang('DK')"></li>
-			<li id="langList"><img id="EN-FLAG" class="langImg" src="/Icons/EN-flag.png" onclick="changeLang('EN')"></li>
-			<li id="langList"><img id="NL-FLAG" class="langImg hidden" src="/Icons/NL-flag.png" onclick="changeLang('NL')"></li>
-		</ul>
-	</div>
+	<span id="langElement"></span>
+	
 
 	<!--About me section-->
 	<link rel="stylesheet" href="/Styles/MainPage/AboutMe.css" />
 	<div id="about" class="fullScreen section">
 		<div id="aboutDiv">
 			<div>
-				<h1 style="display: block; font-size: 34px;">{ABOUT-TITLE}</h1>
-				<p style="display: block; margin: 10px; font-size: 20px;">{ABOUT-TEXT}</p>
+				<h1 style="display: block; font-size: 34px;"localize>{ABOUT-TITLE}</h1>
+				<p style="display: block; margin: 10px; font-size: 20px;"localize>{ABOUT-TEXT}</p>
 			</div>
 		</div>
 	</div>
@@ -60,13 +53,13 @@
 	<!--Projects Section-->
 	<link rel="stylesheet" href="/Styles/MainPage/Projects.css" />
 	<div id="projects" class="fullScreen section">
-		<h1>{PROJECTS}</h1>
+		<h1 localize>{PROJECTS}</h1>
 		<div id="projectDiv">
 			<div id="projectList">
 				<div id = "project" >
 					<div style="background-image: url({IMG});" id="projectInner">
-						<p id="projectTitle">{TITLE}</p>
-						<p id="projectDesc">{DESCRIPTION}</p>
+						<p id="projectTitle"localize>{TITLE}</p>
+						<p id="projectDesc"localize>{DESCRIPTION}</p>
 					</div>
 				</div>
 			</div>

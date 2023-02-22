@@ -4,3 +4,13 @@ const projectTemplate = '<div id = "project">'
 			+ '<p id="projectDesc">{DESCRIPTION}</p>'
 			+ '</div>'
 			+ '</div>';
+
+const langElement = '<!--Languages-->'
++ '<link rel="stylesheet" href="/Styles/Language.css" />'
++ '<div id="langDiv">'
++	'<ul id="langBar">'
++		'<li id="langList"><img id="DK-FLAG" class="langImg" src="/Icons/DK-flag.png" onclick="changeLang(\'DK\')"></li>'
++		'<li id="langList"><img id="EN-FLAG" class="langImg" src="/Icons/EN-flag.png" onclick="changeLang(\'EN\')"></li>'
++		'<li id="langList"><img id="NL-FLAG" class="langImg hidden" src="/Icons/NL-flag.png" onclick="changeLang(\'NL\')"></li>'
++	'</ul>'
++'</div>'

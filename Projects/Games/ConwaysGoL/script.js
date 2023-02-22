@@ -15,8 +15,16 @@ this.stateBtn;
 this.boardLink;
 
 this.cells;
+this.localData;
 
-function load(){
+async function onLoad(){
+    localizePage();
+    loadLangElement();
+    main();
+    
+}
+
+function main(){
     this.tickInput = document.getElementById('tickInput');
     this.sizeInput = document.getElementById('sizeInput');
     this.stateBtn = document.getElementById('gameStateBtn');
@@ -47,7 +55,7 @@ function updateSize(){
     this.cellSize = this.sizeInput.value;
     this.cells = {x: Math.floor(width / cellSize), y: Math.floor(height / cellSize)}
     arrCopy = null;
-    this.board = Array.from(Array(this.cells.x), () => new Array(this.cells.y).fill(false));
+    clearBoard();
     drawCanvas();
 }
 
@@ -99,15 +107,15 @@ function mouseClick(mousePos){
 }
 
 var tickInterval = null;
-async function changeState(){
+function changeState(){
     if(tickInterval != null){
-        this.stateBtn.textContent  = 'Start';
+        this.stateBtn.textContent  = this.localData[lang]['START'];
         clearInterval(tickInterval);
         tickInterval = null;
     }
     else{
-        this.stateBtn.textContent  = 'Stop';
-        tickInterval = setInterval(await doTick, tickRate);
+        this.stateBtn.textContent  = this.localData[lang]['STOP'];
+        tickInterval = setInterval(doTick, tickRate);
     }
 }
 
@@ -142,7 +150,6 @@ async function doTick(){
 }
 
 function loadBoard(layout){
-    this.board = Array.from(Array(this.cells.x), () => new Array(this.cells.y).fill(false));
     let newBoard = JSON.parse((layout != null ? layout : this.boardLink.value));
     this.sizeInput.value = newBoard[0].size;
     this.tickInput.value = newBoard[0].rate;
@@ -170,4 +177,24 @@ function saveBoard(){
     this.boardLink.value = output + ']';
     this.boardLink.select();
     navigator.clipboard.writeText(this.boardLink.value);
+}
+
+function clearBoard(){
+    this.board = Array.from(Array(this.cells.x), () => new Array(this.cells.y).fill(false));
+    this.arrCopy = Array.from(Array(this.cells.x), () => new Array(this.cells.y).fill(true));
+    this.ctx.clearRect(0, 0, this.width, this.height);
+    drawCanvas();
+}
+
+function localizePage(){
+    let _lang = getLang(); 
+    if(_lang != undefined) {lang = _lang;}
+
+    fetch(`local.json`)
+    .then((response) => response.json()
+    .then((json) => 
+    {
+        subKeysDoc(document,  [json[lang], json['GENERAL']]);
+        this.localData = json;
+    }));
 }

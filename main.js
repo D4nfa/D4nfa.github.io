@@ -5,19 +5,12 @@ var projects;
 
 
 function onLoad(){
-    getLang();
+    let _lang = getLang(); 
+    if(_lang != undefined) {lang = _lang;}
     loadProjects().then((e) => localizePage());
-    //Add selected class to img depicting currently selected language
-    
-    $(lang + '-FLAG').classList.add('selected');
-    
+    loadLangElement();
 }
 
-
-function getLang(){
-    let _lang = localStorage.getItem('lang');
-    if(_lang) {lang = _lang}
-}
 
 function scrollToAnchor(anchor)
 {
@@ -66,22 +59,14 @@ function projectLoaded(json){
     $('projectList').innerHTML += json;
 }
 
-//Change language parameter and reload website
-function changeLang(nLang){
-    if(nLang == lang) return;
 
-    localStorage.setItem('lang', nLang);
-    location.reload();
-}
 
 function localizePage(){
     fetch(`./local/homePage.json`)
     .then((response) => response.json()
     .then((json) => 
     {
-        let page = document.getElementsByTagName('html')[0].innerHTML
-        page = subKeys(page, [json[lang], 'GENERAL']); 
-        document.getElementsByTagName('html')[0].innerHTML = page;
+        subKeysDoc(document.getElementsByTagName('html')[0], [json[lang], json['GENERAL']]);
     }));
 }
 

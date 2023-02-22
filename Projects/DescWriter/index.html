@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+    <div id="main">
+        <div id="markdownDiv">
+            <p>markdown input</p>
+            <textarea id="markdownInput" rows="20" cols="50" oninput="updateFields('markdown', this.value)"></textarea>
+        </div>
+        <div id="rawDiv">
+            <p>raw input</p>
+            <input id="rawInput" oninput="updateFields('raw', this.value)">
+        </div>
+    </div>
+    <div id="parsedDiv">
+        <p>parsed output</p>
+        <div id="parsedPara">
+            <p id="parsedOut"></p>
+        </div>
+    </div>
+</body>

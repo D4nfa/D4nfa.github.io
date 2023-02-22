@@ -33,3 +33,7 @@
 .langImg.selected{
     opacity: 1;
 }
+
+.hidden{
+    visibility: hidden;
+}

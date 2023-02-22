@@ -5,10 +5,10 @@
       "PRJCTLINK":"Projects/Games/ConwaysGoL/index.html"
     },
     "EN": {
-      "DESCRIPTION": "Conway's Game of Life, is a..."
+      "DESCRIPTION": "Conway's Game of Life, is a cellular automaton made by British mathematician <b>John Horton Conway</b>.<br><br>It's a zero player game in which the evolution of the game is determined by the initial state of the board."
     },
     "DK": {
-      "DESCRIPTION": "Conway's Game of Life, er et..."
+      "DESCRIPTION": "Conway's Game of Life, er et cellulær automat lavet af Britisk matematiker <b>John Horton Conway</b>.<br><br>Det er et spil uden spillere, hvori evolutionen af spillet er bestemt af spillepladens initiale tilstand."
     },
     "NL": {
       "DESCRIPTION": "Test projecteren"
