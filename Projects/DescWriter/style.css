@@ -37,6 +37,7 @@ body{
 }
 
 #parsedOut{
+    text-align: center;
     color: white;
     margin: 0px;
     padding: 5px;
