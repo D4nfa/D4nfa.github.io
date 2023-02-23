@@ -1,14 +1,14 @@
 var isHidden = true;
-var lang = 'DK';
 var projects;
 
-
-
 function onLoad(){
-    let _lang = getLang(); 
-    if(_lang != undefined) {lang = _lang;}
-    loadProjects().then((e) => localizePage());
+    loadProjects().then(() => localizePage());
     loadLangElement();
+    addEventListener('langChanged', () => 
+    {
+        localizePage();
+        reloadProjects();
+    });
 }
 
 
@@ -46,12 +46,16 @@ function deleteProjects(){
 function loadProjects(){
     return fetch(`./Projects/projects.json`).then((response) => response.json().then((json) => {
         for(let path of json){
-            console.log(`fetching file ${path}`);
             fetch(`./Projects/${path}/info.json`)
             .then((response) => response.json()
             .then((json) => projectLoaded(json)));
         }
     }));
+}
+
+function reloadProjects(){
+    deleteProjects();
+    loadProjects();
 }
 
 function projectLoaded(json){
@@ -66,7 +70,7 @@ function localizePage(){
     .then((response) => response.json()
     .then((json) => 
     {
-        subKeysDoc(document.getElementsByTagName('html')[0], [json[lang], json['GENERAL']]);
+        subKeysAtr(document.getElementsByTagName('html')[0], [json[lang], json['GENERAL']]);
     }));
 }
 

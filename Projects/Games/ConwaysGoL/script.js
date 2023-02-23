@@ -19,6 +19,7 @@ this.localData;
 
 async function onLoad(){
     localizePage();
+    addEventListener('langChanged', () => localizePage());
     loadLangElement();
     main();
     
@@ -187,14 +188,16 @@ function clearBoard(){
 }
 
 function localizePage(){
-    let _lang = getLang(); 
-    if(_lang != undefined) {lang = _lang;}
-
-    fetch(`local.json`)
-    .then((response) => response.json()
-    .then((json) => 
-    {
-        subKeysDoc(document,  [json[lang], json['GENERAL']]);
-        this.localData = json;
-    }));
+    if(!this.localData){
+        fetch(`local.json`)
+        .then((response) => response.json()
+        .then((json) => 
+        {
+            subKeysAtr(document,  [json[lang], json['GENERAL']]);
+            this.localData = json;
+        }));
+    }else{
+        subKeysAtr(document,  [this.localData[lang], this.localData['GENERAL']]);
+    }
+    
 }

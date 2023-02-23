@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-	<title localize>{PAGE-TITLE}</title>
+	<title localize="PAGE-TITLE">{PAGE-TITLE}</title>
 	<script type="text/javascript" src="/templates.js"></script>
 	<script type="text/javascript" src="/localization.js"></script>
 	<script type="text/javascript" src="/main.js"></script>
@@ -29,8 +29,8 @@
 	<div id="navDiv" class="hidden">
 		<img id="navBtn" class="navHidden" src="/Icons/NavBarIcon.png" onclick="MinMaxNav()" />
 		<ul class="navBar">
-			<li><button onclick="scrollToAnchor('about')" localize>{ABOUT-TITLE}</button></li>
-			<li><button onclick="scrollToAnchor('projects')" localize>{PROJECTS}</button></li>
+			<li><button onclick="scrollToAnchor('about')" localize="ABOUT-TITLE">{ABOUT-TITLE}</button></li>
+			<li><button onclick="scrollToAnchor('projects')" localize="PROJECTS">{PROJECTS}</button></li>
 			<li><button onclick="scrollToAnchor('rndPage')" >Random Page</button></li>
 		</ul>
 	</div>
@@ -43,8 +43,8 @@
 	<div id="about" class="fullScreen section">
 		<div id="aboutDiv">
 			<div>
-				<h1 style="display: block; font-size: 34px;"localize>{ABOUT-TITLE}</h1>
-				<p style="display: block; margin: 10px; font-size: 20px;"localize>{ABOUT-TEXT}</p>
+				<h1 style="display: block; font-size: 34px;"localiz="ABOUT-TITLE"></h1>
+				<p style="display: block; margin: 10px; font-size: 20px;"localize="ABOUT-TEXT"></p>
 			</div>
 		</div>
 	</div>
@@ -53,15 +53,9 @@
 	<!--Projects Section-->
 	<link rel="stylesheet" href="/Styles/MainPage/Projects.css" />
 	<div id="projects" class="fullScreen section">
-		<h1 localize>{PROJECTS}</h1>
+		<h1 localize="PROJECTS">{PROJECTS}</h1>
 		<div id="projectDiv">
 			<div id="projectList">
-				<div id = "project" >
-					<div style="background-image: url({IMG});" id="projectInner">
-						<p id="projectTitle"localize>{TITLE}</p>
-						<p id="projectDesc"localize>{DESCRIPTION}</p>
-					</div>
-				</div>
 			</div>
 		</div>
 	</div>
