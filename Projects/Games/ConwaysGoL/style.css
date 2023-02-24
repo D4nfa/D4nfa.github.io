@@ -1,81 +1,81 @@
 .text{
-    color: white;
+	color: white;
 }
 #gameWindow{
-    float: left;
+	float: left;
 }
 
 .btn{
-    margin-top: 15px;
-    
-    font-size: medium;
+	margin-top: 15px;
+	
+	font-size: medium;
 }
 
 
 #inputs{
-    margin-left: 10px;
-    display: block;
-    position: relative;
-    float: left;
-    border-radius: 25px;
-    text-align: center;
-    border: 1px solid white;
-    padding: 10px;
-    height: 100%;
+	margin-left: 10px;
+	display: block;
+	position: relative;
+	float: left;
+	border-radius: 25px;
+	text-align: center;
+	border: 1px solid white;
+	padding: 10px;
+	height: 100%;
 }
 
 #boardLayout{
-    margin-top: 50px;
+	margin-top: 50px;
 }
 
 #titleDiv{
-    text-align: center;
+	text-align: center;
 }
 
 html{
-    width: 100%;
-    padding: 0px;
-    margin: 0px;
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
 }
 
 #desc{
-    margin-right: 10px;
-    display: block;
-    position: relative;
-    float:left;
-    border-radius: 25px;
-    text-align: center;
-    border: 1px solid white;
-    padding: 10px;
-    width: 300px;
-    height: 100%;
+	margin-right: 10px;
+	display: block;
+	position: relative;
+	float:left;
+	border-radius: 25px;
+	text-align: center;
+	border: 1px solid white;
+	padding: 10px;
+	width: 300px;
+	height: 100%;
 }
 
 #gameUI{
-    display: flex;
-    justify-content: center;
-    width: 100%;
+	display: flex;
+	justify-content: center;
+	width: 100%;
 }
 
 #homeBtn{
 
-    margin-top: 10px;
-    position: relative;
-    display: block;
-    width: 50px;
-    height: 50px;
-    padding: 2px;
-    background-color: silver;
-    border: 3px solid white;
-    border-radius: 10px;
+	margin-top: 10px;
+	position: relative;
+	display: block;
+	width: 50px;
+	height: 50px;
+	padding: 2px;
+	background-color: silver;
+	border: 3px solid white;
+	border-radius: 10px;
 }
 
 #homeBtn:hover{
-    background-color: rgb(126, 126, 126);
+	background-color: rgb(126, 126, 126);
 }
 
 #homeDiv{
-    position: fixed;
-    top: 0;
-    width: 100%;
+	position: fixed;
+	top: 0;
+	width: 100%;
 }

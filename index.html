@@ -9,16 +9,16 @@
 <body onload="onLoad()">
 	<script type="text/javascript">const $ = id => document.getElementById(id);</script>
 	<script>
-        document.addEventListener("DOMContentLoaded", function(event) { 
-            let scrollpos = sessionStorage.getItem('scrollpos');
+		document.addEventListener("DOMContentLoaded", function(event) { 
+			let scrollpos = sessionStorage.getItem('scrollpos');
 			sessionStorage.removeItem('scrollpos');
-            if (scrollpos) window.scrollTo(0, scrollpos);
-        });
+			if (scrollpos) window.scrollTo(0, scrollpos);
+		});
 
-        window.onbeforeunload = function(e) {
-            sessionStorage.setItem('scrollpos', window.scrollY);
-        };
-    </script>
+		window.onbeforeunload = function(e) {
+			sessionStorage.setItem('scrollpos', window.scrollY);
+		};
+	</script>
 
 
 	<div id="outgradbck"><div id="gradientbckg"></div></div>

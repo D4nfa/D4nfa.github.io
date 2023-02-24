@@ -1,106 +1,106 @@
 /*Project Section*/
 
 #projectDiv{
-    height: 800px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
+	height: 800px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
 }
 
 #projectList{
-    display: flex;
+	display: flex;
 
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
   
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
+	scroll-behavior: smooth;
+	-webkit-overflow-scrolling: touch;
 
-    width: 100%;
+	width: 100%;
 
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 #projectList #projectInner {
-    display: flex;
-    scroll-snap-align: center;
-    flex-shrink: 0;
+	display: flex;
+	scroll-snap-align: center;
+	flex-shrink: 0;
 
-    border-radius: 25px;
+	border-radius: 25px;
 
-    transform-origin: center center;
-    transform: scale(1);
-    transition: transform 0.5s;
-    position: relative;
+	transform-origin: center center;
+	transform: scale(1);
+	transition: transform 0.5s;
+	position: relative;
 
-    width: 500px;
-    height: 500px;
+	width: 500px;
+	height: 500px;
 }
 
 #projectList #projectInner {
-    text-align: center;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    z-index: -1;
-    color: white;
+	text-align: center;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	z-index: -1;
+	color: white;
 }
 
 #projectList #project{
-    border: 2px solid black;
-    border-radius: 25px;
-    margin: 2px;
-    padding: 0px;
-    height: 500px;
+	border: 2px solid black;
+	border-radius: 25px;
+	margin: 2px;
+	padding: 0px;
+	height: 500px;
 }
 
 #projectList #projectInner.selected {
-    width: 600px;
-    height: 600px;
+	width: 600px;
+	height: 600px;
 }
 
 #projectList #project:hover {
-    background-color: hsla(0, 0%, 0%, 0.10);
+	background-color: hsla(0, 0%, 0%, 0.10);
 }
 
 #projectList #project:active {
-    background-color: hsla(0, 0%, 0%, 0.30);
+	background-color: hsla(0, 0%, 0%, 0.30);
 }
 
 #projectInner #projectTitle{
-    font-size: 34px;
+	font-size: 34px;
 }
 
 #projectInner #projectDesc{
-    font-size: 20px;
+	font-size: 20px;
 }
 
 #projectInner #titleDiv{
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
-    background-color: rgba(0, 0, 0, 0.2);
-    width: 100%;
-    text-align: center;
-    top:0;
-    height: 20%;
+	border-top-left-radius: 25px;
+	border-top-right-radius: 25px;
+	background-color: rgba(0, 0, 0, 0.2);
+	width: 100%;
+	text-align: center;
+	top:0;
+	height: 20%;
 }
 /*rgb(165, 165, 165) 0%,*/
 #projectInner #imgDiv{
-    width: 100%;
-    position: absolute;
-    top: 20%;
-    height: 50%;
-    z-index: -1;
+	width: 100%;
+	position: absolute;
+	top: 20%;
+	height: 50%;
+	z-index: -1;
 }
 
 
 #projectInner #descDiv{
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
-    background-color: rgba(0, 0, 0, 0.2);
-    position:absolute;
-    padding: 0px;
-    width: 100%;
-    height: 30%;
-    bottom: 0;
+	border-bottom-left-radius: 25px;
+	border-bottom-right-radius: 25px;
+	background-color: rgba(0, 0, 0, 0.2);
+	position:absolute;
+	padding: 0px;
+	width: 100%;
+	height: 30%;
+	bottom: 0;
 }

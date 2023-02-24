@@ -1,19 +1,19 @@
 {
   "GENERAL": {
-    "TITLE": "TestProject 3",
-    "IMG": "/Images/TestingImage.png",
-    "PRJCTLINK": "/Projects/testPage"
+	"TITLE": "TestProject 3",
+	"IMG": "/Images/TestingImage.png",
+	"PRJCTLINK": "/Projects/testPage"
   },
   "EN": {
-    "DESCRIPTION": "This is a test project",
-    "INFO": "this is some info"
+	"DESCRIPTION": "This is a test project",
+	"INFO": "this is some info"
   },
   "DK": {
-    "DESCRIPTION": "Dette er et test projekt",
-    "INFO": "dette er er noget info"
+	"DESCRIPTION": "Dette er et test projekt",
+	"INFO": "dette er er noget info"
   },
   "NL":{
-    "DESCRIPTION": "test projecteren",
-    "INFO": "WIP"
+	"DESCRIPTION": "test projecteren",
+	"INFO": "WIP"
   }
 }

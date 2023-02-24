@@ -1,39 +1,39 @@
 /*language*/
 #langDiv{
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
 }
 
 #langBar{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
 }
 
 #langList{
-    float: left;
+	float: left;
 }
 
 .langImg{
-    position: relative;
-    display: block;
-    margin: 2px;
-    width: 50px;
-    height: 50px;
-    padding: 0;
-    opacity: 0.3;
+	position: relative;
+	display: block;
+	margin: 2px;
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	opacity: 0.3;
 }
 
 .langImg:hover{
-    opacity: 0.8;
+	opacity: 0.8;
 }
 
 .langImg.selected{
-    opacity: 1;
+	opacity: 1;
 }
 
 .hidden{
-    visibility: hidden;
+	visibility: hidden;
 }
