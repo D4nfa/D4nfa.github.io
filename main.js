@@ -1,5 +1,7 @@
 var isHidden = true;
 var projects;
+var sections = ['about', 'projects', 'rndPage'];
+var currSection = 0;
 
 function onLoad(){
     loadProjects().then(() => localizePage());
@@ -10,7 +12,6 @@ function onLoad(){
         reloadProjects();
     });
 }
-
 
 function scrollToAnchor(anchor)
 {

@@ -1,9 +1,10 @@
 const projectTemplate = 
-'<div id = "project" onclick="location.href = \'{PRJCTLINK}\'">'
-+		'<div style="background-image: url({IMG});" id="projectInner">'
+	'<div id = "project" onclick="location.href = \'{PRJCTLINK}\'">'
++		'<div id="projectInner">'
 +			'<div id="titleDiv">'
 +				'<p id="projectTitle"localize>{TITLE}</p>'
 +			'</div>'
++			'<div id="imgDiv" style="background-image: url({IMG});"></div>'
 +			'<div id="descDiv">'
 +				'<p id="projectDesc"localize>{DESCRIPTION}</p>'
 +			'</div>'
@@ -24,7 +25,7 @@ const projectTemplate =
 */
 
 const langElement = 
-'<!--Languages-->'
+	'<!--Languages-->'
 +	'<link rel="stylesheet" href="/Styles/Language.css" />'
 +	'<div id="langDiv">'
 +		'<ul id="langBar">'

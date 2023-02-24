@@ -10,7 +10,7 @@
 	<script type="text/javascript">const $ = id => document.getElementById(id);</script>
 	<script>
         document.addEventListener("DOMContentLoaded", function(event) { 
-            var scrollpos = sessionStorage.getItem('scrollpos');
+            let scrollpos = sessionStorage.getItem('scrollpos');
 			sessionStorage.removeItem('scrollpos');
             if (scrollpos) window.scrollTo(0, scrollpos);
         });
@@ -53,11 +53,11 @@
 	<!--Projects Section-->
 	<link rel="stylesheet" href="/Styles/MainPage/Projects.css" />
 	<div id="projects" class="fullScreen section">
-		<h1 localize="PROJECTS">{PROJECTS}</h1>
-		<div id="projectDiv">
-			<div id="projectList">
+			<h1 localize="PROJECTS">{PROJECTS}</h1>
+			<div id="projectDiv">
+				<div id="projectList">
+				</div>
 			</div>
-		</div>
 	</div>
 
 	<div id="rndPage" class="fullScreen section	">

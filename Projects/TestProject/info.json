@@ -1,7 +1,7 @@
 {
   "GENERAL": {
     "TITLE": "TestProject",
-    "IMG": "URL GOES HERE",
+    "IMG": "/Images/TestingImage.png",
     "PRJCTLINK": "/Projects/testPage"
   },
   "EN": {

@@ -1,6 +1,8 @@
 html{
     height: 100%;
     scroll-behavior: smooth;
+    
+    scroll-snap-type: y mandatory;
 }
 html, body{
     margin: 0;
@@ -10,7 +12,16 @@ html, body{
 body {
     height: 100%;
     overflow-x: hidden;
+
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
+
+body::-webkit-scrollbar{
+    display: none;
+}
+
+
 
 
 #gradientbckg{
@@ -44,6 +55,8 @@ body {
 .fullScreen {
     height: 100%;
     overflow: auto;
+    
+    scroll-snap-align: center;
 }
 
 .fullHeight {

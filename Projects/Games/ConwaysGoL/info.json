@@ -1,7 +1,7 @@
 {
     "GENERAL": {
       "TITLE": "Conway's Game of Life",
-      "IMG": "UER",
+      "IMG": "/Images/conwaysGoL.png",
       "PRJCTLINK":"Projects/Games/ConwaysGoL"
     },
     "EN": {
