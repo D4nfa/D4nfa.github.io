@@ -1,5 +1,4 @@
 var isHidden = true;
-var projectIDs = [];
 var projects = [];
 
 function onLoad(){
@@ -54,17 +53,21 @@ function loadProjects(){
 }
 
 function localizeProjects(){ //TODO
-    for(let i = 0; i < projectIDs.length; i++){
-        subKeysAtr(document.getElementsByTagName());
+    for(let i = 0; i < projects.length; i++){
+        subKeysAtr(document.querySelectorAll(`[PRJCTID=${projects[i]['GENERAL']['PRJCTID']}]`)[0], [projects[i][lang], projects[i]['GENERAL']]);
     }
 }
 
+function localizeProject(project){
+	subKeysAtr(document.querySelectorAll(`[PRJCTID=${project['GENERAL']['PRJCTID']}]`)[0], [project[lang], project['GENERAL']]);
+}
+
 function projectLoaded(json){
-    projectIDs.push(json['GENERAL']['PRJCTID']);
     projects.push(json);
-    json = subKeys(projectTemplate, [json[lang], json['GENERAL']]);
     
-    $('projectList').innerHTML += json;
+    $('projectList').innerHTML += subKeys(projectTemplate, [json['GENERAL']]);
+
+	localizeProject(json);
 }
 
 

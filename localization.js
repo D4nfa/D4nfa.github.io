@@ -43,7 +43,7 @@ function getLang(){
 	return 'DK';
 }
 
-//Change language parameter and reload website
+//Set language and dispatch langChanged event
 function changeLang(nLang){
 	if(nLang == lang) return;
 	localStorage.setItem('lang', nLang);
