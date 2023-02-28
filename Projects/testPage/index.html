@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <head>
 	<link rel="stylesheet" href="style.css">
+	<script type="text/javascript" src="/templates.js"></script>
+	<script type="text/javascript" src="/localization.js"></script>
 </head>
-<body style="background-color:  rgb(37, 36, 36);">
+<body style="background-color:  rgb(37, 36, 36);" onload="loadLangElement()">
 	<h1 style="display: flex; justify-content: center; color: white;">This is a test landing page</h1>
+
+	
+
 	<div id="homeDiv">
 		<img id="homeBtn" src="/Icons/home_Dark.png" onclick="window.location = '/'">
 	</div>
+	<span id="langElement"></span>
 </body>
