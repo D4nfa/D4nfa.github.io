@@ -2,7 +2,8 @@
     "GENERAL": {
       "TITLE": "Conway's Game of Life",
       "IMG": "/Images/conwaysGoL.png",
-      "PRJCTLINK":"Projects/Games/ConwaysGoL"
+      "PRJCTLINK":"Projects/Games/ConwaysGoL",
+      "PRJCTID":"CGOL"
     },
     "EN": {
       "DESCRIPTION": "Conway's Game of Life, is a cellular automaton made by British mathematician <b>John Horton Conway</b>.<br><br>It's a zero player game in which the evolution of the game is determined by the initial state of the board."

@@ -2,7 +2,8 @@
   "GENERAL": {
     "TITLE": "Image Collage",
     "IMG": "/Images/TestingImage.png",
-    "PRJCTLINK":"/Projects/testPage"
+    "PRJCTLINK":"/Projects/testPage",
+    "PRJCTID":"IMGC"
   },
   "EN": {
     "DESCRIPTION": "This is a test project",

@@ -1,7 +1,6 @@
 var isHidden = true;
-var projects;
-var sections = ['about', 'projects', 'rndPage'];
-var currSection = 0;
+var projectIDs = [];
+var projects = [];
 
 function onLoad(){
     loadProjects().then(() => localizePage());
@@ -9,7 +8,7 @@ function onLoad(){
     addEventListener('langChanged', () => 
     {
         localizePage();
-        reloadProjects();
+        localizeProjects();
     });
 }
 
@@ -54,13 +53,17 @@ function loadProjects(){
     }));
 }
 
-function reloadProjects(){
-    deleteProjects();
-    loadProjects();
+function localizeProjects(){ //TODO
+    for(let i = 0; i < projectIDs.length; i++){
+        subKeysAtr(document.getElementsByTagName());
+    }
 }
 
 function projectLoaded(json){
+    projectIDs.push(json['GENERAL']['PRJCTID']);
+    projects.push(json);
     json = subKeys(projectTemplate, [json[lang], json['GENERAL']]);
+    
     $('projectList').innerHTML += json;
 }
 

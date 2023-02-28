@@ -89,7 +89,7 @@ function drawCanvas() {
     }
 
     arrCopy = new Array(this.cells.x)
-    for(let x = 0; x <this.cells.x; x++)
+    for(let x = 0; x < this.cells.x; x++)
     {
         arrCopy[x] = board[x].slice();
     }
