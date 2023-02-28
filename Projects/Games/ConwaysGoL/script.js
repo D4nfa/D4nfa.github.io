@@ -88,19 +88,11 @@ function drawCanvas() {
 		}
 	}
 
-<<<<<<< HEAD
     arrCopy = new Array(this.cells.x)
     for(let x = 0; x < this.cells.x; x++)
     {
         arrCopy[x] = board[x].slice();
     }
-=======
-	arrCopy = new Array(this.cells.x)
-	for(let x = 0; x <this.cells.x; x++)
-	{
-		arrCopy[x] = board[x].slice();
-	}
->>>>>>> d36a1f6af47347394f0cf1786be5b73828a5b6b0
 }
 
 function getMouseSquare(event) {
