@@ -1,15 +1,9 @@
 {
   "GENERAL": {
-<<<<<<< HEAD
     "TITLE": "TestProject",
     "IMG": "/Images/TestingImage.png",
     "PRJCTLINK": "/Projects/testPage",
     "PRJCTID":"TEST1"
-=======
-	"TITLE": "TestProject",
-	"IMG": "/Images/TestingImage.png",
-	"PRJCTLINK": "/Projects/testPage"
->>>>>>> d36a1f6af47347394f0cf1786be5b73828a5b6b0
   },
   "EN": {
 	"DESCRIPTION": "This is a test project",
