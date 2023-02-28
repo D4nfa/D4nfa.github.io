@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "GENERAL": {
       "TITLE": "Conway's Game of Life",
       "IMG": "/Images/conwaysGoL.png",
@@ -14,4 +15,20 @@
     "NL": {
       "DESCRIPTION": "Test projecteren"
     }
+=======
+	"GENERAL": {
+	  "TITLE": "Conway's Game of Life",
+	  "IMG": "/Images/conwaysGoL.png",
+	  "PRJCTLINK":"Projects/Games/ConwaysGoL"
+	},
+	"EN": {
+	  "DESCRIPTION": "Conway's Game of Life, is a cellular automaton made by British mathematician <b>John Horton Conway</b>.<br><br>It's a zero player game in which the evolution of the game is determined by the initial state of the board."
+	},
+	"DK": {
+	  "DESCRIPTION": "Conway's Game of Life, er et cellulær automat lavet af Britisk matematiker <b>John Horton Conway</b>.<br><br>Det er et spil uden spillere, hvori evolutionen af spillet er bestemt af spillepladens initiale tilstand."
+	},
+	"NL": {
+	  "DESCRIPTION": "Test projecteren"
+	}
+>>>>>>> d36a1f6af47347394f0cf1786be5b73828a5b6b0
   }
