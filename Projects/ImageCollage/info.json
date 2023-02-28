@@ -1,20 +1,20 @@
 {
   "GENERAL": {
-    "TITLE": "Image Collage",
+    "PRJCTTITLTE": "Image Collage",
     "IMG": "/Images/TestingImage.png",
     "PRJCTLINK":"/Projects/testPage",
     "PRJCTID":"IMGC"
   },
   "EN": {
-	"DESCRIPTION": "This is a test project",
+	"PRJCTDESC": "This is a test project",
 	"INFO": "this is some info {MOREINFO}"
   },
   "DK": {
-	"DESCRIPTION": "Dette er et test projekt",
+	"PRJCTDESC": "Dette er et test projekt",
 	"INFO": "dette er er noget info"
   },
   "NL": {
-	"DESCRIPTION": "Test projecteren",
+	"PRJCTDESC": "Test projecteren",
 	"INFO": "WIP INFO"
   }
 }

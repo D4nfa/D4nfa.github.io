@@ -1,20 +1,20 @@
 {
   "GENERAL": {
-    "TITLE": "TestProject",
+    "PRJCTTITLTE": "TestProject",
     "IMG": "/Images/TestingImage.png",
     "PRJCTLINK": "/Projects/testPage",
     "PRJCTID":"TEST1"
   },
   "EN": {
-	"DESCRIPTION": "This is a test project",
+	"PRJCTDESC": "This is a test project",
 	"INFO": "this is some info"
   },
   "DK": {
-	"DESCRIPTION": "Dette er et test projekt",
+	"PRJCTDESC": "Dette er et test projekt",
 	"INFO": "dette er er noget info"
   },
   "NL":{
-	"DESCRIPTION": "test projecteren",
+	"PRJCTDESC": "test projecteren",
 	"INFO": "WIP"
   }
 }
