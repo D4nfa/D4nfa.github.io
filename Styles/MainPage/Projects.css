@@ -1,62 +1,61 @@
 /*Project Section*/
-
-#projectDiv{
-	height: 800px;
+.carousel-container{
 	width: 100%;
-	display: flex;
-	justify-content: center;
+	height: 100%;
+}
+
+
+.inner-carousel{
+	width: 600px;
+	height: 600px;
+	position: relative;
+	
+	margin: 0px auto;
+	overflow-x: hidden;
 }
 
 #projectList{
-	display: flex;
-
-	overflow-x: auto;
-	scroll-snap-type: x mandatory;
-  
-	scroll-behavior: smooth;
-	-webkit-overflow-scrolling: touch;
-
-	width: 100%;
-
-	margin: 0;
-	padding: 0;
+	height: 100%;
 }
 
+.prev, .next{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.prev{
+	left: 0px;
+}
+
+.next{
+	right: 0px;
+}
+
+
 #projectList #projectInner {
+	
+	position: relative;
 	display: flex;
-	scroll-snap-align: center;
-	flex-shrink: 0;
+	
 
 	border-radius: 25px;
 
-	transform-origin: center center;
-	transform: scale(1);
-	transition: transform 0.5s;
-	position: relative;
-
-	width: 500px;
-	height: 500px;
-}
-
-#projectList #projectInner {
+	width: 600px;
+	height: 600px;
+	
+	
 	text-align: center;
-	background-repeat: no-repeat;
-	background-size: 100%;
-	z-index: -1;
 	color: white;
+	z-index: -1;
+
 }
 
 #projectList #project{
+	position: absolute;
+
 	border: 2px solid black;
 	border-radius: 25px;
-	margin: 2px;
-	padding: 0px;
-	height: 500px;
-}
-
-#projectList #projectInner.selected {
-	width: 600px;
-	height: 600px;
 }
 
 #projectList #project:hover {
@@ -66,6 +65,7 @@
 #projectList #project:active {
 	background-color: hsla(0, 0%, 0%, 0.30);
 }
+
 
 #projectInner #projectTitle{
 	font-size: 34px;
@@ -85,7 +85,7 @@
 	top:0;
 	height: 20%;
 }
-/*rgb(165, 165, 165) 0%,*/
+
 #projectInner #imgDiv{
 	width: 100%;
 	position: absolute;
@@ -93,7 +93,6 @@
 	height: 50%;
 	z-index: -1;
 }
-
 
 #projectInner #descDiv{
 	border-bottom-left-radius: 25px;

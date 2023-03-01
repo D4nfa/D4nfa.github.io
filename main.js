@@ -1,5 +1,6 @@
 var isHidden = true;
 var projects = [];
+var projectElems = [];
 
 function onLoad(){
     loadProjects().then(() => localizePage());
@@ -67,6 +68,8 @@ function projectLoaded(json){
     
     $('projectList').innerHTML += subKeys(projectTemplate, [json['GENERAL']]);
 
+	projectElems.push(document.querySelector(`[PRJCTID=${json['GENERAL']['PRJCTID']}]`));
+
 	localizeProject(json);
 }
 
@@ -78,6 +81,7 @@ function localizePage(){
 	.then((json) => 
 	{
 		subKeysAtr(document.getElementsByTagName('html')[0], [json[lang], json['GENERAL']]);
+		alignProjects();
 	}));
 }
 
@@ -99,3 +103,8 @@ function evalParams(params)
 	}
 }
 evalParams(window.location.href.slice(window.location.href.indexOf('?') + 1));
+
+async function ScrollProjects(){
+	let div = document.getElementById('projectList');
+	div.style.transform = `translateX(${1200}px)`
+}
