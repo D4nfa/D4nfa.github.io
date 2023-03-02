@@ -51,7 +51,6 @@
 	
 	text-align: center;
 	color: white;
-	z-index: -1;
 
 }
 
@@ -60,6 +59,7 @@
 
 	border: 2px solid black;
 	border-radius: 25px;
+	z-index: -1;
 }
 
 #projectList #project:hover {
@@ -95,7 +95,6 @@
 	position: absolute;
 	top: 20%;
 	height: 50%;
-	z-index: -1;
 }
 
 #projectInner #descDiv{

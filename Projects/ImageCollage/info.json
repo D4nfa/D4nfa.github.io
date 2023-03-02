@@ -5,13 +5,13 @@
     "PRJCTLINK":"/Projects/testPage",
     "PRJCTID":"IMGC"
   },
-  "EN": {
-	"PRJCTDESC": "This is a test project",
-	"INFO": "this is some info {MOREINFO}"
-  },
   "DK": {
 	"PRJCTDESC": "Dette er et test projekt",
 	"INFO": "dette er er noget info"
+  },
+  "EN": {
+	"PRJCTDESC": "This is a test project",
+	"INFO": "this is some info {MOREINFO}"
   },
   "NL": {
 	"PRJCTDESC": "Test projecteren",
