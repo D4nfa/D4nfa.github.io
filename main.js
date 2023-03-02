@@ -71,6 +71,8 @@ function projectLoaded(json){
 	projectElems.push(document.querySelector(`[PRJCTID=${json['GENERAL']['PRJCTID']}]`));
 
 	localizeProject(json);
+	
+	alignProjects();
 }
 
 
@@ -81,7 +83,6 @@ function localizePage(){
 	.then((json) => 
 	{
 		subKeysAtr(document.getElementsByTagName('html')[0], [json[lang], json['GENERAL']]);
-		alignProjects();
 	}));
 }
 

@@ -6,16 +6,20 @@
 
 
 .inner-carousel{
-	width: 600px;
-	height: 600px;
+	width: 1818px;
+	height: 606px;
 	position: relative;
 	
 	margin: 0px auto;
 	overflow-x: hidden;
+	
+	overflow-y: hidden;
 }
 
 #projectList{
 	height: 100%;
+	transform: translateX(606px);
+	transition: Transform 600ms ease-in-out;
 }
 
 .prev, .next{
