@@ -1,0 +1,18 @@
+{
+    "GENERAL": {
+      "PRJCTTITLTE": "Boids",
+      "IMG": "/Images/TestingImage.png",
+      "PRJCTLINK":"Projects/Games/Boids",
+      "PRJCTID":"BOIDS",
+      "TAGS": ["HTML", "CSS", "Javascript"]
+    },
+    "DK": {
+      "PRJCTDESC": "Boids er et..."
+    },
+    "EN": {
+      "PRJCTDESC": "Boids is a.."
+    },
+    "NL": {
+      "PRJCTDESC": "Test projecteren"
+    }
+  }
