@@ -49,15 +49,13 @@ function boidLogic(boid){
 	
     let boidInView = getBoidsInRange(boid, viewRange);
 
-	let angle = Math.atan2(boid.vel.x, boid.vel.y);
-	angle = (angle < 0) ? (radToDegree(angle) + 360) : radToDegree(angle);
+	let angle = Math.atan2(boid.vel.y, boid.vel.x);
+    angle = (angle < 0) ? (radToDegree(angle) + 360) : radToDegree(angle);
 
-	boid.rot = angle;
+    boid.rot = angle;
 
 	boid.pos.x += boid.vel.x * 0.1;
 	boid.pos.y += boid.vel.y * 0.1;
-
-	boid.rot = angle;
 
     if (boid.pos.x > canvas.width) {
         boid.pos.x -= canvas.width;
