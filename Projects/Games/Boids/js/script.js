@@ -78,14 +78,24 @@ function boidLogic(boid){
     //boid.rot += seperation(boidInView, boid);
 
     //ALIGNMENT
-    //boid.rot += alignRot(boidInView, boid);
+    alignVector(boidInView, boid);
 
     //COHESION
     //boid.rot += cohesion(boidInView, boid);
 }
 
-function alignRot(boidInView, boid){
-    
+function alignVector(boidInView, boid){
+    let avgVect = {x: 0, y: 0};
+	boidInView.forEach(_boid => {
+		avgVect.x += _boid.vel.x;
+		avgVect.y += _boid.vel.y;
+	});
+	avgVect.x / boidInView.length;
+	avgVect.y / boidInView.length;
+
+	
+	boid.vel.x += (avgVect.x / 0.01 > boid.maxVel) ? (avgVect.x / 0.01) : (avgVect.x);
+	boid.vel.y += (avgVect.y / 0.01 > boid.maxVel) ? (avgVect.y / 0.01) : (avgVect.y);
 }
 
 function seperation(boidInView, boid){
@@ -102,7 +112,8 @@ function getBoidsInRange(origin, range){
     let boidsInRange = [];
     for(let boid of flock){
         if(getDist(origin, boid) <= range){
-            boidsInRange.push(boid);
+			if(origin != boid)
+			boidsInRange.push(boid);
         }
     }
     return boidsInRange;
