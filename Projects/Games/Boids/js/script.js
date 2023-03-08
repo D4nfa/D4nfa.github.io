@@ -13,12 +13,14 @@ let tickInterval = setInterval(doTick, 10);
 
 spawnBoids(150);
 
-
 function doTick(){
     clearScreen();
     flock.forEach(boid => {
         boidLogic(boid);
+        boid.update();
         drawBoid(boid);
+
+        
         //BOID BE SPINNIN
         /*
         boid.rot++;
@@ -35,13 +37,13 @@ function doTick(){
 
 function spawnBoids(amount){
     for(let i = 0; i < amount; i++){
-        flock.push(new Boid({x: Math.random() * canvas.width, y: Math.random() * canvas.height}));
+        flock.push(new Boid(new vector2(Math.random() * canvas.width, Math.random() * canvas.height)));
     }
 }
 
-let sepForce = .5;
-let atractForce = 1;
-let alignForce = .5
+let sepForce = document.getElementById('seperation');
+let atractForce = document.getElementById('cohesion');
+let alignForce = document.getElementById('align')
 let viewRange = 20;
 
 
@@ -54,57 +56,92 @@ function boidLogic(boid){
 
     boid.rot = angle;
 
-	boid.pos.x += boid.vel.x * 0.1;
-	boid.pos.y += boid.vel.y * 0.1;
-
     if (boid.pos.x > canvas.width) {
         boid.pos.x -= canvas.width;
-      }
-      if (boid.pos.x < 0) {
+    }
+    if (boid.pos.x < 0) {
         boid.pos.x += canvas.width
-      }
-      if (boid.pos.y > canvas.height) {
+    }
+    if (boid.pos.y > canvas.height) {
         boid.pos.y -= canvas.height;
-      }
-      if (boid.pos.y < 0) {
+    }
+    if (boid.pos.y < 0) {
         boid.pos.y += canvas.height;
-      }
+    }
 
     if(boidInView.length == 1){
         return;
     }
 
+    boid.accel = new vector2();
     //SEPERATION
-    //boid.rot += seperation(boidInView, boid);
+    let sepVal = seperation(boidInView, boid);
+    sepVal = sepVal.mult(sepForce.value);
+    boid.accel = boid.accel.addVect(sepVal);
 
     //ALIGNMENT
-    alignVector(boidInView, boid);
+    let alignVal = align(boidInView, boid);
+    alignVal = alignVal.mult(alignForce.value);
+    boid.accel = boid.accel.addVect(alignVal);
 
     //COHESION
-    //boid.rot += cohesion(boidInView, boid);
-}
-
-function alignVector(boidInView, boid){
-    let avgVect = {x: 0, y: 0};
-	boidInView.forEach(_boid => {
-		avgVect.x += _boid.vel.x;
-		avgVect.y += _boid.vel.y;
-	});
-	avgVect.x / boidInView.length;
-	avgVect.y / boidInView.length;
-
-	
-	boid.vel.x += (avgVect.x / 0.01 > boid.maxVel) ? (avgVect.x / 0.01) : (avgVect.x);
-	boid.vel.y += (avgVect.y / 0.01 > boid.maxVel) ? (avgVect.y / 0.01) : (avgVect.y);
-}
-
-function seperation(boidInView, boid){
+    let attractVal = cohesion(boidInView, boid);
+    attractVal = attractVal.mult(atractForce.value);
+    boid.accel = boid.accel.addVect(attractVal);
     
+}
+
+function align(boidInView, boid)
+{
+    if(boidInView.length < 2){return new vector2();}
+
+    let avgVect = new vector2(0, 0);
+	boidInView.forEach(_boid => {
+        if(_boid != boid){
+            avgVect = avgVect.addVect(_boid.vel);
+        }
+	});
+	avgVect = avgVect.div(boidInView.length - 1)
+    
+	return limitVect(avgVect.subVect(boid.vel), boid.maxAccel);
+}
+
+function seperation(boidInView, boid)
+{
+    if(boidInView.length < 2){return new vector2();}
+
+    let avgVect = new vector2(0, 0);
+	boidInView.forEach(_boid => {
+        if(_boid != boid){
+            let diff = boid.pos.subVect(_boid.pos);
+            
+            diff = diff.div(getDist(boid, _boid));
+            avgVect = avgVect.addVect(diff);
+        }
+	});
+	avgVect = avgVect.div(boidInView.length - 1)
+
+	return limitVect(avgVect.subVect(boid.vel), boid.maxAccel);
 }
 
 function cohesion(boidInView, boid)
 {
-    
+    if(boidInView.length < 2){return new vector2();}
+
+    let avgPos = new vector2(0, 0);
+	boidInView.forEach(_boid => {
+        if(_boid != boid){
+            avgPos = avgPos.addVect(_boid.pos);
+        }
+	});
+
+	avgPos = avgPos.div(boidInView.length - 1)
+
+    avgPos = avgPos.subVect(boid.pos);
+
+    avgPos = avgPos.subVect(boid.vel);
+
+    return limitVect(avgPos, boid.maxAccel);
 }
 
 
@@ -112,7 +149,6 @@ function getBoidsInRange(origin, range){
     let boidsInRange = [];
     for(let boid of flock){
         if(getDist(origin, boid) <= range){
-			if(origin != boid)
 			boidsInRange.push(boid);
         }
     }

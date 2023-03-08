@@ -1,9 +1,26 @@
 <!DOCTYPE html>
 <head>
+    <script type="text/javascript" src="js/vector.js" defer></script>
 	<script type="text/javascript" src="js/boid.js" defer></script>
     <script type="text/javascript" src="js/script.js" defer></script>
+    <script type="text/javascript" src="/templates.js"></script>
+    <script type="text/javascript" src="/localization.js" defer></script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body onload="loadLangElement()">
     <canvas id="canvas" width="800px" height="800px"></canvas>
+    <div class="slidecontainer">
+        <p id="sliderText">seperation</p>
+        <input type="range" min="0" max="5" value="1" step="0.01" class="slider" id="seperation">
+        <p id="sliderText">cohesion</p>
+        <input type="range" min="0" max="5" value="1" step="0.01" class="slider" id="cohesion">
+        <p id="sliderText">alignment</p>
+        <input type="range" min="0" max="5" value="1" step="0.01" class="slider" id="align">
+    </div>
+
+
+    <span id="langElement"></span>
+    <div id="homeDiv">
+        <img id="homeBtn" src="/Icons/home_Dark.png" onclick="window.location = '/'">
+    </div>
 </body>
