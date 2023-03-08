@@ -25,7 +25,9 @@ class vector2{
     less(n){ return this.x < n && this.y < n; }
     lessVect(v){ return this.x < v.x && this.y < v.y; }
 
-    
+    getMag(){ return this.x * this.x + this.y * this.y; }
+
+	setMag(n){ return this.mult(n).div(this.getMag()); }
 }
 
 function limitVect(vect, n1 = 1){ 

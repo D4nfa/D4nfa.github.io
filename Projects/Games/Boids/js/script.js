@@ -103,7 +103,7 @@ function align(boidInView, boid)
 	});
 	avgVect = avgVect.div(boidInView.length - 1)
     
-	return limitVect(avgVect.subVect(boid.vel), boid.maxAccel);
+	return limitVect(avgVect.subVect(boid.vel).setMag(boid.maxAccel), boid.maxAccel);
 }
 
 function seperation(boidInView, boid)
@@ -121,7 +121,7 @@ function seperation(boidInView, boid)
 	});
 	avgVect = avgVect.div(boidInView.length - 1)
 
-	return limitVect(avgVect.subVect(boid.vel), boid.maxAccel);
+	return limitVect(avgVect.subVect(boid.vel).setMag(boid.maxAccel), boid.maxAccel);
 }
 
 function cohesion(boidInView, boid)
@@ -139,7 +139,7 @@ function cohesion(boidInView, boid)
 
     avgPos = avgPos.subVect(boid.pos);
 
-    avgPos = avgPos.subVect(boid.vel);
+    avgPos = avgPos.subVect(boid.vel).setMag(boid.maxAccel);
 
     return limitVect(avgPos, boid.maxAccel);
 }

@@ -11,7 +11,6 @@ class Boid{
 	}
 
 	update(){
-		this.vel = limitVect(this.vel, 10);
 		this.pos = this.pos.addVect(this.vel);
 		this.vel = this.vel.addVect(this.accel);
 	}
