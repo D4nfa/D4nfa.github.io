@@ -11,12 +11,12 @@ const flock = [];
 let tickInterval = setInterval(doTick, 10);
 
 
-spawnBoids(150);
+spawnBoids(100);
 
 function doTick(){
     clearScreen();
     flock.forEach(boid => {
-        boidLogic(boid);
+		boid.applyLogic();
         boid.update();
         drawBoid(boid);
 
@@ -48,26 +48,8 @@ let viewRange = 20;
 
 
 function boidLogic(boid){
-	
-    let boidInView = getBoidsInRange(boid, viewRange);
+    
 
-	let angle = Math.atan2(boid.vel.y, boid.vel.x);
-    angle = (angle < 0) ? (radToDegree(angle) + 360) : radToDegree(angle);
-
-    boid.rot = angle;
-
-    if (boid.pos.x > canvas.width) {
-        boid.pos.x -= canvas.width;
-    }
-    if (boid.pos.x < 0) {
-        boid.pos.x += canvas.width
-    }
-    if (boid.pos.y > canvas.height) {
-        boid.pos.y -= canvas.height;
-    }
-    if (boid.pos.y < 0) {
-        boid.pos.y += canvas.height;
-    }
 
     if(boidInView.length == 1){
         return;
@@ -91,64 +73,10 @@ function boidLogic(boid){
     
 }
 
-function align(boidInView, boid)
-{
-    if(boidInView.length < 2){return new vector2();}
-
-    let avgVect = new vector2(0, 0);
-	boidInView.forEach(_boid => {
-        if(_boid != boid){
-            avgVect = avgVect.addVect(_boid.vel);
-        }
-	});
-	avgVect = avgVect.div(boidInView.length - 1)
-    
-	return limitVect(avgVect.subVect(boid.vel).setMag(boid.maxAccel), boid.maxAccel);
-}
-
-function seperation(boidInView, boid)
-{
-    if(boidInView.length < 2){return new vector2();}
-
-    let avgVect = new vector2(0, 0);
-	boidInView.forEach(_boid => {
-        if(_boid != boid){
-            let diff = boid.pos.subVect(_boid.pos);
-            
-            diff = diff.div(getDist(boid, _boid));
-            avgVect = avgVect.addVect(diff);
-        }
-	});
-	avgVect = avgVect.div(boidInView.length - 1)
-
-	return limitVect(avgVect.subVect(boid.vel).setMag(boid.maxAccel), boid.maxAccel);
-}
-
-function cohesion(boidInView, boid)
-{
-    if(boidInView.length < 2){return new vector2();}
-
-    let avgPos = new vector2(0, 0);
-	boidInView.forEach(_boid => {
-        if(_boid != boid){
-            avgPos = avgPos.addVect(_boid.pos);
-        }
-	});
-
-	avgPos = avgPos.div(boidInView.length - 1)
-
-    avgPos = avgPos.subVect(boid.pos);
-
-    avgPos = avgPos.subVect(boid.vel).setMag(boid.maxAccel);
-
-    return limitVect(avgPos, boid.maxAccel);
-}
-
-
 function getBoidsInRange(origin, range){
     let boidsInRange = [];
     for(let boid of flock){
-        if(getDist(origin, boid) <= range){
+        if(boid != origin && getDist(origin, boid) <= range + boid.height){
 			boidsInRange.push(boid);
         }
     }
