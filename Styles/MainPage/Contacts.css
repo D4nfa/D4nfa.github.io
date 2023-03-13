@@ -1,0 +1,82 @@
+#contacts{
+    overflow-y: hidden;
+}
+
+#ContactDiv{
+    width: 100%;
+    height: 100%;
+}
+
+#ContactDiv .title{
+    text-align: center;
+}
+
+.meeting{
+    width: 150px;
+    height: 150px;
+    background-size: 100%;
+    background-image: url(/Icons/Calendar.png);
+}
+.meeting:hover{
+    background-color: hsla(0, 0%, 0%, 0.2);
+}
+.meeting:hover:active{
+    background-color: hsla(0, 0%, 0%, 0.5);
+}
+
+.email{
+    width: 150px;
+    height: 150px;
+    background-size: 100%;
+    background-image: url(/Icons/Email.png);
+    background-repeat: no-repeat;
+}
+.email:hover{
+    background-color: hsla(0, 0%, 0%, 0.2);
+}
+.email:hover:active{
+    background-color: hsla(0, 0%, 0%, 0.5);
+}
+
+.linkedin{
+    width: 150px;
+    height: 150px;
+    background-size: 100%;
+    background-image: url(/Icons/linkedin.png);
+    background-repeat: no-repeat;
+}
+.linkedin:hover{
+    background-color: hsla(0, 0%, 0%, 0.2);
+}
+.linkedin:hover:active{
+    background-color: hsla(0, 0%, 0%, 0.5);
+}
+
+.github{
+    width: 150px;
+    height: 150px;
+    background-size: 100%;
+    background-image: url(/Icons/github.png);
+    background-repeat: no-repeat;
+}
+.github:hover{
+    background-color: hsla(0, 0%, 0%, 0.2);
+}
+.github:hover:active{
+    background-color: hsla(0, 0%, 0%, 0.5);
+}
+
+
+
+
+.contactBck{	
+    margin: auto auto;
+	height: 90%;
+	width: 90%;
+	background-color: hsla(0, 0%, 0%, 0.2);
+}
+
+.calendly{
+    visibility: hidden;
+}
+
