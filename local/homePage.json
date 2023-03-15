@@ -5,18 +5,26 @@
 	"DK":{
 		"PAGE-TITLE": "Lilfa Portfolio",
 		"ABOUT-TITLE": "Omkring mig",
-		"ABOUT-TEXT":"DANSK TEKST : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique molestie efficitur. Duis id tempor odio, et ultricies lacus. Suspendisse quis mi lacinia, laoreet purus et, efficitur ligula. Phasellus facilisis arcu a ullamcorper laoreet. Etiam elit dolor, dignissim et bibendum et, sodales sit amet enim. Praesent commodo magna vel risus imperdiet viverra. Integer ex magna, fringilla id nibh sed, laoreet posuere felis.",
+		"ABOUT-TEXT":"<div style='text-align: left; font-size: 20px'>Lilly Andersen</font></div ><br><div style='font-size: 70px;'>Fullstack Udvikler</div><br><div style='text-align: right'><div style='font-size: 20px;'>Laver web, software, og app udvikling</div>",
 		"PROJECTS": "Projekter",
 		"MOREINFO": "Se mere",
-		"CONTACTS": "Kontakt"
+		"CONTACTS": "Kontakt",
+		"meetingTip": "Arranger et møde",
+		"emailTip": "Send en email",
+		"linkedinTip": "Åben min linkedin",
+		"githubTip": "Åben min github"
 		},
 	"EN":{
 		"PAGE-TITLE": "Lilfa Portfolio",
 		"ABOUT-TITLE": "About me",
-		"ABOUT-TEXT":"ENGLISH TEXT : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique molestie efficitur. Duis id tempor odio, et ultricies lacus. Suspendisse quis mi lacinia, laoreet purus et, efficitur ligula. Phasellus facilisis arcu a ullamcorper laoreet. Etiam elit dolor, dignissim et bibendum et, sodales sit amet enim. Praesent commodo magna vel risus imperdiet viverra. Integer ex magna, fringilla id nibh sed, laoreet posuere felis.",
+		"ABOUT-TEXT":"<div style='text-align: left; font-size: 20px'>Lilly Andersen</font></div ><br><div style='font-size: 70px;'>Fullstack Developer</div><br><div style='text-align: right'><div style='font-size: 20px;'>Doing web, software, and app development</div>",
 		"PROJECTS": "Projects",
 		"MOREINFO": "See more",
-		"CONTACTS": "Contacts"
+		"CONTACTS": "Contacts",
+		"meetingTip": "Arrange a meeting",
+		"emailTip": "Send an email",
+		"linkedinTip": "Open my linkedin",
+		"githubTip": "Open my github"
 		},
 	"NL":{
 		"PAGE-TITLE": "Lilfa Portfolio",
@@ -24,6 +32,10 @@
 		"ABOUT-TEXT":"DUTCH TEXT : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique molestie efficitur. Duis id tempor odio, et ultricies lacus. Suspendisse quis mi lacinia, laoreet purus et, efficitur ligula. Phasellus facilisis arcu a ullamcorper laoreet. Etiam elit dolor, dignissim et bibendum et, sodales sit amet enim. Praesent commodo magna vel risus imperdiet viverra. Integer ex magna, fringilla id nibh sed, laoreet posuere felis.",
 		"PROJECTS": "Projecten",
 		"MOREINFO": "Bekjik meer",
-		"CONTACTS": "Contacten"
+		"CONTACTS": "Contacten",
+		"meetingTip": "Arranger et møde",
+		"emailTip": "Send en email",
+		"linkedinTip": "Åben min linkedin",
+		"githubTip": "Åben min github"
 	}
 }

@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Sono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+
+@font-face {
+    font-family: mainFont;
+    src: url(/font/CONSOLA.TTF);
+  }
+
+
+html{
+    /*font-family: 'Sono', sans-serif;*/
+    font-family: 'Tilt Neon', cursive;
+}

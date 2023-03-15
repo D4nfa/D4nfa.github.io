@@ -15,8 +15,10 @@
 	transform: translateY(10%);  
 	display: flex;
 	justify-content: center;
-	height: 80%;
-	width: 40%;
+	height: max-content;
+	width: max-content;
+	padding: 5px 20px;
+	margin: auto auto;
 	background-color: hsla(0, 0%, 0%, 0.2);
 	color: white;
 }

@@ -1,8 +1,9 @@
 /*language*/
 #langDiv{
 	position: fixed;
-	bottom: 0;
-	width: 100%;
+	bottom: 0px;
+	width: max-content;
+	left: 0px;
 }
 
 #langBar{

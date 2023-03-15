@@ -5,7 +5,9 @@
 	<script type="text/javascript" src="/localization.js"></script>
 	<script type="text/javascript" src="/main.js"></script>
 	<script type="text/javascript" src="/prjctCarousel.js" defer></script>
-	<link rel="stylesheet" href="/Styles/MainPage/General.css" />
+	<link rel="stylesheet" href="/Styles/MainPage/General.css"/>
+	<link rel="stylesheet" href="/Styles/tooltip.css"/>
+	<link rel="stylesheet" href="/font/font.css"/>
 </head>
 <body onload="onLoad()">
 	<script type="text/javascript">const $ = id => document.getElementById(id);</script>
@@ -36,9 +38,9 @@
 	<div id="navDiv" class="hidden">
 		<img id="navBtn" class="navHidden" src="/Icons/NavBarIcon.png" onclick="MinMaxNav()" />
 		<ul class="navBar">
-			<li><button onclick="scrollToAnchor('about')" localize="ABOUT-TITLE">{ABOUT-TITLE}</button></li>
-			<li><button onclick="scrollToAnchor('projects')" localize="PROJECTS">{PROJECTS}</button></li>
-			<li><button onclick="scrollToAnchor('contacts')" localize="CONTACTS">Random Page</button></li>
+			<li><button onclick="scrollToAnchor('about')" localize="ABOUT-TITLE"></button></li>
+			<li><button onclick="scrollToAnchor('projects')" localize="PROJECTS"></button></li>
+			<li><button onclick="scrollToAnchor('contacts')" localize="CONTACTS"></button></li>
 		</ul>
 	</div>
 
@@ -49,10 +51,7 @@
 	<link rel="stylesheet" href="/Styles/MainPage/AboutMe.css" />
 	<div id="about" class="fullScreen section">
 		<div id="aboutDiv">
-			<div>
-				<h1 style="display: block; font-size: 34px;"localize="ABOUT-TITLE"></h1>
-				<p style="display: block; margin: 10px; font-size: 20px;"localize="ABOUT-TEXT"></p>
-			</div>
+			<p style="display: block; margin-top: 5%; padding: 1px;" localize="ABOUT-TEXT"></p>
 		</div>
 	</div>
 
@@ -60,14 +59,14 @@
 	<!--Projects Section-->
 	<link rel="stylesheet" href="/Styles/MainPage/Projects.css" />
 	<div id="projects" class="fullScreen section">
-			<h1 localize="PROJECTS">{PROJECTS}</h1>
+			<h1 localize="PROJECTS"></h1>
 			<div class="carousel-container">
 				<div class="inner-carousel">
 					<div id="projectList">
 					</div>
 					<div class="nav">
-						<button class="prev">PREV</button>
-						<button class="next">NEXT</button>
+						<button class="prev"></button>
+						<button class="next"></button>
 					</div>
 				</div>
 			</div>
@@ -80,26 +79,23 @@
 		<div id="ContactDiv">
 			<div class="contactBck">
 				<div class="title">
-					<h1 localize="CONTACTS">Contacts</h1>
+					<h1 localize="CONTACTS"></h1>
 				</div>
-				<div class="meeting">
-
+				<div class="contactBtns">
+					<div class="meeting tooltip" onclick="location.href='https://calendly.com/lilfa/coffee-meeting'">
+						<span class="tooltiptext" localize="meetingTip"></span>
+					</div>
+					<div class="email tooltip" onclick="location.href='mailto:lillyfandersen@outlook.com';">
+						<span class="tooltiptext" localize="emailTip"></span>
+					</div>
+					<div class="linkedin tooltip">
+						<span class="tooltiptext" localize="linkedinTip"></span>
+					</div>
+					<div class="github tooltip" onclick="location.href='https://github.com/Lilf4'">
+						<span class="tooltiptext" localize="githubTip"></span>
+					</div>
 				</div>
-				<div class="email">
-
-				</div>
-				<div class="linkedin">
-
-				</div>
-				<div class="github">
-
-				</div>
-				<!-- Calendly inline widget begin -->
-				<div class="calendly-inline-widget calendly" data-url="https://calendly.com/lilfa/coffee-meeting" style="min-width:320px;height:660px;"></div>
-				<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-				<!-- Calendly inline widget end -->
 			</div>
-			
 		</div>
 	</div>
 </body> 
