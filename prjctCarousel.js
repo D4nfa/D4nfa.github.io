@@ -1,61 +1,19 @@
-const prev = document.querySelector(".prev");
-const next = document.querySelector(".next");
-const carousel = document.querySelector(".carousel-container");
-const track = document.querySelector("#projectList");
-var slides;
-let offset = 606;
-let width;
+const carouselContainer = document.querySelector('.carousel-container');
+const carouselPrevBtn = document.querySelector('.carousel-prev');
+const carouselNextBtn = document.querySelector('.carousel-next');
+var carouselItemWidth;
+let position = 0;
 
-
-function alignProjects(){
-	slides = Array.from(track.children);
-	slides[0].classList.add('selected');
-	width = slides[0].getBoundingClientRect().width + 2;
-
-	slides.forEach((slide, index) => {
-		slide.style.left = `${index * width}px`;
-	})
-
-	visibleButtons(track.querySelector('.selected'));
-}
-
-next.addEventListener("click", function (e) {
-	e.preventDefault();
-	let currentSlide = track.querySelector('.selected');
-	let nextSlide = currentSlide.nextElementSibling;
-	
-	track.style.transform = `translateX(${offset + -parseInt(nextSlide.style.left, 10)}px)`;
-
-	currentSlide.classList.remove('selected');
-	nextSlide.classList.add('selected');
-	
-	visibleButtons(nextSlide);
+carouselPrevBtn.addEventListener('click', () => {
+  if (position < 0) {
+    position += carouselItemWidth + 20; // Adjust this value to match the margin-right of .carousel-item
+    carouselContainer.style.transform = `translateX(${position}px)`;
+  }
 });
 
-prev.addEventListener("click", function () {
-	let currentSlide = track.querySelector('.selected');
-	let prevSlide = currentSlide.previousElementSibling;
-	
-	track.style.transform = `translateX(${offset + -parseInt(prevSlide.style.left, 10)}px)`;
-
-	currentSlide.classList.remove('selected');
-	prevSlide.classList.add('selected');
-
-	visibleButtons(prevSlide);
+carouselNextBtn.addEventListener('click', () => {
+  if (position > -(carouselItemWidth + 20) * 4) { // Adjust this value to match the number of items in the carousel
+    position -= carouselItemWidth + 20;
+    carouselContainer.style.transform = `translateX(${position}px)`;
+  }
 });
-
-function visibleButtons(currentSlide){
-	if(currentSlide.previousElementSibling == null){
-		prev.style.visibility = 'hidden';
-	}
-	else{
-		prev.style.visibility = 'visible';
-	}
-
-	if(currentSlide.nextElementSibling == null){
-		next.style.visibility = 'hidden';
-	}
-	else{
-		next.style.visibility = 'visible';
-	}
-}

@@ -4,6 +4,7 @@
 	bottom: 0px;
 	width: max-content;
 	left: 0px;
+	z-index: 1;
 }
 
 #langBar{

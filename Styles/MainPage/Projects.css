@@ -1,103 +1,88 @@
-/*Project Section*/
-.carousel-container{
-	width: 100%;
-	height: 100%;
-}
-
-
-.inner-carousel{
-	width: 1818px;
-	height: 606px;
+.carousel {
 	position: relative;
-	
-	margin: 0px auto;
-	overflow-x: hidden;
-	
-	overflow-y: hidden;
-}
-
-#projectList{
-	height: 100%;
-	transform: translateX(606px);
-	transition: Transform 600ms ease-in-out;
-}
-
-.prev, .next{
+	width: 100%;
+	overflow: hidden;
+  }
+  
+  .carousel-container {
+	display: flex;
+	flex-wrap: nowrap;
+	transition: transform 0.3s ease-in-out;
+  }
+  
+  .carousel-item {
+	flex: 0 0 400px; /* Adjust this value to set the width of each item */
+	margin-right: 1%;
+  }
+  
+  .carousel-prev, .carousel-next {
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
+	background-color: rgba(255, 255, 255, 0.8);
+	border: none;
+	padding: 10px;
+	cursor: pointer;
+  }
+  
+  .carousel-prev {
+	left: 0;
+  }
+  
+  .carousel-next {
+	right: 0;
+  }
+
+
+
+
+
+
+#projectList{
+	width: 100%;
+	height: 100%;
 }
 
-.prev{
-	left: 0px;
-}
-
-.next{
-	right: 0px;
-}
-
-
-#projectList #projectInner {
-	
+#project{
 	position: relative;
-	display: flex;
-	
-
-	border-radius: 25px;
-
-	width: 600px;
-	height: 600px;
-	
-	
-	text-align: center;
-	color: white;
-
-}
-
-#projectList #project{
-	position: absolute;
 
 	border: 2px solid black;
 	border-radius: 25px;
-	z-index: -1;
-}
 
-#projectList #project:hover {
+	width: 400px;
+	height: 400px;
+	
+	transition: width 300ms, height 300ms;
+}
+#project:hover {
 	background-color: hsla(0, 0%, 0%, 0.10);
+	width: 420px;
+	height: 420px;
 }
-
-#projectList #project:active {
+#project:hover:active {
 	background-color: hsla(0, 0%, 0%, 0.30);
 }
 
+#projectInner {
+	display: flex;
 
-#projectInner #projectTitle{
-	font-size: 34px;
-}
+	border-radius: 25px;
 
-#projectInner #projectDesc{
-	font-size: 20px;
-	margin: 2px;
-}
-
-#projectInner #titleDiv{
-	border-top-left-radius: 25px;
-	border-top-right-radius: 25px;
-	background-color: rgba(0, 0, 0, 0.2);
 	width: 100%;
+	height: 100%;
+	
 	text-align: center;
-	top:0;
-	height: 20%;
+	color: white;
 }
 
-#projectInner #imgDiv{
+#imgDiv{
 	width: 100%;
 	position: absolute;
 	top: 20%;
 	height: 50%;
 }
 
-#projectInner #descDiv{
+#descDiv{
 	border-bottom-left-radius: 25px;
 	border-bottom-right-radius: 25px;
 	background-color: rgba(0, 0, 0, 0.2);
@@ -106,4 +91,23 @@
 	width: 100%;
 	height: 30%;
 	bottom: 0;
+}
+
+#projectTitle{
+	font-size: 150%;
+}
+#projectDesc{
+	font-size: 75%;
+	margin: 2px;
+}
+
+#titleDiv{
+	border-top-left-radius: 25px;
+	border-top-right-radius: 25px;
+	background-color: rgba(0, 0, 0, 0.2);
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	top:0;
+	height: 20%;
 }

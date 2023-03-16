@@ -41,6 +41,8 @@
     
     background-repeat: no-repeat;
     background-size: 100%;
+
+    transition: width 100ms, height 100ms;
 }
 
 .contactBtns div:hover{

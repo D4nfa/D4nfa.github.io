@@ -1,5 +1,5 @@
 const projectTemplate = 
-	'<div id = "project" onclick="location.href = \'{PRJCTLINK}\'" PRJCTID="{PRJCTID}">'
+	'<div class="carousel-item" id="project" onclick="location.href = \'{PRJCTLINK}\'" PRJCTID="{PRJCTID}">'
 +		'<div id="projectInner">'
 +			'<div id="titleDiv">'
 +				'<p id="projectTitle"localize="PRJCTTITLTE">{TITLE}</p>'

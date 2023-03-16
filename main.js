@@ -65,16 +65,13 @@ function localizeProject(project){
 
 function projectLoaded(json){
     projects.push(json);
-    
     $('projectList').innerHTML += subKeys(projectTemplate, [json['GENERAL']]);
 
 	projectElems.push(document.querySelector(`[PRJCTID=${json['GENERAL']['PRJCTID']}]`));
 
 	localizeProject(json);
-	
-	alignProjects();
+	carouselItemWidth = document.querySelector('.carousel-item').offsetWidth;
 }
-
 
 
 function localizePage(){
