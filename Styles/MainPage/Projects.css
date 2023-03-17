@@ -107,6 +107,12 @@
 
 	text-align: center;
 	width:  max-content;
+
+	padding-left: 15px;
+	padding-right: 15px;
+
+	border-radius: 25px;
+
 	color: white;
 	background-color: rgba(0, 0, 0, 0.2);
 }
