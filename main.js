@@ -43,13 +43,41 @@ function deleteProjects(){
 	$('projectList').innerHTML = '';
 }
 
+const delay = ms => new Promise(res => setTimeout(res, ms));
+
 function loadProjects(){
 	return fetch(`./Projects/projects.json`).then((response) => response.json().then((json) => {
-		for(let path of json){
+		let prjcts = [];
+		let seeMore = undefined;
+
+		for(let i = 0; i < 5; i++){
+			let path = json.splice(Math.floor(Math.random() * json.length), 1);
+			console.log(path, json);
 			fetch(`./Projects/${path}/info.json`)
 			.then((response) => response.json()
-			.then((json) => projectLoaded(json)));
+			.then((json) => prjcts.push(json)))
 		}
+
+		fetch(`./Projects/info.json`)
+			.then((response) => response.json()
+			.then((json) => seeMore = json))
+
+		check();
+
+		async function check(){
+			if(prjcts.length < 5 && seeMore == undefined){
+				window.setTimeout(check, 100);
+			}
+			else{
+				prjcts.forEach(project => {
+					console.log(project);
+					projectLoaded(project);
+				});
+				projectLoaded(seeMore);
+			}
+		}
+
+		
 	}));
 }
 
@@ -70,7 +98,6 @@ function projectLoaded(json){
 	projectElems.push(document.querySelector(`[PRJCTID=${json['GENERAL']['PRJCTID']}]`));
 
 	localizeProject(json);
-	carouselItemWidth = document.querySelector('.carousel-item').offsetWidth;
 }
 
 
