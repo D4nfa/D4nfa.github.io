@@ -77,11 +77,18 @@
 }
 
 #projectTitle{
-	font-size: 150%;
+	font-size: 1.5vw;
 }
+#titleDiv{
+	overflow-y: hidden;
+}
+
 #projectDesc{
-	font-size: 75%;
+	font-size: 0.8vw;
 	margin: 2px;
+}
+#descDiv{
+	overflow-y: hidden;
 }
 
 #titleDiv{
