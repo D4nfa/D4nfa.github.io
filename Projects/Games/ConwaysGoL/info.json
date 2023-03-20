@@ -4,7 +4,7 @@
       "IMG": "/Images/conwaysGoL.png",
       "PRJCTLINK":"Projects/Games/ConwaysGoL",
       "PRJCTID":"CGOL",
-      "TAGS": ["HTML", "CSS", "Javascript"]
+      "TAGS": ["HTML", "CSS", "JS"]
     },
     "DK": {
       "PRJCTDESC": "Conway's Game of Life, er et cellulær automat lavet af Britisk matematiker <b>John Horton Conway</b>.<br><br>Det er et spil uden spillere, hvori evolutionen af spillet er bestemt af spillepladens initiale tilstand."

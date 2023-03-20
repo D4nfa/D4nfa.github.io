@@ -4,7 +4,7 @@
 		"IMG": "/Images/TestingImage.png",
 		"PRJCTLINK": "Projects/Games/Boids",
 		"PRJCTID": "BOIDS",
-		"TAGS": ["HTML", "CSS", "Javascript"]
+		"TAGS": ["HTML", "CSS", "JS"]
 	},
 	"DK": {
 		"PRJCTDESC": "Boids er et..."

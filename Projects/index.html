@@ -1,9 +1,19 @@
 <!DOCTYPE html>
 <head>
-    <script type="text/javascript" src="script.js"></script>
-    <link rel="stylesheet" href="style.css"/>
+	<link rel="stylesheet" href="/Styles/home.css"></link>
+    <link rel="stylesheet" href="styles/general.css"/>
     <link rel="stylesheet" href="/font/font.css"/>
-</head>
-<body>
 
+    <script type="text/javascript" src="/templates.js"></script>
+    <script type="text/javascript" src="/localization.js" defer></script>
+    <script type="text/javascript" src="script.js"></script>
+</head>
+<body onload="loadLangElement()">
+    <span class="gradientbckg"></span>
+    <div id=""></div>
+
+    <span id="langElement"></span>
+	<div id="homeDiv">
+		<img id="homeBtn" src="/Icons/home_Dark.png" onclick="window.location = '/'">
+	</div>
 </body>
