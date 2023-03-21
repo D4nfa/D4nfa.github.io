@@ -4,6 +4,7 @@
 	justify-content: center;
 
 	grid-template-columns: 25% 25% 25%;
+	grid-auto-rows: 50%;
 
 	column-gap: 20px;
 	row-gap: 20px;
