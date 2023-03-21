@@ -1,0 +1,21 @@
+#searchBar{
+    
+    position: relative;
+    top: 10px;
+    margin: 0px auto;
+    width: 80%;
+    height: 5%;
+    background-color: rgb(36, 36, 36);
+    border-radius: 25px;
+    position: sticky;
+
+}
+
+#blockthingie{
+    z-index: -1;
+    position: relative;
+    margin: 0px auto;
+    height: 500%;
+    width: 80%;
+    background: linear-gradient(-45deg, rgba(146,0,244,1) 0%, rgba(146,0,244,1) 10%, rgba(253,29,29,1) 25%, rgba(255,149,0,1) 45%, rgba(255,139,2,1) 55%, rgba(253,29,29,1) 75%, rgba(146,0,244,1) 90%, rgba(146,0,244,1) 100%);
+}
