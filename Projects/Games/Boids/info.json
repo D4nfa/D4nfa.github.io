@@ -2,7 +2,7 @@
 	"GENERAL": {
 		"PRJCTTITLTE": "Boids",
 		"IMG": "/Images/TestingImage.png",
-		"PRJCTLINK": "Projects/Games/Boids",
+		"PRJCTLINK": "/Projects/Games/Boids",
 		"PRJCTID": "BOIDS",
 		"TAGS": ["HTML", "CSS", "JS"]
 	},
