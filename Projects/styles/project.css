@@ -1,0 +1,106 @@
+#project{
+	margin: auto;
+
+	position: relative;
+
+	border: 2px solid black;
+	border-radius: 25px;
+
+	width: 100%;
+	height: 100%;
+	
+	transition: width 300ms, height 300ms;
+}
+
+.prjctShrink{
+	display: flex;
+
+	width: 100%;
+	height: 100%;
+	
+	justify-self: center;
+	align-self: center;
+}
+
+.prjctShrink:hover #project{
+	background-color: hsla(0, 0%, 0%, 0.10);
+	width: 95%;
+	height: 95%;
+}
+
+#project:hover:active {
+	background-color: hsla(0, 0%, 0%, 0.30);
+}
+
+#projectInner {
+	display: flex;
+
+	border-radius: 25px;
+
+	width: 100%;
+	height: 100%;
+	
+	text-align: center;
+	color: white;
+}
+
+#imgDiv{
+	width: 100%;
+	position: absolute;
+	top: 20%;
+	height: 50%;
+}
+
+#descDiv{
+	border-bottom-left-radius: 25px;
+	border-bottom-right-radius: 25px;
+	background-color: rgba(0, 0, 0, 0.2);
+	position:absolute;
+	padding: 0px;
+	width: 100%;
+	height: 30%;
+	bottom: 0;
+}
+
+#projectTitle{
+	font-size: 1.5vw;
+}
+#titleDiv{
+	overflow-y: hidden;
+}
+
+#projectDesc{
+	font-size: 0.8vw;
+	margin: 2px;
+}
+#descDiv{
+	overflow-y: hidden;
+}
+
+#titleDiv{
+	border-top-left-radius: 25px;
+	border-top-right-radius: 25px;
+	background-color: rgba(0, 0, 0, 0.2);
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	top:0;
+	height: 20%;
+}
+
+#projects .title{
+	margin: auto auto;
+
+	text-align: center;
+	width:  max-content;
+
+	padding-left: 15px;
+	padding-right: 15px;
+
+	border-radius: 25px;
+
+	color: white;
+	background-color: rgba(0, 0, 0, 0.2);
+
+	font-size: 1vw;
+}

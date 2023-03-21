@@ -52,7 +52,6 @@ function loadProjects(){
 
 		for(let i = 0; i < 5; i++){
 			let path = json.splice(Math.floor(Math.random() * json.length), 1);
-			console.log(path, json);
 			fetch(`./Projects/${path}/info.json`)
 			.then((response) => response.json()
 			.then((json) => prjcts.push(json)))
@@ -70,7 +69,6 @@ function loadProjects(){
 			}
 			else{
 				prjcts.forEach(project => {
-					console.log(project);
 					projectLoaded(project);
 				});
 				projectLoaded(seeMore);

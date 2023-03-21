@@ -1,0 +1,37 @@
+#prjctContainer{
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    grid-auto-rows: 50%;
+
+    column-gap: 20px;
+	row-gap: 20px;
+
+    position: relative;
+    top: 20px;
+    margin: 0px auto;
+    width: 80%;
+    height: 90%;
+    overflow-y: auto;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+  
+  /* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f133;
+}
+  
+  /* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+  
+  /* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
