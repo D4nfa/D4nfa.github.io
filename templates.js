@@ -28,11 +28,11 @@ const projectTemplate =
 
 const langElement = 
 	'<!--Languages-->'
-+	'<link rel="stylesheet" href="/Styles/Language.css" />'
++	'<link rel="stylesheet" href="https://lilf4.github.io/Styles/Language.css" />'
 +	'<div id="langDiv">'
 +		'<ul id="langBar">'
-+			'<li id="langList"><img id="DK-FLAG" class="langImg" src="/Icons/DK-flag.png" onclick="changeLang(\'DK\')"></li>'
-+			'<li id="langList"><img id="EN-FLAG" class="langImg" src="/Icons/EN-flag.png" onclick="changeLang(\'EN\')"></li>'
-+			'<li id="langList"><img id="NL-FLAG" class="langImg hidden" src="/Icons/NL-flag.png" onclick="changeLang(\'NL\')"></li>'
++			'<li id="langList"><img id="DK-FLAG" class="langImg" src="https://lilf4.github.io/Icons/DK-flag.png" onclick="changeLang(\'DK\')"></li>'
++			'<li id="langList"><img id="EN-FLAG" class="langImg" src="https://lilf4.github.io/Icons/EN-flag.png" onclick="changeLang(\'EN\')"></li>'
++			'<li id="langList"><img id="NL-FLAG" class="langImg hidden" src="https://lilf4.github.io/Icons/NL-flag.png" onclick="changeLang(\'NL\')"></li>'
 +		'</ul>'
 +	'</div>'
