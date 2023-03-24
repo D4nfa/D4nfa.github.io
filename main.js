@@ -64,7 +64,7 @@ function loadProjects(){
 		check();
 
 		async function check(){
-			if(prjcts.length < 5 && seeMore == undefined){
+			if(prjcts.length <= 5 && seeMore == undefined){
 				window.setTimeout(check, 100);
 			}
 			else{

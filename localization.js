@@ -48,6 +48,7 @@ function changeLang(nLang){
 	if(nLang == lang) return;
 	localStorage.setItem('lang', nLang);
 
+	console.log(lang, nLang);
 	document.getElementById(lang + '-FLAG').classList.remove('selected');
 	document.getElementById(nLang + '-FLAG').classList.add('selected');
 
