@@ -1,7 +1,7 @@
 /* Nav Bar */
 #navDiv {
-	-webkit-transition-duration: 600ms;
-	transition-duration: 600ms;
+	-webkit-transition: transform 600ms;
+	transition: transform 600ms;
 	position: fixed;
 	top: 0px;
 	bottom: 0px;
@@ -10,7 +10,7 @@
 	padding: 0px;
 	width: 200px;
 	height: 80%;
-	background-color: rgba(115, 105, 103, 0.5);
+	background-color: rgba(0, 0, 0, 0.2);
 	z-index: 1;
 
 	border-top-left-radius: 25px;
@@ -23,28 +23,29 @@
 }
 
 #navDiv.hidden{
-	visibility: hidden;
-	
+	visibility: visible;
 	transform: translate(100%);
 	-webkit-transform: translate(100%);
 }
 
 .navBar {
+	border-top-left-radius: 25px;
+	overflow-y: hidden;
 	position: relative;
 	list-style-type: none;
-	background-color: black;
 	width: 200px;
 	padding: 0;
 	margin: 0;
 }
 
 .navBar > li button {
+	margin-top: 2px;
 	color: white;
 	display: block;
 	border: none;
 	width: 200px;
-	height: 35px;
-	background-color: #736967;
+	height: 50px;
+	background-color: rgba(0, 0, 0, 0.1);
 	text-align: center;
 }
 
@@ -53,32 +54,32 @@
 	display: flex;
 	border: none;
 	width: 200px;
-	height: 35px;
-	background-color: #736967;
+	height: 50px;
+	background-color: rgba(0, 0, 0, 0.3);
 	text-align: center;
 	align-items: center;
 }
 .navBar > li p {
+	font-size: 2vw;
 	margin: 0 auto;
 }
 
-.navBar > li button {
-	-webkit-transition: transform 700ms;
-	transition: transform 700ms;
+.navBar > li button{
+	font-family: 'Tilt Neon', cursive;
+	font-size: 1vw;
 }
 
 .navBar > li button:hover {
-	background-color: #555;
-	color: white;
+	background-color: rgba(0, 0, 0, 0.2);
 }
 
 .navBar > li button:active {
-	background-color: #303030;
-	color: white;
+	background-color: rgba(0, 0, 0, 0.3);
 }
 
 /*Nav Button*/
 #navBtn {
+	
 	border-radius: 10px;
 	position: absolute;
 	width: 40px;
@@ -94,8 +95,6 @@
 	-webkit-transition: transform 600ms, width 100ms, height 100ms;
 	transition: transform 600ms, width 100ms, height 100ms;
 
-
-	
 	transform: translate(-0%);
 	-webkit-transform: translate(-0%);
 }
