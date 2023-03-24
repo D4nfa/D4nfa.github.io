@@ -4,7 +4,8 @@
 	<script type="text/javascript" src="/templates.js"></script>
 	<script type="text/javascript" src="/localization.js"></script>
 	<script type="text/javascript" src="/main.js"></script>
-	<link rel="stylesheet" href="/Styles/MainPage/General.css"/>
+	<link rel="stylesheet" href="/Styles/general.css">
+	<link rel="stylesheet" href="/Styles/MainPage/main.css"/>
 	<link rel="stylesheet" href="/Styles/tooltip.css"/>
 	<link rel="stylesheet" href="/font/font.css"/>
 </head>
@@ -21,12 +22,18 @@
 			sessionStorage.setItem('scrollpos', window.scrollY);
 		};
 
-		window.addEventListener("mousewheel", function (event) {
-			event.preventDefault();
-			var scrollAmount = window.scrollY + (event.deltaY < 0 ? -1000 : 1000);
-			console.log(scrollAmount, event.deltaY);
+		//i do not know why this code doesn't work but for reasons only fucking god knows it doesn't and i'm about to commit seppuko
+		//document.addEventListener("touchstart", function(e) {console.log("yeetus");})
+		//document.addEventListener("mousewheel", function (e) { scroll(e); }, {passive: false});
+
+		function scroll(e){
+			e.preventDefault();
+			var scrollAmount = window.scrollY + (e.deltaY < 0 ? -1000 : 1000);
+			console.log(scrollAmount, e.deltaY);
 			window.scrollTo({left:0, top:scrollAmount});
-		}, {passive: false})
+		}
+
+		
 	</script>
 
 
@@ -37,12 +44,14 @@
 	<link rel="stylesheet" href="/Styles/MainPage/langOverride.css">
 	<link rel="stylesheet" href="/Styles/MainPage/NavBar.css" />
 	<div id="navDiv" class="hidden">
-		<img id="navBtn" class="navHidden" src="/Icons/NavBarIcon.png" onclick="MinMaxNav()" />
 		<ul class="navBar">
-			<li><button onclick="scrollToAnchor('about')" localize="ABOUT-TITLE"></button></li>
-			<li><button onclick="scrollToAnchor('projects')" localize="PROJECTS"></button></li>
-			<li><button onclick="scrollToAnchor('contacts')" localize="CONTACTS"></button></li>
+			<li><div><p localize="MENU"></p></div></li>
+			<li><button class="clickable" onclick="scrollToAnchor('about')" localize="ABOUT-TITLE"></button></li>
+			<li><button class="clickable" onclick="scrollToAnchor('projects')" localize="PROJECTS"></button></li>
+			<li><button class="clickable" onclick="scrollToAnchor('contacts')" localize="CONTACTS"></button></li>
 		</ul>
+		
+		<img id="navBtn" class="navHidden clickable" src="/Icons/NavBarIcon.png" onclick="MinMaxNav()" />
 		<span id="langElement"></span>
 	</div>
 
@@ -79,16 +88,16 @@
 					<h1 localize="CONTACTS"></h1>
 				</div>
 				<div class="contactBtns">
-					<div class="meeting tooltip" onclick="location.href='https://calendly.com/lilfa/coffee-meeting'">
+					<div class="meeting tooltip clickable" onclick="location.href='https://calendly.com/lilfa/coffee-meeting'">
 						<span class="tooltiptext" localize="meetingTip"></span>
 					</div>
-					<div class="email tooltip" onclick="location.href='mailto:lillyfandersen@outlook.com';">
+					<div class="email tooltip clickable" onclick="location.href='mailto:lillyfandersen@outlook.com';">
 						<span class="tooltiptext" localize="emailTip"></span>
 					</div>
-					<div class="linkedin tooltip" onclick="location.href='https://www.linkedin.com/in/lilly-andersen-958717253'">
+					<div class="linkedin tooltip clickable" onclick="location.href='https://www.linkedin.com/in/lilly-andersen-958717253'">
 						<span class="tooltiptext" localize="linkedinTip"></span>
 					</div>
-					<div class="github tooltip" onclick="location.href='https://github.com/Lilf4'">
+					<div class="github tooltip clickable" onclick="location.href='https://github.com/Lilf4'">
 						<span class="tooltiptext" localize="githubTip"></span>
 					</div>
 				</div>

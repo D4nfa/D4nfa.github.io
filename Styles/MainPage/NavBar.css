@@ -48,6 +48,20 @@
 	text-align: center;
 }
 
+.navBar > li div {
+	color: white;
+	display: flex;
+	border: none;
+	width: 200px;
+	height: 35px;
+	background-color: #736967;
+	text-align: center;
+	align-items: center;
+}
+.navBar > li p {
+	margin: 0 auto;
+}
+
 .navBar > li button {
 	-webkit-transition: transform 700ms;
 	transition: transform 700ms;
@@ -65,24 +79,30 @@
 
 /*Nav Button*/
 #navBtn {
-	position: relative;
+	border-radius: 10px;
+	position: absolute;
 	width: 40px;
-	height: auto;
+	height: 120px;
 	display: block;
+	top: 0px;
+	bottom: 0px;
+	margin: auto;
 	padding: 0;
-	margin-right: 4px;
 }
 
 #navBtn{
-	-webkit-transition: transform 600ms;
-	transition: transform 600ms;
+	-webkit-transition: transform 600ms, width 100ms, height 100ms;
+	transition: transform 600ms, width 100ms, height 100ms;
 
+
+	
 	transform: translate(-0%);
 	-webkit-transform: translate(-0%);
 }
 
 #navBtn:hover {
-	background-color: #555;
+	width: 42px;
+	height: 130px;
 }
 
 #navBtn.navHidden {
