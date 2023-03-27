@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-	<title localize="PAGE-TITLE">{PAGE-TITLE}</title>
+	<title localize="PAGE-TITLE"></title>
 	<script type="text/javascript" src="/templates.js"></script>
 	<script type="text/javascript" src="/localization.js"></script>
 	<script type="text/javascript" src="/main.js"></script>
@@ -22,19 +22,18 @@
 			sessionStorage.setItem('scrollpos', window.scrollY);
 		};
 
-		//i do not know why this code doesn't work but for reasons only god knows it doesn't and i'm about to commit seppuku
-		//document.addEventListener("touchstart", function(e) {console.log("yeetus");})
+
 		document.addEventListener("mousewheel", function (e) { scroll(e); }, {passive: false});
 
 		function scroll(e){
-			console.log(e);
-			e.preventDefault();
+			if(e.wheelDelta == 120 || e.wheelDelta == -120){
+				e.preventDefault();
 			
-			var scrollAmount = window.scrollY + (e.deltaY < 0 ? -1000 : 1000);
-			console.log(scrollAmount, e.deltaY);
-			window.scrollTo({left:0, top:scrollAmount});
+				var scrollAmount = window.scrollY + (e.deltaY < 0 ? -1000 : 1000);
+				
+				window.scrollTo({left:0, top:scrollAmount});
+			}
 		}
-
 		
 	</script>
 
@@ -54,6 +53,8 @@
 		</ul>
 		
 		<img id="navBtn" class="navHidden clickable" src="/Icons/NavBarIcon.png" onclick="MinMaxNav()" />
+
+		
 		<span id="langElement"></span>
 	</div>
 

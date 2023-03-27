@@ -9,7 +9,7 @@
 	right: 0px;
 	padding: 0px;
 	width: 200px;
-	height: 80%;
+	height: 60%;
 	background-color: rgba(0, 0, 0, 0.2);
 	z-index: 1;
 
@@ -82,8 +82,8 @@
 	
 	border-radius: 10px;
 	position: absolute;
-	width: 40px;
-	height: 120px;
+	width: 17%;
+	height: 10%;
 	display: block;
 	top: 0px;
 	bottom: 0px;
@@ -100,8 +100,8 @@
 }
 
 #navBtn:hover {
-	width: 42px;
-	height: 130px;
+	width: 18%;
+	height: 12%;
 }
 
 #navBtn.navHidden {
