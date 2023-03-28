@@ -5,7 +5,7 @@
 	"DK":{
 		"PAGE-TITLE": "Lilfa Portfolio",
 		"ABOUT-TITLE": "Omkring mig",
-		"ABOUT-TEXT":"<div style='text-align: left; font-size: 20px'>Lilly Andersen</font></div ><br><div style='font-size: 70px;'>Fullstack Udvikler</div><br><div style='text-align: right'><div style='font-size: 20px;'>Laver web, software, og app udvikling</div>",
+		"ABOUT-TEXT":"<div style='text-align: left; font-size: 20px'>Lilly Andersen</font></div ><br><div style='font-size: 70px;'>Fullstack Udvikler</div><br><div style='text-align: right'><div style='font-size: 20px;'>Web, software, og app udvikling</div>",
 		"MENU": "Menu",
 		"LANGUAGES": "Sprog",
 		"PROJECTS": "Projekter",
@@ -19,7 +19,7 @@
 	"EN":{
 		"PAGE-TITLE": "Lilfa Portfolio",
 		"ABOUT-TITLE": "About me",
-		"ABOUT-TEXT":"<div style='text-align: left; font-size: 20px'>Lilly Andersen</font></div ><br><div style='font-size: 70px;'>Fullstack Developer</div><br><div style='text-align: right'><div style='font-size: 20px;'>Doing web, software, and app development</div>",
+		"ABOUT-TEXT":"<div style='text-align: left; font-size: 20px'>Lilly Andersen</font></div ><br><div style='font-size: 70px;'>Fullstack Developer</div><br><div style='text-align: right'><div style='font-size: 20px;'>Web, software, and app development</div>",
 		"MENU": "Menu",
 		"LANGUAGES": "Languages",
 		"PROJECTS": "Projects",

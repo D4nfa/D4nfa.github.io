@@ -27,20 +27,18 @@
 
 		function scroll(e){
 			if(e.ctrlKey){return;}
-			//CURRENT CONSENSUS:
-			//IF TOUCHPAD IS USED wheelDeltaY WILL ALWAYS BE THE SAME AS THE OPPOSITE SIGN OF deltaY ROUNDED TOWARDS 0
 
+			//Current consensus:
+			//If touchpad is used wheelDeltaY will always be the same as the opposite sign of deltaY rounded towards 0
 			if(e.wheelDeltaY == (e.deltaY > 0 ? -Math.floor(e.deltaY) : -Math.ceil(e.deltaY))){
-				console.log("touchpad detected");
+				//console.log("touchpad detected");
 				return;
 			}
 
 			e.preventDefault();
 
-			console.log("mouse detected");
+			//console.log("mouse detected");
 			var scrollAmount = window.scrollY + (e.deltaY < 0 ? -1000 : 1000);
-			console.log(scrollAmount);
-
 			window.scrollTo({left:0, top:scrollAmount});
 		}
 		
