@@ -3,3 +3,7 @@
     right: 0px !important;
     margin: auto;
 }
+
+#langDiv hr, #langDiv #langText{
+	visibility: visible !important;
+}

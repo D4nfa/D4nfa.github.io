@@ -39,3 +39,7 @@
 .hidden{
 	visibility: hidden;
 }
+
+#langDiv hr, #langDiv #langText{
+	visibility: hidden;
+}
