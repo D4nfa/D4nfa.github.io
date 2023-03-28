@@ -68,11 +68,6 @@ function loadProjects(){
 				window.setTimeout(check, 100);
 			}
 			else{
-				prjcts.forEach(prjcts => console.log(prjcts));
-				console.log(seeMore);
-				prjcts.forEach(project => {
-					projectLoaded(project);
-				});
 				projectLoaded(seeMore);
 			}
 		}
