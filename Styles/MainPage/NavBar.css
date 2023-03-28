@@ -13,8 +13,15 @@
 	background-color: rgba(0, 0, 0, 0.2);
 	z-index: 1;
 
+	color: white;
+
 	border-top-left-radius: 25px;
 	border-bottom-left-radius: 25px;
+}
+
+#navDiv #langText{
+	text-align: center;
+	margin: 0px;
 }
 
 #navDiv.visible{
@@ -29,6 +36,7 @@
 }
 
 .navBar {
+	
 	border-top-left-radius: 25px;
 	overflow-y: hidden;
 	position: relative;

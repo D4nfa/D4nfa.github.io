@@ -21,9 +21,6 @@ body::-webkit-scrollbar{
 	display: none;
 }
 
-
-
-
 #gradientbckg{
 	height: 100%;
 	width: 200%;
@@ -66,4 +63,3 @@ body::-webkit-scrollbar{
 .section{
 	border: 1px solid black;
 }
-
