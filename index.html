@@ -26,13 +26,15 @@
 		document.addEventListener("mousewheel", function (e) { scroll(e); }, {passive: false});
 
 		function scroll(e){
-			if(e.wheelDelta == 120 || e.wheelDelta == -120){
-				e.preventDefault();
-			
-				var scrollAmount = window.scrollY + (e.deltaY < 0 ? -1000 : 1000);
-				
-				window.scrollTo({left:0, top:scrollAmount});
+			//IF TOUCHPAD IS USED wheelDeltaY WILL ALWAYS BE THE SAME AS THE OPPOSITE SIGN OF deltaY ROUNDED TOWARDS 0
+			if(e.wheelDeltaY == (e.deltaY > 0 ? -Math.floor(e.deltaY) : -Math.ceil(e.deltaY)))
+			{
+				//console.log("touchpad detected");
+				return;
 			}
+			//console.log("mouse detected");
+			var scrollAmount = window.scrollY + (e.deltaY < 0 ? -1000 : 1000);
+			window.scrollTo({left:0, top:scrollAmount});
 		}
 		
 	</script>
