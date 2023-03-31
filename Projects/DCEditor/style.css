@@ -1,0 +1,71 @@
+html{
+	width: 100%;
+	height: 100%;
+}
+body{
+	margin: 0px;
+	overflow: hidden;
+	height: 100%;
+	width: 100%;
+
+	color: white;
+    background-color: rgb(36, 36, 36);
+}
+
+
+
+#canvas{
+	margin: auto auto auto auto;
+    border: 1px solid #b8b8b8;
+}
+
+#gInputs{
+	justify-self: right;
+	align-items: center;
+	
+	left: 0px;
+	right: 0px;
+	margin: auto 5px auto auto;
+
+	width: max-content;
+	height: max-content;
+}
+
+.gTitleDiv{
+	margin: 0px;
+	width: 100%;
+	height: 100%;
+	border-bottom: 1px solid white;
+}
+.gITitle{
+	text-align: center;
+}
+
+.inputField{
+	font-family: "Tilt Neon", cursive;
+	color: rgb(255, 255, 255);
+	border: none;
+	background-color: #ffffff00;
+	width: 5em;
+}
+
+.inputContainer{
+	width: max-content;
+	border-radius: 25px;
+	border: solid 1px white;
+}
+
+#content{
+	display: grid;
+    grid-template-columns: 30% 30% 30%;
+	width: 100%;
+	height: 100%;
+}
+
+.input{
+	margin: 10px;
+}
+
+#mapIn{
+	width: max-content;
+}

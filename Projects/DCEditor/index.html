@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<head>
+	<script type="text/javascript" src="https://lilfa.dev/templates.js"></script>
+	<script type="text/javascript" src="https://lilfa.dev/localization.js" defer></script>
+	<script type="text/javascript" src="js/localizer.js" defer></script>
+	<script type="text/javascript" src="js/script.js" defer></script>
+	<link rel="stylesheet" href="/Styles/home.css"></link>
+	<link rel="stylesheet" href="https://lilfa.dev/Styles/general.css"></link>
+	<link rel="stylesheet" href="https://lilfa.dev/font/font.css"></link>
+	<link rel="stylesheet" href="style.css">
+	<title localize="TITLE"></title>
+</head>
+<body onload="loadLangElement(); start();">
+	<div id="content">
+		<div id="gInputs">
+			<div class="inputContainer">
+				<!--ADD INPUTS INTO HERE-->
+				<div class="gTitleDiv">
+					<p class="gITitle">Map Info</p>
+				</div>
+				
+				<div class="input">
+					<label for="height" class="inputLabel">Width:</label>
+					<input type="text" class="inputField" name="width">
+		
+					<label for="height" class="inputLabel">Height:</label>
+					<input type="text" class="inputField" name="height">
+				</div>
+				<div>
+					<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+				</div>
+				<div class="input">
+					<label for="mapIn" class="inputLabel">Load a map:</label>
+					<input type="file" id="mapIn" name="mapIn" onclick="this.val = '';" onchange="loadMap(this);">
+				</div>
+			</div>
+		</div>
+		<canvas id="canvas"></canvas>
+		
+		
+		
+	</div>
+	
+	
+	
+
+	
+
+	<span id="langElement"></span>
+	<div id="homeDiv">
+		<img class="clickable" id="homeBtn" src="/Icons/home_Dark.png" alt="" onclick="window.location = '/'">
+	</div>
+</body>
