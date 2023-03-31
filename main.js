@@ -68,6 +68,9 @@ function loadProjects(){
 				window.setTimeout(check, 100);
 			}
 			else{
+				prjcts.forEach(element => {
+					projectLoaded(element);
+				});
 				projectLoaded(seeMore);
 			}
 		}
