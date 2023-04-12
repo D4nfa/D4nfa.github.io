@@ -17,7 +17,11 @@ let mRooms = [
 		x: 0,
 		z: 0,
 		y: 0,
-		layouts: [],
+		layouts: [{
+			width: 0,
+			height: 0,
+			layout: [[]]
+		}],
 		roominfo: []
 	}
 ];
@@ -64,19 +68,24 @@ function updateValues()
 	mName = mapName.value;
 	if(layersIn.value == '') {layersIn.value = 1;}
 	if(layerIn.value == '' || layerIn.value < 0 || layerIn.value > layersIn.value ){layerIn.value = 1;}
-
+	mRooms[0].layouts[layerIn.value - 1].height = widthIn.value;
+	mRooms[0].layouts[layerIn.value - 1].width = heightIn.value;
+	mRooms[0].layouts[layerIn.value - 1].layout = updateSize(parseInt(widthIn.value), parseInt(heightIn.value));
+	drawMap();
 }
 
-function updateSize(){
-	map = Array.from(Array(mapSize.x), () => new Array(mapSize.y).fill(false));
+function updateSize(x, y){
+	return Array.from(Array(x), () => new Array(y).fill(false));
 }
 
 function drawMap(){
+	canvas.width = widthIn.value * cellSize;
+	canvas.height = heightIn.value * cellSize;
 	ctx.strokeStyle = "#b8b8b8";
 	clearScreen();
-	for(let x = 0; x < mapSize.x; x++){
-		for(let y = 0; y < mapSize.y; y++){
-			if(map.rooms[0].layouts[layerIn.value - 1].layout[x][y]) {
+	for(let x = 0; x < mRooms[0].layouts[layerIn.value - 1].width; x++){
+		for(let y = 0; y < mRooms[0].layouts[layerIn.value - 1].height; y++){
+			if(mRooms[0].layouts[layerIn.value - 1].layout[x][y]) {
 				ctx.fillStyle = "silver";
 				ctx.fillRect(x * cellSize, y * cellSize, cellSize, cellSize);
 			}
@@ -98,6 +107,6 @@ function getMouseSquare(event) {
 	const rect = this.canvas.getBoundingClientRect();
 	const x = event.clientX - rect.left;
 	const y = event.clientY - rect.top;
-	map.rooms[0].layouts[layerIn.value - 1].layout[Math.floor(x / cellSize)][Math.floor(y / cellSize)] = !map.rooms[0].layouts[layerIn.value - 1].layout[Math.floor(x / cellSize)][Math.floor(y / cellSize)];
+	mRooms[0].layouts[layerIn.value - 1].layout[Math.floor(x / cellSize)][Math.floor(y / cellSize)] = !mRooms[0].layouts[layerIn.value - 1].layout[Math.floor(x / cellSize)][Math.floor(y / cellSize)];
 	drawMap();
 }
