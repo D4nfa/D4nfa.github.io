@@ -1,0 +1,17 @@
+{
+  "GENERAL": {
+    "PRJCTTITLTE": "Sorting Algorithms",
+    "IMG": "/Images/TestingImage.png",
+    "PRJCTLINK": "/Projects/SortAlg",
+    "PRJCTID":"SORTS"
+  },
+  "DK": {
+	"PRJCTDESC": "Dette er et test projekt"
+  },
+  "EN": {
+	"PRJCTDESC": "This is a test project"
+  },
+  "NL":{
+	"PRJCTDESC": "test projecteren"
+  }
+}

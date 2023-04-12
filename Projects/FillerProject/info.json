@@ -1,0 +1,17 @@
+{
+  "GENERAL": {
+    "PRJCTTITLTE": "Filler",
+    "IMG": "/Images/TestingImage.png",
+    "PRJCTLINK": "/Projects/TestPage",
+    "PRJCTID":"FILL"
+  },
+  "DK": {
+	"PRJCTDESC": "Dette er et fyldnings projekt"
+  },
+  "EN": {
+	"PRJCTDESC": "This is a filler project"
+  },
+  "NL":{
+	"PRJCTDESC": "test projecteren"
+  }
+}
