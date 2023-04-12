@@ -1,27 +1,16 @@
 class Map {
 	constructor() {
-		this.mapName = typeof String;
-		this.rooms = [typeof Room];
+		this.mapName = "";
+		this.rooms = [new Room()];
 	}
 }
 
 class Room {
 	constructor() {
-		this.totalX = 100,
-		this.totalZ = 100,
-		this.totalY = 2,
-		this.layouts = [
-			{
-				x: 50,
-				z: 50,
-				layout: [[typeof Boolean]]
-			},
-			{
-				x: 25,
-				z: 25,
-				layout: [[typeof Boolean]]
-			}
-		],
+		this.totalX,
+		this.totalZ,
+		this.totalY,
+		this.layouts = [],
 		this.roomInfo = [
 			{
 				info: [typeof String]

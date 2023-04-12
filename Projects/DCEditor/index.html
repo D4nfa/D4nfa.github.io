@@ -4,6 +4,7 @@
 	<script type="text/javascript" src="https://lilfa.dev/localization.js" defer></script>
 	<script type="text/javascript" src="js/localizer.js" defer></script>
 	<script type="text/javascript" src="js/script.js" defer></script>
+	<script type="text/javascript" src="js/mapStruct.js"></script>
 	<link rel="stylesheet" href="/Styles/home.css"></link>
 	<link rel="stylesheet" href="https://lilfa.dev/Styles/general.css"></link>
 	<link rel="stylesheet" href="https://lilfa.dev/font/font.css"></link>
@@ -18,13 +19,26 @@
 				<div class="gTitleDiv">
 					<p class="gITitle">Map Info</p>
 				</div>
+				<div class="input">
+					<label for="mapName" class="inputLabel">Name:</label>
+					<input type="text" class="inputField mapName" name="mapName" onchange="updateValues()">
+				</div>
+				
 				
 				<div class="input">
+					<label for="layers" class="inputLabel">Layers:</label>
+					<input type="text" class="inputField layersIn" name="layers" onchange="updateValues()">
+
+					<label for="layer" class="inputLabel">Layer:</label>
+					<input type="text" class="inputField layerIn" name="layer" onchange="updateValues()">
+
+				</div>
+				<div class="input">
 					<label for="height" class="inputLabel">Width:</label>
-					<input type="text" class="inputField" name="width">
+					<input type="text" class="inputField widthIn" name="width" onchange="updateValues()">
 		
 					<label for="height" class="inputLabel">Height:</label>
-					<input type="text" class="inputField" name="height">
+					<input type="text" class="inputField heightIn" name="height" onchange="updateValues()">
 				</div>
 				<div>
 					<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
