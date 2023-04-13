@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+	<title localize="TITLE">{TITLE}</title>
+	<link rel="stylesheet" href="style.css"></link>
+	<link rel="stylesheet" href="https://lilfa.dev/Styles/Language.css"></link>
+	<link rel="stylesheet" href="/Styles/home.css"></link>
+	<script type="text/javascript" src="https://lilfa.dev/templates.js"></script>
+	<script type="text/javascript" src="https://lilfa.dev/localization.js"></script>
+	<script type="text/javascript" src="script.js" defer></script>
+	<link rel="stylesheet" href="https://lilfa.dev/font/font.css"/>
+	<link rel="stylesheet" href="https://lilfa.dev/Styles/general.css">
+</head>
+<body onload="onLoad()" style="background-color: rgb(37, 36, 36);">
+	<div>
+		<div id="titleDiv">
+			<h1 class="text" localize="TITLE">{TITLE}</h1>
+		</div>
+		
+		<div id="content">
+			<div id="desc" class="leftBox">
+				<h3 localize="TITLE" class="text">{TITLE}</h3>
+				<p localize="DESC" class="text">{DESC}</p>
+			</div>
+			<canvas id="gameWindow" width="800px" height="800px" style="border: 1px solid white;"></canvas>
+			<div id="inputs" class="rightBox">
+				<div>
+					<p class="text" localize="SORTING-LIST">{SORTING-LIST}</p>
+					<input type="text" id="sizeInput" class="inputField" onblur="updateSize()">
+					<button id="listGenBtn" onclick="genList(50)" class="btn" localize="AUTO-POPULATE"></button>
+				</div>
+				
+				<div>
+					
+					<button id="drawBtn" onclick="drawList()" class="btn" localize="DRAW"></button>
+				</div>
+				<div id="boardLayout">
+					<p class="text" localize="BOARD">{BOARD}</p>
+					<input type="text" id="boardLink">
+					<div>
+						<button onclick="loadBoard()" class="btn" localize="LOAD">{LOAD}</button>
+						<button onclick="saveBoard()" class="btn" localize="COPY">{COPY}</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<span id="langElement"></span>
+		<div id="homeDiv">
+			<img id="homeBtn" src="/Icons/home_Dark.png" alt="" onclick="window.location = '/'">
+		</div>
+	</div>
+</body>
