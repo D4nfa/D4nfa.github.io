@@ -25,13 +25,15 @@
 			<div id="inputs" class="rightBox">
 				<div>
 					<p class="text" localize="SORTING-LIST">{SORTING-LIST}</p>
-					<input type="text" id="sizeInput" class="inputField" onblur="updateSize()">
-					<button id="listGenBtn" onclick="genList(50)" class="btn" localize="AUTO-POPULATE"></button>
+					<input type="text" id="listInput" class="inputField" onblur="drawList(readList())">
+					<input type="number" id="rangeIn" class="smallInput" value="50">
+					<button id="listGenBtn" onclick="genList()" class="btn" localize="AUTO-POPULATE"></button>
 				</div>
 				
 				<div>
-					
-					<button id="drawBtn" onclick="drawList()" class="btn" localize="DRAW"></button>
+					<select name="algorithms" id="algoDrop">
+					  </select>
+					<button id="sortBtn" onclick="sort()" class="btn" localize="SORT"></button>
 				</div>
 				<div id="boardLayout">
 					<p class="text" localize="BOARD">{BOARD}</p>

@@ -3,11 +3,11 @@ var projects = [];
 var projectElems = [];
 
 function onLoad(){
-    loadProjects().then(() => localizePage());
+    loadProjects().then(() => localizePage(`./local/homePage.json`));
     loadLangElement();
     addEventListener('langChanged', () => 
     {
-        localizePage();
+        localizePage(`./local/homePage.json`);
         localizeProjects();
     });
 }
@@ -96,16 +96,6 @@ function projectLoaded(json){
 	projectElems.push(document.querySelector(`[PRJCTID=${json['GENERAL']['PRJCTID']}]`));
 
 	localizeProject(json);
-}
-
-
-function localizePage(){
-	fetch(`./local/homePage.json`)
-	.then((response) => response.json()
-	.then((json) => 
-	{
-		subKeysAtr(document.getElementsByTagName('html')[0], [json[lang], json['GENERAL']]);
-	}));
 }
 
 

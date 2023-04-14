@@ -34,12 +34,22 @@
 	height: 100%;
 }
 
+.smallInput{
+	text-align: center;
+	font-family: "Tilt Neon", cursive;
+	color: rgb(0, 0, 0);
+	border: none;
+	border-radius: 5px;
+	width: 5em;
+}
+
 .inputField{
 	font-family: "Tilt Neon", cursive;
 	color: rgb(0, 0, 0);
 	border: none;
 	border-radius: 5px;
 	width: 100%;
+	text-align: center;
 }
 
 .leftBox{
