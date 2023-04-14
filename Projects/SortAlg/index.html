@@ -25,7 +25,7 @@
 			<div id="inputs" class="rightBox">
 				<div>
 					<p class="text" localize="SORTING-LIST">{SORTING-LIST}</p>
-					<input type="text" id="listInput" class="inputField" onblur="drawList(readList())">
+					<input type="text" id="listInput" class="inputField" onblur="drawList(readList(), getMinMax(readList()))">
 					<input type="number" id="rangeIn" class="smallInput" value="50">
 					<button id="listGenBtn" onclick="genList()" class="btn" localize="AUTO-POPULATE"></button>
 				</div>
