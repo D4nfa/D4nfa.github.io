@@ -1,9 +1,10 @@
 const changeEvent = new Event('langChanged');
 
+//global variabel
 var lang = getLang();
 
-//Function that substitues keys in a text with key value pairs
-//Expects keys to be in an array to allow for use of multiple keysets
+
+//Function that substitutes keys in a text with key value pairs
 function subKeys(template, keys) {
 	for(let keyset of keys){
 		for (let key of Object.keys(keyset)) {
@@ -13,17 +14,9 @@ function subKeys(template, keys) {
 	return template;
 }
 
-function subKeysDoc(doc, keys){
-	let nodes = doc.querySelectorAll('[localize]');
-	for(let keyset of keys){
-		for (let key of Object.keys(keyset)) {
-			for(let node of nodes){
-				node.innerHTML = node.innerHTML.replaceAll(`{${key}}`, keyset[key]);
-			}
-		}
-	}
-}
 
+//Function that takes in a document and list of keysets and then fills the value property at nodes with the attribute 'localize'
+//looks for key in the 'localize' attribute
 function subKeysAtr(doc, keys){
 	let nodes = doc.querySelectorAll('[localize]');
 	for(let keyset of keys){
@@ -36,6 +29,19 @@ function subKeysAtr(doc, keys){
 	}
 }
 
+//localize page using a json file
+function localizePage(path){
+	fetch(path)
+	.then((response) => response.json()
+	.then((json) => 
+	{
+		subKeysAtr(document.getElementsByTagName('html')[0], [json[lang], json['GENERAL']]);
+	}));
+}
+
+
+//Tries to get lang string from website localStorage
+//incase lang string wasn't found return 'DK'
 function getLang(){
 	if(localStorage.getItem('lang') != undefined){
 		return localStorage.getItem('lang');
@@ -43,19 +49,19 @@ function getLang(){
 	return 'DK';
 }
 
-//Set language and dispatch langChanged event
+//Change lang and dispatch langChanged event
 function changeLang(nLang){
 	if(nLang == lang) return;
 	localStorage.setItem('lang', nLang);
 
-	console.log(lang, nLang);
 	document.getElementById(lang + '-FLAG').classList.remove('selected');
 	document.getElementById(nLang + '-FLAG').classList.add('selected');
-
+	
 	lang = nLang;
 	this.dispatchEvent(changeEvent);
 }
 
+//Load language change templates
 function loadLangElement(){
 	document.getElementById('langElement').insertAdjacentHTML("afterend", langElement);
 	document.getElementById(lang + '-FLAG').classList.add('selected');
