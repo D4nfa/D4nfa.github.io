@@ -54,7 +54,8 @@ function drawPillar(){
 
 const algorithms = {
 	Bubble: 0,
-	Insertion: 1
+	Selection: 1,
+	Bogo: 2
 
 }
 
@@ -93,17 +94,35 @@ async function sort(){
 			console.log('array sorted');
 			break;
 		case 1:
+			//selection sort
 			var i, j;
 			for (i = 0; i < n-1; i++)
 			{
 				var min = i;
-				for(j = i; j < n; j++){
+				for(j = i+1; j < n; j++){
 					if(arr[j] < arr[min]) min = j;
 				}
 				swap(arr, i, min);
 				drawList(arr, minMax);
 				await sleep(1);
 			}	
+			break;
+		case 2:
+			
+			while(true){
+				var sorted = true;
+				for (var i = 0; i < n - 1; i++) {
+					if (arr[i] > arr[i+1]) {
+						sorted = false;
+						break;
+					}
+				}
+				if(sorted) break;
+				arr = arr.sort((a, b) => 0.5 - Math.random());
+				drawList(arr, minMax);
+				await sleep(10);
+			}
+				
 
 			break;
 	}
