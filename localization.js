@@ -39,6 +39,16 @@ function localizePage(path){
 	}));
 }
 
+//localize element using a json file
+function localizeElem(path, elem){
+	fetch(path)
+	.then((response) => response.json()
+	.then((json) => 
+	{
+		subKeysAtr(elem, [json[lang], json['GENERAL']]);
+	}));
+}
+
 
 //Tries to get lang string from website localStorage
 //incase lang string wasn't found return 'DK'
