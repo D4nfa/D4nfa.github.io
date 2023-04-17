@@ -16,7 +16,7 @@ async function onLoad(){
 
 
 function genList(){
-	writeList(Array.from({length: rangeIn.value}, (_, i) => i + 1).sort((a, b) => 0.5 - Math.random()));
+	writeList(Array.from({length: rangeIn.value}, (_, i) => i + 1).sort(() => 0.5 - Math.random()));
 	drawList(readList(), getMinMax(readList()));
 }
 
@@ -85,11 +85,14 @@ async function sort(){
 					{
 						swapped = true;
 						swap(arr,j,j+1);
+						drawList(arr, minMax);
+						await sleep(1);
 					}
-					drawList(arr, minMax);
-					await sleep(1);
+					
 				}
+				
 				if(!swapped) break;
+				
 			}	
 			console.log('array sorted');
 			break;
@@ -108,7 +111,6 @@ async function sort(){
 			}	
 			break;
 		case 2:
-			
 			while(true){
 				var sorted = true;
 				for (var i = 0; i < n - 1; i++) {
@@ -118,12 +120,10 @@ async function sort(){
 					}
 				}
 				if(sorted) break;
-				arr = arr.sort((a, b) => 0.5 - Math.random());
+				arr = arr.sort(() => 0.5 - Math.random());
 				drawList(arr, minMax);
 				await sleep(10);
 			}
-				
-
 			break;
 	}
 }
