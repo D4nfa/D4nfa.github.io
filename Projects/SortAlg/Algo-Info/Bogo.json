@@ -1,0 +1,14 @@
+{
+    "GENERAL":{
+        "ALGO-TITLE": "Bogo Sort"
+    },
+    "DK": {
+        "ALGO-DESC": "THIS IS SOME TEXT"
+    },
+    "EN":{
+        "ALGO-DESC": ""
+    },
+    "NL":{
+        "ALGO-DESC": ""
+    }
+}
