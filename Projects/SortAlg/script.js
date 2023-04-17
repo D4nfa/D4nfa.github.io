@@ -55,7 +55,8 @@ function drawPillar(){
 const algorithms = {
 	Bubble: 0,
 	Selection: 1,
-	Bogo: 2
+	Insertion: 2,
+	Bogo: 3
 
 }
 
@@ -69,9 +70,9 @@ function swap(array, index1, index2){
 
 
 async function sort(){
-	let arr = readList();
-	let n = arr.length;
-	let minMax = getMinMax(arr);
+	var arr = readList();
+	var n = arr.length;
+	var minMax = getMinMax(arr);
 	switch(algorithms[selAlgo.options[selAlgo.selectedIndex].value]){
 		case 0:
 			//Optimized bubble sort
@@ -94,7 +95,6 @@ async function sort(){
 				if(!swapped) break;
 				
 			}	
-			console.log('array sorted');
 			break;
 		case 1:
 			//selection sort
@@ -111,6 +111,10 @@ async function sort(){
 			}	
 			break;
 		case 2:
+			//Insertion sort
+			break;
+		case 3:
+			//Bogo sort
 			while(true){
 				var sorted = true;
 				for (var i = 0; i < n - 1; i++) {
@@ -126,6 +130,7 @@ async function sort(){
 			}
 			break;
 	}
+	console.log('array sorted');
 }
 
 function populateAlgs(){
