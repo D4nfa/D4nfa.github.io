@@ -6,12 +6,15 @@ const listInput = document.querySelector('#listInput');
 const rangeIn = document.querySelector('#rangeIn');
 const selAlgo = document.querySelector('#algoDrop');
 
+const descBox = document.querySelector('#desc');
+
 async function onLoad(){
 	localizePage('local.json');
 	addEventListener('langChanged', () => localizePage('local.json'));
 	loadLangElement();
 
 	populateAlgs();
+	changedAlgo();
 }
 
 
@@ -112,6 +115,21 @@ async function sort(){
 			break;
 		case 2:
 			//Insertion sort
+			var i, key, j;
+			for(i = 1; i < n; i++){
+				key = arr[i];
+				j = i - 1;
+
+				while(j >= 0 && arr[j] > key){
+					swap(arr, j+1, j);
+					j = j - 1;
+					drawList(arr, minMax);
+					await sleep(1);
+				}
+
+			}
+
+
 			break;
 		case 3:
 			//Bogo sort
@@ -140,4 +158,8 @@ function populateAlgs(){
 		option.text = key;
 		algoDrop.add(option);
 	}
+}
+
+function changedAlgo(){
+	localizeElem(`Algo-Info\\${selAlgo.options[selAlgo.selectedIndex].value}.json`, descBox);
 }

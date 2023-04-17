@@ -18,8 +18,8 @@
 		
 		<div id="content">
 			<div id="desc" class="leftBox">
-				<h3 localize="TITLE" class="text">{TITLE}</h3>
-				<p localize="DESC" class="text">{DESC}</p>
+				<h3 localize="ALGO-TITLE" class="text">{TITLE}</h3>
+				<p localize="ALGO-DESC" class="text">{DESC}</p>
 			</div>
 			<canvas id="gameWindow" width="800px" height="800px" style="border: 1px solid white;"></canvas>
 			<div id="inputs" class="rightBox">
@@ -31,17 +31,9 @@
 				</div>
 				
 				<div>
-					<select name="algorithms" id="algoDrop">
+					<select name="algorithms" id="algoDrop" onchange="changedAlgo()">
 					  </select>
 					<button id="sortBtn" onclick="sort()" class="btn" localize="SORT"></button>
-				</div>
-				<div id="boardLayout">
-					<p class="text" localize="BOARD">{BOARD}</p>
-					<input type="text" id="boardLink">
-					<div>
-						<button onclick="loadBoard()" class="btn" localize="LOAD">{LOAD}</button>
-						<button onclick="saveBoard()" class="btn" localize="COPY">{COPY}</button>
-					</div>
 				</div>
 			</div>
 		</div>
