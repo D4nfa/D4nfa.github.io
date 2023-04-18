@@ -4,6 +4,7 @@
 	<link rel="stylesheet" href="style.css"></link>
 	<link rel="stylesheet" href="https://lilfa.dev/Styles/Language.css"></link>
 	<link rel="stylesheet" href="/Styles/home.css"></link>
+	<link rel="stylesheet" href="/extensions/prism.css">
 	<script type="text/javascript" src="https://lilfa.dev/templates.js"></script>
 	<script type="text/javascript" src="https://lilfa.dev/localization.js"></script>
 	<script type="text/javascript" src="script.js" defer></script>
@@ -20,6 +21,7 @@
 			<div id="desc" class="leftBox">
 				<h3 localize="ALGO-TITLE" class="text">{TITLE}</h3>
 				<p localize="ALGO-DESC" class="text">{DESC}</p>
+				<p localize="CODE"></p>
 			</div>
 			<canvas id="gameWindow" width="800px" height="800px" style="border: 1px solid white;"></canvas>
 			<div id="inputs" class="rightBox">
@@ -42,4 +44,5 @@
 			<img id="homeBtn" src="/Icons/home_Dark.png" alt="" onclick="window.location = '/'">
 		</div>
 	</div>
+	<script type="text/javascript" src="/extensions/prism.js"></script>
 </body>
