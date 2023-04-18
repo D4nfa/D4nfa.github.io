@@ -1,6 +1,7 @@
 {
     "GENERAL":{
-        "ALGO-TITLE": "Bubble Sort"
+        "ALGO-TITLE": "Bubble Sort",
+        "CODE": "<pre><code class='language-js'>var i, j;\nfor (i = 0; i < n-1; i++)\n{\n&emsp;let swapped = false;\n&emsp;for (j = 0; j < n-i-1; j++)\n&emsp;{\n&emsp;&emsp;if (arr[j] > arr[j+1])\n&emsp;&emsp;{\n&emsp;&emsp;&emsp;swapped = true;\n&emsp;&emsp;&emsp;swap(arr,j,j+1);\n&emsp;&emsp;}\n&emsp;}\n&emsp;if(!swapped)\n break;\n}</code></pre>"
     },
     "DK": {
         "ALGO-DESC": ""
