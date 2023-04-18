@@ -94,9 +94,7 @@ async function sort(){
 					}
 					
 				}
-				
 				if(!swapped) break;
-				
 			}	
 			break;
 		case 1:
@@ -160,6 +158,8 @@ function populateAlgs(){
 	}
 }
 
-function changedAlgo(){
+async function changedAlgo(){
 	localizeElem(`Algo-Info\\${selAlgo.options[selAlgo.selectedIndex].value}.json`, descBox);
+	await sleep(200);
+	Prism.highlightAll();
 }
