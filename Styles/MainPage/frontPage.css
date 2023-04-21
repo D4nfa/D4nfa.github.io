@@ -1,0 +1,24 @@
+
+/*About Me section*/
+#hero{
+	display: flex;
+	justify-content: center;
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+
+#heroDiv{
+	border-radius: 25px;
+	text-align: center;
+	position: relative;
+	-ms-transform: translateY(10%);
+	transform: translateY(10%);  
+	display: flex;
+	justify-content: center;
+	height: max-content;
+	width: max-content;
+	padding: 5px 20px;
+	margin: auto auto;
+	background-color: hsla(0, 0%, 0%, 0.2);
+	color: white;
+}

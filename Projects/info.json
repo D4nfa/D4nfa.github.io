@@ -1,18 +1,20 @@
 {
 	"GENERAL": {
-		"PRJCTTITLTE": "Projects",
 		"IMG": "/Images/TestingImage.png",
 		"PRJCTLINK": "Projects",
 		"PRJCTID": "PROJECTS",
 		"TAGS": ["HTML", "CSS", "Javascript"]
 	},
 	"DK": {
+		"PRJCTTITLTE": "Projekter",
 		"PRJCTDESC": "Se flere projekter..."
 	},
 	"EN": {
+		"PRJCTTITLTE": "Projects",
 		"PRJCTDESC": "See more projects..."
 	},
 	"NL": {
+		"PRJCTTITLTE": "Projecter",
 		"PRJCTDESC": "Test projecteren"
 	}
 }

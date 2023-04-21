@@ -9,7 +9,7 @@
 
 #aboutDiv{
 	border-radius: 25px;
-	text-align: center;
+	text-align: left;
 	position: relative;
 	-ms-transform: translateY(10%);
 	transform: translateY(10%);  

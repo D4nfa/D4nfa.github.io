@@ -54,6 +54,7 @@
 	<div id="navDiv" class="hidden">
 		<ul class="navBar">
 			<li><div><p localize="MENU"></p></div></li>
+			<li><button class="clickable" onclick="scrollToAnchor('hero')" localize="FRONT-TITLE"></button></li>
 			<li><button class="clickable" onclick="scrollToAnchor('about')" localize="ABOUT-TITLE"></button></li>
 			<li><button class="clickable" onclick="scrollToAnchor('projects')" localize="PROJECTS"></button></li>
 			<li><button class="clickable" onclick="scrollToAnchor('contacts')" localize="CONTACTS"></button></li>
@@ -68,8 +69,16 @@
 	
 	
 
+	<!--Front page section-->
+	<link rel="stylesheet" href="/Styles/MainPage/frontPage.css" />
+	<div id="hero" class="fullScreen section">
+		<div id="heroDiv">
+			<p style="display: block; margin-top: 5%; padding: 1px;" localize="FRONT-TEXT"></p>
+		</div>
+	</div>
+
 	<!--About me section-->
-	<link rel="stylesheet" href="/Styles/MainPage/AboutMe.css" />
+	<link rel="stylesheet" href="/Styles/MainPage/about.css" />
 	<div id="about" class="fullScreen section">
 		<div id="aboutDiv">
 			<p style="display: block; margin-top: 5%; padding: 1px;" localize="ABOUT-TEXT"></p>
@@ -81,7 +90,7 @@
 	<link rel="stylesheet" href="/Styles/MainPage/Projects.css"/> 
 	<div id="projects" class="fullScreen section">
 		<div class="title">
-			<h1>Projects</h1>
+			<h1 localize="PROJECTS"></h1>
 		</div>
 		<div id="projectList">
 				<!--Projects will be populated here-->
