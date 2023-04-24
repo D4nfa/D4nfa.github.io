@@ -1,6 +1,7 @@
 {
     "GENERAL":{
-        "ALGO-TITLE": "Selection Sort"
+        "ALGO-TITLE": "Selection Sort",
+        "CODE": "<pre><code class='language-js'>var i, j;\nfor (i = 0; i < n-1; i++)\n{\n&emsp;var min = i;\n&emsp;for(j = i+1; j < n; j++)\n&emsp;{\n&emsp;&emsp;if(arr[j] < arr[min])\n&emsp;&emsp;{\n&emsp;&emsp;&emsp;min = j;\n&emsp;&emsp;}\n&emsp;&emsp;swap(arr, i, min);\n&emsp;}\n}</code></pre>"
     },
     "DK": {
         "ALGO-DESC": ""
