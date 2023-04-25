@@ -21,7 +21,23 @@
 			<div id="desc" class="leftBox">
 				<h3 localize="ALGO-TITLE" class="text">{TITLE}</h3>
 				<p localize="ALGO-DESC" class="text">{DESC}</p>
-				<p localize="CODE"></p>
+				<img class="clickable" id="info-btn" src="/Icons/info.svg" alt="Info-button" width="40px" height="40px" onclick="infoBtn()">
+				<script type="text/javascript">
+					function infoBtn(){
+						let detail = document.getElementById("detailView");
+						if(detail.classList.contains("hidden")){
+							detail.classList.remove("hidden")
+						}else{
+							detail.classList.add("hidden")
+						}
+					}
+				</script>
+				<div id="detailView" class="hidden">
+					<div id="detailBox">
+						<img class="clickable" id="xBtn" src="/Icons/x-circle.svg" alt="X Circle" width="40px" height="40px" onclick="infoBtn()">
+						<p localize="CODE"></p>
+					</div>
+				</div>
 			</div>
 			<canvas id="gameWindow" width="800px" height="800px" style="border: 1px solid white;"></canvas>
 			<div id="inputs" class="rightBox">

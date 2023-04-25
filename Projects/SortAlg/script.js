@@ -126,8 +126,6 @@ async function sort(){
 				}
 
 			}
-
-
 			break;
 		case 3:
 			//Bogo sort
@@ -162,4 +160,8 @@ async function changedAlgo(){
 	localizeElem(`Algo-Info\\${selAlgo.options[selAlgo.selectedIndex].value}.json`, descBox);
 	await sleep(200);
 	Prism.highlightAll();
+}
+
+function test(text){
+    console.log(text.replace(/\t/g, '&nbsp;&nbsp;&nbsp;&nbsp;'));
 }
