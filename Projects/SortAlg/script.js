@@ -41,6 +41,16 @@ function drawList(list, minMax){
 	}
 }
 
+function drawRecursive(list, N, index, minMax){
+	ctx.fillStyle = "silver";
+	let pillarWidth = rect.width / N;
+	for(x = index; x < index + list.length; x++){
+		let pillarHeight = (list[x] - minMax[0]) / (minMax[1] - minMax[0]) * rect.height;
+		ctx.clearRect(x * pillarWidth, 0, pillarWidth, rect.height);
+		ctx.fillRect(x * pillarWidth, rect.height - pillarHeight, pillarWidth, pillarHeight);
+	}
+}
+
 function getMinMax(list){
 	let min = Infinity;
 	let max = 0;
@@ -59,7 +69,10 @@ const algorithms = {
 	Bubble: 0,
 	Selection: 1,
 	Insertion: 2,
-	Bogo: 3
+	Bitonic: 3,
+	Merge: 4,
+	Heap: 5,
+	Bogo: 9
 
 }
 
@@ -128,6 +141,104 @@ async function sort(){
 			}
 			break;
 		case 3:
+			var k, j, l, i;
+			for (k = 2; k <= n; k *= 2) {
+				for (j = k/2; j > 0; j /= 2) {
+					for (i = 0; i < n; i++) {
+						l = i ^ j;
+						if (l > i) {
+							if ( ((i&k)==0) && (arr[i] > arr[l]) || ( ( (i&k)!=0) && (arr[i] < arr[l])) )  {
+								swap(arr, i, l);
+								drawList(arr, minMax);
+								await sleep(1);
+							}
+						}
+					}
+				}
+			}
+			break;
+		case 4:
+
+			//Drawlist(currArr, n, index, minMax)
+			//Merge sort, gotta do quite a bit of fixing on this
+			drawList(arr, minMax);
+			
+
+			arr = await mergeSort(arr, 0);
+			async function mergeSort(arra, index) {
+				
+
+				const half = arra.length / 2
+			  
+				if (arra.length < 2){
+				  return arra;
+				}
+
+				
+			  
+				const left = arra.splice(0, half);
+				let e = merge(await mergeSort(left, 0), await mergeSort(arra, index + half - 1));
+				
+				drawRecursive(arra, n, index, minMax);
+				await sleep(1);
+
+				return e;
+			}
+
+			async function merge(left, right) {
+				let arr1 = []
+			
+				while (left.length && right.length) {
+					if (left[0] < right[0]) {
+						arr1.push(left.shift())
+					} else {
+						arr1.push(right.shift())
+					}
+				}
+				return [ ...arr1, ...left, ...right ]
+			}
+			break;
+		case 5:
+			drawList(arr, minMax);
+			await sleep(1);
+			
+			arr = await heapSort(arr);
+			async function heapSort(array) {
+				let size = array.length
+			  
+				for (let i = Math.floor(size / 2 - 1); i >= 0; i--){
+					heapify(array, size, i)
+					drawList(array, minMax);
+					await sleep(1);
+				}
+				  
+				
+
+				for (let i = size - 1; i >= 0; i--) {
+					swap(0, i);
+					heapify(array, i, 0)
+				}
+			  }
+			  
+			function heapify(array, size, i) {
+				let max = i
+				let left = 2 * i + 1
+				let right = 2 * i + 2
+			  
+				if (left < size && array[left] > array[max])
+				  max = left
+			  
+				if (right < size && array[right] > array[max])
+				  max = right
+			  
+				if (max != i) {
+					swap(array, i, max);
+				
+					heapify(array, size, max)
+				}
+			}
+			break;
+		case 9:
 			//Bogo sort
 			while(true){
 				var sorted = true;
