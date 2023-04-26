@@ -5,7 +5,7 @@
 	"DK":{
 		"PAGE-TITLE": "Lilfa Portfolio",
 		"FRONT-TITLE": "Hjem",
-		"FRONT-TEXT":"<div style='text-align: left; font-size: 20px'>Lilly Andersen</font></div ><br><div style='font-size: 70px;'>Fullstack Udvikler</div><br><div style='text-align: right'><div style='font-size: 20px;'>Software, app, og web udvikling</div>",
+		"FRONT-TEXT":"<div style='text-align: left; font-size: 20px'>Lilly F. Andersen</font></div ><br><div style='font-size: 70px;'>Fullstack Udvikler</div><br><div style='text-align: right'><div style='font-size: 20px;'>Software, app, og web udvikling</div>",
 		"ABOUT-TITLE":"Om Mig",
 		"ABOUT-TEXT":"<div style='font-size: 40px;'>About me</div><div style='font-size: 20px;'>This is some placeholder text about me, i am currently studying at Techcollege denmark.<br>test</div>",
 		"MENU": "Menu",
@@ -21,7 +21,7 @@
 	"EN":{
 		"PAGE-TITLE": "Lilfa Portfolio",
 		"FRONT-TITLE": "Home",
-		"FRONT-TEXT":"<div style='text-align: left; font-size: 20px'>Lilly Andersen</font></div ><br><div style='font-size: 70px;'>Fullstack Developer</div><br><div style='text-align: right'><div style='font-size: 20px;'>Software, app, and web development</div>",
+		"FRONT-TEXT":"<div style='text-align: left; font-size: 20px'>Lilly F. Andersen</font></div ><br><div style='font-size: 70px;'>Fullstack Developer</div><br><div style='text-align: right'><div style='font-size: 20px;'>Software, app, and web development</div>",
 		"ABOUT-TITLE":"About Me",
 		"ABOUT-TEXT":"<div style='font-size: 40px;'>About me</div><div style='font-size: 20px;'>This is some placeholder text about me, i am currently studying at Techcollege denmark.<br>test</div>",
 		"MENU": "Menu",
