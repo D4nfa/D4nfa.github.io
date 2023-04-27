@@ -45,7 +45,7 @@ function drawRecursive(list, N, index, minMax){
 	ctx.fillStyle = "silver";
 	let pillarWidth = rect.width / N;
 	for(x = index; x < index + list.length; x++){
-		let pillarHeight = (list[x] - minMax[0]) / (minMax[1] - minMax[0]) * rect.height;
+		let pillarHeight = (list[x - index] - minMax[0]) / (minMax[1] - minMax[0]) * rect.height;
 		ctx.clearRect(x * pillarWidth, 0, pillarWidth, rect.height);
 		ctx.fillRect(x * pillarWidth, rect.height - pillarHeight, pillarWidth, pillarHeight);
 	}
@@ -72,6 +72,8 @@ const algorithms = {
 	Bitonic: 3,
 	Merge: 4,
 	Heap: 5,
+	Quick: 6,
+	Radix: 7,
 	Bogo: 9
 
 }
@@ -141,6 +143,7 @@ async function sort(){
 			}
 			break;
 		case 3:
+			//Bitonic sort
 			var k, j, l, i;
 			for (k = 2; k <= n; k *= 2) {
 				for (j = k/2; j > 0; j /= 2) {
@@ -158,14 +161,12 @@ async function sort(){
 			}
 			break;
 		case 4:
-
-			//Drawlist(currArr, n, index, minMax)
-			//Merge sort, gotta do quite a bit of fixing on this
+			//Merge sort
 			drawList(arr, minMax);
 			
 
 			arr = await mergeSort(arr, 0);
-			async function mergeSort(arra, index) {
+			async function mergeSort(arra, index, rl) {
 				
 
 				const half = arra.length / 2
@@ -177,15 +178,14 @@ async function sort(){
 				
 			  
 				const left = arra.splice(0, half);
-				let e = merge(await mergeSort(left, 0), await mergeSort(arra, index + half - 1));
-				
-				drawRecursive(arra, n, index, minMax);
+				let e = await merge(await mergeSort(left, index), await mergeSort(arra, index + half, true), index);
+				drawRecursive(e, n, index, minMax);
 				await sleep(1);
 
 				return e;
 			}
 
-			async function merge(left, right) {
+			async function merge(left, right, index) {
 				let arr1 = []
 			
 				while (left.length && right.length) {
@@ -194,48 +194,115 @@ async function sort(){
 					} else {
 						arr1.push(right.shift())
 					}
+					drawRecursive(arr1, n, index, minMax);
+					await sleep(1)
 				}
 				return [ ...arr1, ...left, ...right ]
 			}
 			break;
 		case 5:
+			//heap sort
 			drawList(arr, minMax);
-			await sleep(1);
 			
-			arr = await heapSort(arr);
+			await heapSort(arr);
 			async function heapSort(array) {
 				let size = array.length
-			  
-				for (let i = Math.floor(size / 2 - 1); i >= 0; i--){
-					heapify(array, size, i)
-					drawList(array, minMax);
-					await sleep(1);
-				}
-				  
-				
 
+				for (let i = Math.floor(size / 2 - 1); i >= 0; i--){
+					await heapify(array, size, i)
+				}
 				for (let i = size - 1; i >= 0; i--) {
-					swap(0, i);
-					heapify(array, i, 0)
+					swap(array, 0, i);
+					await heapify(array, i, 0)
 				}
 			  }
 			  
-			function heapify(array, size, i) {
+			async function heapify(array, size, i) {
 				let max = i
 				let left = 2 * i + 1
 				let right = 2 * i + 2
-			  
+
 				if (left < size && array[left] > array[max])
-				  max = left
-			  
+					max = left
+
 				if (right < size && array[right] > array[max])
-				  max = right
-			  
+					max = right
+
 				if (max != i) {
 					swap(array, i, max);
-				
-					heapify(array, size, max)
+					await heapify(array, size, max)
+					
+					drawList(arr, minMax);
+					await sleep(1);
 				}
+			}
+			drawList(arr, minMax);
+			break;
+		case 6:
+			//quick sort
+			arr = await quickSort(arr);
+			async function quickSort(array, start, end) {
+				if (start === undefined) {
+				  start = 0;
+				  end = array.length - 1;
+				} else if (start >= end) {
+				  return array;
+				}
+				var rStart = start, rEnd = end;
+				var pivot = array[Math.floor(Math.random() * (end - start + 1) + start)];
+				while (start < end) {
+				  while (array[start] <= pivot) start++;
+				  while (array[end] > pivot) end--;
+				  if (start < end) {
+					swap(array, start, end);
+
+					
+					drawList(array, minMax);
+					await sleep(1);
+				  }
+				}
+				quickSort(array, rStart, start - 1);
+				quickSort(array, start, rEnd);
+				drawList(array, minMax);
+				await sleep(1);
+			  }
+			break;
+		case 7:
+			
+			drawList(arr, minMax);
+
+			arr = await radixSort(arr); 
+			
+			function getMax(arr1) {
+				let max = 0;
+				for (let num of arr1) {
+					if (max < num.toString().length) {
+						max = num.toString().length
+					}
+				}
+				return max
+			}
+			
+			function getPosition(num, place){
+				return  Math.floor(Math.abs(num)/Math.pow(10,place))% 10
+			}
+			
+			async function radixSort(arr1) {
+				const max = getMax(arr1);
+			
+				for (let i = 0; i < max; i++) {
+					let buckets = Array.from({ length: 10 }, () => [ ])
+					for (let j = 0; j < arr1.length; j++) {
+					  buckets[getPosition(arr1[ j ], i)].push(arr1[ j ]);
+					}
+					for(let j = 0; j < buckets.length; j++){
+						
+						drawRecursive(buckets[j], n, j * 10, minMax);
+						await sleep(1);
+					}
+					arr1 = [ ].concat(...buckets);
+				}
+				return arr1
 			}
 			break;
 		case 9:
