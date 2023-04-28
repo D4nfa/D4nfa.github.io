@@ -79,7 +79,7 @@ const algorithms = {
 }
 
 function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+	return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 function swap(array, index1, index2){
@@ -104,11 +104,12 @@ async function sort(){
 					{
 						swapped = true;
 						swap(arr,j,j+1);
-						drawList(arr, minMax);
-						await sleep(1);
 					}
 					
+					drawList(arr, minMax);
+					await sleep(1);
 				}
+				
 				if(!swapped) break;
 			}	
 			break;
@@ -136,10 +137,9 @@ async function sort(){
 				while(j >= 0 && arr[j] > key){
 					swap(arr, j+1, j);
 					j = j - 1;
-					drawList(arr, minMax);
-					await sleep(1);
 				}
-
+				drawList(arr, minMax);
+				await sleep(1);
 			}
 			break;
 		case 3:
@@ -166,9 +166,8 @@ async function sort(){
 			
 
 			arr = await mergeSort(arr, 0);
-			async function mergeSort(arra, index, rl) {
+			async function mergeSort(arra, index) {
 				
-
 				const half = arra.length / 2
 			  
 				if (arra.length < 2){
@@ -178,7 +177,7 @@ async function sort(){
 				
 			  
 				const left = arra.splice(0, half);
-				let e = await merge(await mergeSort(left, index), await mergeSort(arra, index + half, true), index);
+				let e = await merge(await mergeSort(left, index), await mergeSort(arra, index + half), index);
 				drawRecursive(e, n, index, minMax);
 				await sleep(1);
 
@@ -215,7 +214,7 @@ async function sort(){
 					swap(array, 0, i);
 					await heapify(array, i, 0)
 				}
-			  }
+			}
 			  
 			async function heapify(array, size, i) {
 				let max = i
@@ -268,7 +267,7 @@ async function sort(){
 			  }
 			break;
 		case 7:
-			
+			//Radix sort
 			drawList(arr, minMax);
 
 			arr = await radixSort(arr); 
@@ -293,17 +292,21 @@ async function sort(){
 				for (let i = 0; i < max; i++) {
 					let buckets = Array.from({ length: 10 }, () => [ ])
 					for (let j = 0; j < arr1.length; j++) {
-					  buckets[getPosition(arr1[ j ], i)].push(arr1[ j ]);
-					}
-					for(let j = 0; j < buckets.length; j++){
-						
-						drawRecursive(buckets[j], n, j * 10, minMax);
+					  	buckets[getPosition(arr1[ j ], i)].push(arr1[ j ]);
+					  	var index = 0;
+						for(let j = 0; j < buckets.length; j++){
+							drawRecursive(buckets[j], n, index, minMax);
+							index += buckets[j].length;
+							
+						}
 						await sleep(1);
 					}
+					
 					arr1 = [ ].concat(...buckets);
 				}
 				return arr1
 			}
+
 			break;
 		case 9:
 			//Bogo sort
@@ -341,5 +344,5 @@ async function changedAlgo(){
 }
 
 function test(text){
-    console.log(text.replace(/\t/g, '&nbsp;&nbsp;&nbsp;&nbsp;'));
+	console.log(text.replace(/\t/g, '&nbsp;&nbsp;&nbsp;&nbsp;'));
 }
