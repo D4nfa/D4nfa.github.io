@@ -13,18 +13,6 @@ const projectTemplate =
 +		'</div>'
 +	'</div>'
 
-/*
-<div id="project" onclick="location.href='{PRJCTLINK}'">
-	<div style="background-image: url({IMG});" id="projectInner">
-		<div id="titleDiv">
-			<p id="projectTitle"localize="TITLE">{TITLE}</p>
-		</div>
-		<div id="descDiv">
-			<p id="projectDesc"localize="DESCRIPTION">{DESCRIPTION}</p>
-		</div>
-	</div>
-</div>
-*/
 
 const langElement = 
 	'<!--Languages-->'
