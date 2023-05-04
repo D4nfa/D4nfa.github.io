@@ -52,7 +52,8 @@ function loadProjects(){
 
 		for(let i = 0; i < 5; i++){
 			let path = json.splice(Math.floor(Math.random() * json.length), 1);
-			fetch(`./Projects/${path}/info.json`)
+			
+			fetch(`./Projects/${path[0]['link']}/info.json`)
 			.then((response) => response.json()
 			.then((json) => prjcts.push(json)))
 		}
