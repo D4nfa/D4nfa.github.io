@@ -49,8 +49,9 @@ function loadProjects(){
 	return fetch(`./Projects/projects.json`).then((response) => response.json().then((json) => {
 		let prjcts = [];
 		let seeMore = undefined;
-
-		for(let i = 0; i < 5; i++){
+		let prjctCount = 5 > json.length ? json.length : 5;
+		
+		for(let i = 0; i < prjctCount; i++){
 			let path = json.splice(Math.floor(Math.random() * json.length), 1);
 			
 			fetch(`./Projects/${path[0]['link']}/info.json`)
@@ -63,13 +64,14 @@ function loadProjects(){
 			.then((json) => seeMore = json))
 
 		check();
-
+		
 		async function check(){
-			if(prjcts.length < 5 || seeMore == undefined){
+			if(prjcts.length < prjctCount || seeMore == undefined){
 				window.setTimeout(check, 100);
 			}
 			else{
 				prjcts.forEach(element => {
+					console.log(element);
 					projectLoaded(element);
 				});
 				projectLoaded(seeMore);
