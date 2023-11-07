@@ -16,7 +16,8 @@
 		"meetingTip": "Arranger et møde",
 		"emailTip": "Email",
 		"linkedinTip": "Linkedin",
-		"githubTip": "Github"
+		"githubTip": "Github",
+		"LAST-UPDATED": "Sidst opdateret"
 		},
 	"EN":{
 		"PAGE-TITLE": "Lilfa Portfolio",
@@ -32,7 +33,8 @@
 		"meetingTip": "Arrange a meeting",
 		"emailTip": "Email",
 		"linkedinTip": "Linkedin",
-		"githubTip": "Github"
+		"githubTip": "Github",
+		"LAST-UPDATED": "Last updated:"
 		},
 	"NL":{
 		"PAGE-TITLE": "Lilfa Portfolio",
