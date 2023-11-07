@@ -10,6 +10,9 @@ function onLoad(){
         localizePage(`./local/homePage.json`);
         localizeProjects();
     });
+	fetch(`./LastUpdated.json`).then((response) => response.json().then(async (json) => {
+		$("lastUpdatedPara").innerHTML = json["date"];
+	}));
 }
 
 function scrollToAnchor(anchor)
