@@ -1,0 +1,14 @@
+{
+	"GENERAL":{
+		"PLACEHOLDER":"PLACEHOLDER"
+	},
+	"DK":{
+        "TESTPAGE":"Dette er en test landings side"
+    },
+	"EN":{
+		"TESTPAGE":"This is a test landing page"
+    },
+	"NL":{
+        "PLACEHOLDER":"PLACEHOLDER"
+	}
+}

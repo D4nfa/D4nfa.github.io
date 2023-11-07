@@ -1,0 +1,18 @@
+{
+  "GENERAL": {
+    "PRJCTTITLTE": "ENL Dist WMS",
+    "IMG": "/Projects/SchoolProjects/Database/ENL_Dist_WMS/Resources/Logo.png",
+    "PRJCTLINK": "/Projects/SchoolProjects/Database/ENL_Dist_WMS",
+    "PRJCTID":"WMSE",
+		"TAGS": ["C#", "SQL"]
+  },
+  "DK": {
+	"PRJCTDESC": "Et projekt om at lave et WMS for et fiktivt firma kendt som ENL Distribution"
+  },
+  "EN": {
+	"PRJCTDESC": "A project to create a Warehouse Management System (aka a WMS) for a fictional company known as ENL Distribution"
+  },
+  "NL":{
+	"PRJCTDESC": "test projecteren"
+  }
+}

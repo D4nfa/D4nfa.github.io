@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+	<link rel="icon" type="image/x-icon" href="https://lilfa.dev/Icons/pageIcon/icon.ico">
+	<link rel="stylesheet" href="style.css">
+	<script type="text/javascript" src="/templates.js"></script>
+	<script type="text/javascript" src="/localization.js"></script>
+	<script>
+		async function onLoad(){
+			localizePage('local.json');
+			addEventListener('langChanged', () => localizePage('local.json'));
+			loadLangElement();
+		}
+	</script>
+</head>
+<body style="background-color:  rgb(36, 36, 36);" onload="onLoad()">
+	
+	<h1 localize="TESTPAGE" style="display: flex; justify-content: center; color: white;">This is a test landing page</h1>
+
+	
+
+	<div id="homeDiv">
+		<img id="homeBtn" src="/Icons/home_Dark.png" onclick="window.location = '/'">
+	</div>
+	<span id="langElement"></span>
+</body>
