@@ -5,7 +5,7 @@ const projectTemplate =
 +			'<div id="titleDiv">'
 +				'<p id="projectTitle"localize="PRJCTTITLTE"></p>'
 +			'</div>'
-+			'<div id="imgDiv" style="background-image: url({IMG});"></div>'
++			'<div id="imgDiv" style="background: url({IMG}) no-repeat; background-position: center; background-size: 100%; background-color: RGBA(0,0,0,0.5);"></div>'
 +			'<div id="descDiv">'
 +				'<p id="projectDesc"localize="PRJCTDESC"></p>'
 +			'</div>'
