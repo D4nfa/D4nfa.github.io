@@ -46,43 +46,44 @@ function deleteProjects(){
 const delay = ms => new Promise(res => setTimeout(res, ms));
 
 function loadProjects(){
-	return fetch(`./Projects/projects.json`).then((response) => response.json().then((json) => {
+	return fetch(`./Projects/projects.json`).then((response) => response.json().then(async (json) => {
 		let prjcts = [];
 		let seeMore = undefined;
 		let prjctCount = 5 > json.length ? json.length : 5;
 		
+		function sortByStamp(a, b){
+			return ((a.lastUpdated > b.lastUpdated) ? -1 : ((a.lastUpdated < b.lastUpdated) ? 1 : 0));
+		}	
+
+		json.sort(sortByStamp);
+
 		for(let i = 0; i < prjctCount; i++){
-			let path = json.splice(Math.floor(Math.random() * json.length), 1);
-			
-			fetch(`./Projects/${path[0]['link']}/info.json`)
-			.then((response) => response.json()
-			.then((json) => prjcts.push(json)))
+			let path = json[i];
+			prjcts.push(await getPrjct(path['link']));
 		}
 
-		fetch(`./Projects/info.json`)
+		async function getPrjct(prjct){
+			return await fetch(`./Projects/${prjct}/info.json`)
 			.then((response) => response.json()
-			.then((json) => seeMore = json))
-
-		check();
-		
-		async function check(){
-			if(prjcts.length < prjctCount || seeMore == undefined){
-				window.setTimeout(check, 100);
-			}
-			else{
-				prjcts.forEach(element => {
-					console.log(element);
-					projectLoaded(element);
-				});
-				projectLoaded(seeMore);
-			}
+			.then((json) => { return json; }));
+		}
+		async function getSeeMore(){
+			return await fetch(`./Projects/info.json`)
+			.then((response) => response.json()
+			.then((json) => {return json;}))
 		}
 
+		seeMore = await getSeeMore();
 		
+		prjcts.forEach(element => {
+			projectLoaded(element);
+		});
+		
+		projectLoaded(seeMore);
 	}));
 }
 
-function localizeProjects(){ //TODO
+function localizeProjects(){
     for(let i = 0; i < projects.length; i++){
         subKeysAtr(document.querySelectorAll(`[PRJCTID=${projects[i]['GENERAL']['PRJCTID']}]`)[0], [projects[i][lang], projects[i]['GENERAL']]);
     }
