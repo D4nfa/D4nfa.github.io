@@ -21,6 +21,18 @@ body::-webkit-scrollbar{
 	display: none;
 }
 
+#lastUpdated{
+	position: fixed;
+	left: 5px;
+	bottom: 5px;
+}
+
+#lastUpdated > p{
+	padding: 0px;
+	margin: 0px;
+	float:left;
+}
+
 #gradientbckg{
 	height: 100%;
 	width: 200%;
