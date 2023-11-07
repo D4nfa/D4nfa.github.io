@@ -23,23 +23,33 @@
 			sessionStorage.setItem('scrollpos', window.scrollY);
 		};
 
-
 		document.addEventListener("mousewheel", function (e) { scroll(e); }, {passive: false});
-
+		
+		var lastTouchScroll = -9999;
+		
 		function scroll(e){
 			if(e.ctrlKey){return;}
+			
+			var scrollAmount = 0;
+			var wHeight = window.innerHeight;
+			e.preventDefault();
 
 			//Current consensus:
 			//If touchpad is used wheelDeltaY will always be the same as the opposite sign of deltaY rounded towards 0
 			if(e.wheelDeltaY == (e.deltaY > 0 ? -Math.floor(e.deltaY) : -Math.ceil(e.deltaY))){
-				//console.log("touchpad detected");
-				return;
+				if(Math.abs(lastTouchScroll - e.timeStamp) > 300){
+					lastTouchScroll = e.timeStamp;
+					scrollAmount = window.scrollY + (e.wheelDeltaY < 0 ? -wHeight : wHeight);
+				}
+				else{
+					lastTouchScroll = e.timeStamp;
+					return;
+				}
 			}
-
-			e.preventDefault();
-
-			//console.log("mouse detected");
-			var scrollAmount = window.scrollY + (e.deltaY < 0 ? -1000 : 1000);
+			else{
+				scrollAmount = window.scrollY + (e.deltaY < 0 ? -wHeight : wHeight);
+			}
+			
 			window.scrollTo({left:0, top:scrollAmount});
 		}
 		
