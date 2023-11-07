@@ -1,7 +1,7 @@
 {
   "GENERAL": {
     "PRJCTTITLTE": "ENL Dist WMS",
-    "IMG": "/Projects/SchoolProjects/Database/ENL_Dist_WMS/Resources/Logo.png",
+    "IMG": "/Images/ENL_Dist_WMS_Logo.png",
     "PRJCTLINK": "/Projects/SchoolProjects/Database/ENL_Dist_WMS",
     "PRJCTID":"WMSE",
 		"TAGS": ["C#", "SQL"]
