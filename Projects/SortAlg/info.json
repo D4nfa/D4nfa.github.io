@@ -3,7 +3,8 @@
     "PRJCTTITLTE": "Sorting Algorithms",
     "IMG": "/Images/Sorting.png",
     "PRJCTLINK": "/Projects/SortAlg",
-    "PRJCTID":"SORTS"
+    "PRJCTID":"SORTS",
+		"TAGS": ["HTML", "CSS", "JS"]
   },
   "DK": {
 	"PRJCTDESC": "Dette er et test projekt"
