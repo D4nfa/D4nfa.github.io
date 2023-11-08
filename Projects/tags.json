@@ -1,16 +1,27 @@
 {
-	"GENERAL": {
-        "HTML": "HTML",
-        "CSS": "CSS",
-        "JS": "Javascript"
+	"HTML": {
+		"shortname": "HTML",
+		"fullname": "",
+		"iconLink": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
 	},
-	"DK": {
-        
+	"CSS": {
+		"shortname": "CSS",
+		"fullname": "",
+		"iconLink": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
 	},
-	"EN": {
-        
+	"JS": {
+		"shortname": "JS",
+		"fullname": "Javascript",
+		"iconLink": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
 	},
-	"NL": {
-        
+	"C#": {
+		"shortname": "C#",
+		"fullname": "",
+		"iconLink": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg"
+	},
+	"MSSQL":{
+		"shortname": "MSSQL",
+		"fullname": "",
+		"iconLink": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg"
 	}
 }

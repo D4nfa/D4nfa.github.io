@@ -3,6 +3,7 @@
 	<link rel="icon" type="image/x-icon" href="https://lilfa.dev/Icons/pageIcon/icon.ico">
 	<link rel="stylesheet" href="style.css">
 	<script type="text/javascript" src="/templates.js"></script>
+	<link rel="stylesheet" href="/Styles/home.css"></link>
 	<script type="text/javascript" src="/localization.js"></script>
 	<script>
 		async function onLoad(){
@@ -13,11 +14,23 @@
 	</script>
 </head>
 <body style="background-color:  rgb(36, 36, 36);" onload="onLoad()">
+	<h1 localize="TITLE" style="display: flex; justify-content: center;">TITLE</h1>
 	
-	<h1 localize="TESTPAGE" style="display: flex; justify-content: center; color: white;">This is a test landing page</h1>
+	
+
+
+	<div class="TextSection padTop5">
+		<img id="CoverImage" src="resources/Logo.png" style="margin: auto;">
+		<div class="TextBody">
+			<h3>This project was build to showcase and test requirements of a WMS assignment created for upcoming students.</h3>
+			<p>This</p>
+		</div>
+	</div>
 
 	
-
+	<div id="lastUpdated" style="position: fixed; left: 5px; bottom: 5px;">
+		<p localize="lastUpdated" style="margin: 0px; float:left;">Last updated ??/??/????</p>
+	</div>
 	<div id="homeDiv">
 		<img id="homeBtn" src="/Icons/home_Dark.png" onclick="window.location = '/'">
 	</div>

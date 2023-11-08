@@ -3,7 +3,8 @@
     "PRJCTTITLTE": "Filler",
     "IMG": "/Images/TestingImage.png",
     "PRJCTLINK": "/Projects/TestPage",
-    "PRJCTID":"FILL"
+    "PRJCTID":"FILL",
+    "TAGS": []
   },
   "DK": {
 	"PRJCTDESC": "Dette er et fyldnings projekt"

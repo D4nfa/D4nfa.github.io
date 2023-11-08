@@ -1,14 +1,12 @@
 {
-	"GENERAL":{
-		"PLACEHOLDER":"PLACEHOLDER"
-	},
-	"DK":{
-        "TESTPAGE":"Dette er en test landings side"
-    },
-	"EN":{
-		"TESTPAGE":"This is a test landing page"
-    },
-	"NL":{
-        "PLACEHOLDER":"PLACEHOLDER"
-	}
+  "GENERAL": { "PLACEHOLDER": "PLACEHOLDER" },
+  "DK": {
+    "TITLE": "Dette er en test landings side",
+    "lastUpdated": "Sidst opdateret 08/11/2023"
+  },
+  "EN": {
+    "TITLE": "WMS for ENL Distribution",
+    "lastUpdated": "Last updated 08/11/2023"
+  },
+  "NL": { "PLACEHOLDER": "PLACEHOLDER" }
 }
