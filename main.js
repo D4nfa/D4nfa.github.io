@@ -1,9 +1,14 @@
 var isHidden = true;
 var projects = [];
 var projectElems = [];
+var tags;
 
 function onLoad(){
-    loadProjects().then(() => localizePage(`./local/homePage.json`));
+	fetch(`./Projects/tags.json`).then((response) => response.json().then((json) =>{ 
+		tags = json;
+    	loadProjects().then(() => localizePage(`./local/homePage.json`));
+	}));
+
     loadLangElement();
     addEventListener('langChanged', () => 
     {
@@ -99,6 +104,12 @@ function localizeProject(project){
 function projectLoaded(json){
     projects.push(json);
     $('projectList').innerHTML += subKeys(projectTemplate, [json['GENERAL']]);
+
+	var tagContainer = document.querySelector(`[PRJCTID=${json['GENERAL']['PRJCTID']}]`).getElementsByClassName(`tagDiv`)[0];
+	
+	json['GENERAL']['TAGS'].forEach(element => {
+		tagContainer.innerHTML += `<img src="${tags[element]['iconLink']}" style="width:25px;">`;
+	});
 
 	projectElems.push(document.querySelector(`[PRJCTID=${json['GENERAL']['PRJCTID']}]`));
 
