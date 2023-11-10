@@ -23,9 +23,10 @@
 		var currAnchor = 0;
 
 		document.addEventListener("DOMContentLoaded", function(event) { 
-			let scrollAnchor = sessionStorage.getItem('scrollAnchor');
+			currAnchor = parseInt(sessionStorage.getItem('scrollAnchor'));
 			sessionStorage.removeItem('scrollAnchor');
-			if (scrollAnchor) scrollToAnchor(anchors[scrollAnchor]);
+			if (currAnchor) scrollToAnchor(anchors[currAnchor]);
+			else currAnchor = 0;
 		});
 
 		window.onbeforeunload = function(e) {
