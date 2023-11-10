@@ -13,14 +13,23 @@
 <body onload="onLoad()">
 	<script type="text/javascript">const $ = id => document.getElementById(id);</script>
 	<script>
+		var anchors = [
+			'hero',
+			'about',
+			'projects',
+			'contacts'
+		];
+
+		var currAnchor = 0;
+
 		document.addEventListener("DOMContentLoaded", function(event) { 
-			let scrollpos = sessionStorage.getItem('scrollpos');
-			sessionStorage.removeItem('scrollpos');
-			if (scrollpos) window.scrollTo(0, scrollpos);
+			let scrollAnchor = sessionStorage.getItem('scrollAnchor');
+			sessionStorage.removeItem('scrollAnchor');
+			if (scrollAnchor) scrollToAnchor(anchors[scrollAnchor]);
 		});
 
 		window.onbeforeunload = function(e) {
-			sessionStorage.setItem('scrollpos', window.scrollY);
+			sessionStorage.setItem('scrollAnchor', currAnchor);
 		};
 
 		document.addEventListener("mousewheel", function (e) { scroll(e); }, {passive: false});
@@ -30,8 +39,6 @@
 		function scroll(e){
 			if(e.ctrlKey){return;}
 			
-			var scrollAmount = 0;
-			var wHeight = window.innerHeight;
 			e.preventDefault();
 
 			//Current consensus:
@@ -39,7 +46,7 @@
 			if(e.wheelDeltaY == (e.deltaY > 0 ? -Math.floor(e.deltaY) : -Math.ceil(e.deltaY))){
 				if(Math.abs(lastTouchScroll - e.timeStamp) > 300){
 					lastTouchScroll = e.timeStamp;
-					scrollAmount = window.scrollY + (e.wheelDeltaY < 0 ? -wHeight : wHeight);
+					currAnchor += (e.wheelDeltaY < 0 ? -1 : 1);
 				}
 				else{
 					lastTouchScroll = e.timeStamp;
@@ -47,10 +54,13 @@
 				}
 			}
 			else{
-				scrollAmount = window.scrollY + (e.deltaY < 0 ? -wHeight : wHeight);
+				currAnchor += (e.deltaY < 0 ? -1 : 1);
 			}
 			
-			window.scrollTo({left:0, top:scrollAmount});
+			if(currAnchor < 0) currAnchor = 0;
+			if(currAnchor > anchors.length - 1) currAnchor = anchors.length - 1;
+
+			scrollToAnchor(anchors[currAnchor]);
 		}
 		
 	</script>
