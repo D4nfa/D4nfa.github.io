@@ -108,34 +108,10 @@ function projectLoaded(json){
 	var tagContainer = document.querySelector(`[PRJCTID=${json['GENERAL']['PRJCTID']}]`).getElementsByClassName(`tagDiv`)[0];
 	
 	json['GENERAL']['TAGS'].forEach(element => {
-		tagContainer.innerHTML += `<img src="${tags[element]['iconLink']}" style="width:25px;">`;
+		tagContainer.innerHTML += tagImgTemplate.replace('@TAGLINK', tags[element]['iconLink']).replace('@TAGNAME', tags[element]['shortname']);
 	});
 
 	projectElems.push(document.querySelector(`[PRJCTID=${json['GENERAL']['PRJCTID']}]`));
 
 	localizeProject(json);
-}
-
-
-//Evaluate url params
-function evalParams(params)
-{
-	if (!params || window.location.href.indexOf('?') < 0) 
-	{
-		return;
-	}
-
-	let qstr = new URLSearchParams(params);
-	for(let param of qstr.entries())
-	{
-		switch(param[0])
-		{
-		}
-	}
-}
-evalParams(window.location.href.slice(window.location.href.indexOf('?') + 1));
-
-async function ScrollProjects(){
-	let div = document.getElementById('projectList');
-	div.style.transform = `translateX(${1200}px)`
 }
