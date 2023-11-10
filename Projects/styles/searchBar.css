@@ -1,10 +1,30 @@
 #searchBar{
+    display: grid;
+
+    grid-template-columns: 25% 25% 25% 25%;
+
     position: relative;
     top: 10px;
     margin: 0px auto;
     width: 80%;
-    height: 35px;
+    height: 4vh;
     background-color: rgb(36, 36, 36);
-    border-radius: 25px;
+    border-radius: 2vh;
+}
 
+#textSearch{
+    position: relative;
+
+    width: 200px;
+    height: 3vh;
+
+    float: right;
+    margin-right: 0.2vw;
+
+
+    border-radius: 2vh;
+
+    background-color: white;
+
+    text-indent: 10px;
 }
