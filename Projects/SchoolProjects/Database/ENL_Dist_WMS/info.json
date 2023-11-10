@@ -2,7 +2,7 @@
   "GENERAL": {
     "PRJCTTITLTE": "ENL Dist WMS",
     "IMG": "/Images/ENL_Dist_WMS_Logo.png",
-    "PRJCTLINK": "/Projects/SchoolProjects/Database/ENL_Dist_WMS",
+    "PRJCTLINK": "https://github.com/Lilf4/ENL_Distribution#enl-distribution",
     "PRJCTID": "WMSE",
     "TAGS": ["C#", "MSSQL"]
   },
