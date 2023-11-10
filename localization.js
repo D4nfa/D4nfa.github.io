@@ -51,12 +51,12 @@ function localizeElem(path, elem){
 
 
 //Tries to get lang string from website localStorage
-//incase lang string wasn't found return 'DK'
+//incase lang string wasn't found return 'EN'
 function getLang(){
 	if(localStorage.getItem('lang') != undefined){
 		return localStorage.getItem('lang');
 	}
-	return 'DK';
+	return 'EN';
 }
 
 //Change lang and dispatch langChanged event
