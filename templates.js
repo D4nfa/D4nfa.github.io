@@ -6,7 +6,8 @@ const projectTemplate =
 +				'<p id="projectTitle"localize="PRJCTTITLTE"></p>'
 +			'</div>'
 +			'<div id="imgDiv" style="background: url({IMG}) no-repeat; background-position: center; background-size: 100%; background-color: RGBA(0,0,0,0.5);">'
-+			'<div class="tagDiv" style="position: absolute; width: fit-content; height: 15px; bottom: 12px; right: 2px;"></div>'
++				'<div class="tagDiv" style="position: absolute; width: fit-content; height: fit-content; bottom: 0px; right: 3px;">'
++				'</div>'
 + 			'</div>'
 +			'<div id="descDiv">'
 +				'<p id="projectDesc"localize="PRJCTDESC"></p>'
@@ -15,6 +16,11 @@ const projectTemplate =
 +		'</div>'
 +	'</div>'
 
+const tagImgTemplate =
+	'<div class="tooltip" style="width: fit-content; height: fit-content; float: left;">'
++		'<img src="@TAGLINK" style="width:25px;">'
++		'<span class="tooltiptext">@TAGNAME</span>'
++	'</div>';
 
 const langElement = 
 	'<!--Languages-->'
