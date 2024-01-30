@@ -1,16 +1,16 @@
 {
 	"GENERAL": {
-		"PRJCTTITLTE": "Boids",
-		"IMG": "/Images/Boids.png",
-		"PRJCTLINK": "/Projects/Games/Boids",
-		"PRJCTID": "BOIDS",
+		"PRJCTTITLTE": "Tic-Tac-Toe",
+		"IMG": "/Images/TicTacToe.png",
+		"PRJCTLINK": "/Projects/Games/Multiplayer/TicTacToe",
+		"PRJCTID": "TTOE",
 		"TAGS": ["HTML", "CSS", "JS"]
 	},
 	"DK": {
-		"PRJCTDESC": "Boids er et..."
+		"PRJCTDESC": "Et klassisk Tic-Tac-Toe spil, lavet med mulighed for at spille peer to peer med andre."
 	},
 	"EN": {
-		"PRJCTDESC": "Boids is a.."
+		"PRJCTDESC": "A classic Tic-Tac-Toe game, made with the ability to play peer to peer with others."
 	},
 	"NL": {
 		"PRJCTDESC": "Test projecteren"
