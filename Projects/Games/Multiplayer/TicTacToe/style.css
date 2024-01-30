@@ -1,0 +1,79 @@
+body{
+	height: 100vh;
+	display: grid;
+	grid-template-columns: 20% 50% 20%;
+	grid-template-rows: auto auto;
+	justify-content: center;
+	color: white;
+    background-color: rgb(36, 36, 36);
+}
+
+#leftPanel{
+	grid-column: 1;
+	grid-row: 1;
+	width: 23vh;
+	border: 2px white solid;
+	margin: 3vh 0 3vh auto;
+	border-radius: 50px;
+}
+
+#leftInnerPanel{
+	padding: 50px 0 50px 0;
+	height: calc(100% - 100px);
+	width: 100%;
+}
+
+.btn{
+	width: fit-content;
+	font-size:medium;
+	height: 3vh;
+	background-color: rgb(80, 80, 80);
+	color: white;
+	border: 0;
+}
+
+.btn:hover{
+	background-color: rgb(63, 63, 63);
+}
+
+.btn:hover:active{
+	background-color: rgb(48, 48, 48);
+}
+
+#netBtns, #gameBtns, #gameInfo, #idField #details{
+	margin: auto;
+	margin-bottom: 5vh;
+	width: fit-content;
+}
+
+#details{
+	text-align: center;
+}
+
+#gameInfo{
+	text-align: center;
+}
+
+#idText{
+	text-align: center;
+}
+
+#canvas{
+	grid-column: 2;
+	grid-row: 1;
+	margin: auto;
+
+}
+
+#id, #codeIn{
+	grid-column: 1;
+	grid-row: 2;
+}
+
+.hidden{
+	width: 0;
+	height: 0;
+	visibility: hidden;
+	position: absolute;
+	pointer-events: none;
+}

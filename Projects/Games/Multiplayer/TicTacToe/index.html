@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+	<link rel="icon" type="image/x-icon" href="https://lilfa.dev/Icons/pageIcon/icon.ico">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script src="https://unpkg.com/peerjs@1.5.2/dist/peerjs.min.js"></script>
+	<script src="js/connLogic.js"></script>
+	<script src="js/gameLogic.js" defer></script>
+	<script src="js/main.js" defer></script>
+	<script type="text/javascript" src="https://lilfa.dev/templates.js"></script>
+	<script type="text/javascript" src="https://lilfa.dev/localization.js" defer></script>
+	<link rel="stylesheet" href="https://lilfa.dev/Styles/home.css"></link>
+	<link rel="stylesheet" href="https://lilfa.dev/Styles/general.css"></link>
+	<link rel="stylesheet" href="style.css">
+	<title localize="TITLE"></title>
+</head>
+<body onload="loadLangElement()">
+	<div id="leftPanel">
+		<div id="leftInnerPanel">
+			<div id="netBtns">
+				<button id="joinBtn" onclick="join()" class="btn">Join</button>
+				<button id="hostBtn" onclick="host()" class="btn">Host</button>
+				<button id="discBtn" onclick="disc()" class="btn hidden">Disconnect</button>
+			</div>
+			<div id="idField">
+				<p id="idText" class="hidden">fed28992-7706-4c4c-8dde-b21d7217e38d</p>
+			</div>
+			<div id="gameBtns">
+				<button id="resetBtn" onclick="reset()" class="btn">Reset</button>
+			</div>
+			<div id="gameInfo">
+				<p id="player">You are playing as: X</p>
+				<p id="currPlayer">It's X to play</p>
+				<p id="gameState">Game is ongoing</p>
+			</div>
+			<div id="details">
+				<p>Purpose:<br> This is a test of implementing peer to peer networking in js</p>
+			</div>
+		</div>
+	</div>
+	<canvas id="canvas" width="800px" height="800px"></canvas>
+
+
+	<span id="langElement"></span>
+	<div id="homeDiv">
+		<img class="clickable" id="homeBtn" src="/Icons/home_Dark.png" onclick="window.location = '/'">
+	</div>
+</body>
