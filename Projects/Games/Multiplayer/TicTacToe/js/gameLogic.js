@@ -118,6 +118,19 @@ function checkBoard() {
 	let checkWon = false;
 	for (let j = 0; j < 2; j++) {
 		check++;
+
+		if (board[0][0] != 0 && board[0][0] == board[1][1] && board[0][0] == board[2][2]) {
+			console.log("won on downward diagonal");
+			check = board[0][0]
+			checkWon = true;
+			break;
+		}
+		if (board[0][2] != 0 && board[0][2] == board[1][1] && board[0][2] == board[2][0]) {
+			console.log("won on upward diagonal");
+			check = board[0][2]
+			checkWon = true;
+			break;
+		}
 		for (let i = 0; i < 3; i++) {
 			if (board[0][i] != 0 && board[0][i] == board[1][i] && board[0][i] == board[2][i]) {
 				console.log("won on parallel");
@@ -128,18 +141,6 @@ function checkBoard() {
 			if (board[i][0] != 0 && board[i][0] == board[i][1] && board[i][0] == board[i][2]) {
 				console.log("won on vertical");
 				check = board[i][0];
-				checkWon = true;
-				break;
-			}
-			if (i == 0 && board[0][0] != 0 && board[0][0] == board[1][1] && board[0][0] == board[2][2]) {
-				console.log("won on downward diagonal");
-				check = board[0][0]
-				checkWon = true;
-				break;
-			}
-			if (i == 0 && board[0][2] != 0 && board[0][2] == board[1][1] && board[0][2] == board[2][0]) {
-				console.log("won on upward diagonal");
-				check = board[0][2]
 				checkWon = true;
 				break;
 			}
