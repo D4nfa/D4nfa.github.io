@@ -17,6 +17,13 @@ peer.on('connection', function (conn) {
 	//Return incase of peer not being host or max connections have been reached
 	if (connections.length >= maxConns || (!isHost && connections.length > 0)) 
 	{ 
+		let errCode = isHost ? 1 : 2;
+		let msg = isHost ? "Lobby is full." : "Peer is not designated as a host.";
+		conn.send({
+			type: "error",
+			msg: msg,
+			code: errCode
+		});
 		conn.close(); 
 		return; 
 	}
@@ -74,7 +81,11 @@ function SetupConn(conn) {
 	});
 
 	conn.on('close', () => {
-		if(isHost) {return;}
+		if(isHost) {
+			connections.splice(connections.indexOf(conn), 1);
+			dispatchEvent(new CustomEvent("connClosed", conn));
+			return;
+		}
 
 		dispatchEvent(new Event("connClosed"));
 		connections = [];

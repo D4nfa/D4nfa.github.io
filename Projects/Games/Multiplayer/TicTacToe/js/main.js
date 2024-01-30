@@ -23,18 +23,23 @@ function disc(){
 
 function hostUser(){
 	$("#idText").removeClass("hidden");
+	$("#playerJoined").removeClass("hidden");
 }
 
 function guestUser(){
 	$("#resetBtn").addClass("hidden");
+	$("#playerJoined").removeClass("hidden");
+	$("#playerJoined").text("Connecting");
 }
 
 function setOnline(){
 	onlineGame = true;
 	resetGame()
+	$("#joinError").addClass("hidden");
 	$("#joinBtn").addClass("hidden");
 	$("#hostBtn").addClass("hidden");
 	$("#idText").addClass("hidden");
+	$("#playerJoined").addClass("hidden");
 	$("#discBtn").removeClass("hidden");
 	$("#resetBtn").removeClass("hidden");
 }
@@ -46,6 +51,8 @@ function setLocal(){
 	$("#hostBtn").removeClass("hidden");
 	$("#resetBtn").removeClass("hidden");
 	$("#idText").addClass("hidden");
+	$("#playerJoined").addClass("hidden");
+	$("#joinError").addClass("hidden");
 	$("#discBtn").addClass("hidden");
 }
 
@@ -80,10 +87,23 @@ addEventListener("peerInit", (id) => {
 
 addEventListener("connOpen", () => {
 	console.log("connected");
+	$("#joinError").addClass("hidden");
+	if(isHost){
+		$("#playerJoined").text("Player connected, game is ready.");
+		$("#idText").addClass("hidden");
+	}
+	else{
+		$("#playerJoined").text("Connected to player.");
+	}
 	reset();
 })
 
 addEventListener("connClosed", () => {
+	if(isHost){
+		$("#idText").removeClass("hidden");
+		$("#playerJoined").text("Waiting for player..");
+		return;
+	}
 	disc();
 })
 
@@ -104,9 +124,7 @@ addEventListener("dataRecievedClient", (data) => {
 	console.log(data)
 	switch (data.detail.data.type) {
 		case "init":
-			console.log(data.detail.data.player);
 			playerOnline = data.detail.data.player;
-			console.log(playerOnline);
 			reset();
 			break;
 		case "gameState":
@@ -121,6 +139,10 @@ addEventListener("dataRecievedClient", (data) => {
 			gameOngoing = data.detail.data.gameOngoing;
 			winner = data.detail.data.winner;
 			drawScreen();
+			break;
+		case "error":
+			$("joinError").text((data.detail.data.code == 1 ? "Failed to join lobby, " : "There was an error trying to connect to peer, ") + data.detail.data.msg);
+			$("joinError").removeClass("hidden");
 			break;
 	}
 	updateDisplayInfo();
@@ -173,5 +195,6 @@ function drawScreen() {
 
 
 //Start
+setLocal();
 reset();
 drawScreen();

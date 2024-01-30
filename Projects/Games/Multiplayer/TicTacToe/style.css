@@ -40,21 +40,13 @@ body{
 	background-color: rgb(48, 48, 48);
 }
 
-#netBtns, #gameBtns, #gameInfo, #idField #details{
+#netBtns, #gameBtns, #gameInfo, #idField #details, #error{
 	margin: auto;
 	margin-bottom: 5vh;
 	width: fit-content;
 }
 
-#details{
-	text-align: center;
-}
-
-#gameInfo{
-	text-align: center;
-}
-
-#idText{
+#details, #gameInfo, #idText, #playerJoined, #joinError{
 	text-align: center;
 }
 

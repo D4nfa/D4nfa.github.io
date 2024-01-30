@@ -22,6 +22,7 @@
 				<button id="discBtn" onclick="disc()" class="btn hidden">Disconnect</button>
 			</div>
 			<div id="idField">
+				<p id="playerJoined" class="hidden">Waiting for player..</p>
 				<p id="idText" class="hidden">fed28992-7706-4c4c-8dde-b21d7217e38d</p>
 			</div>
 			<div id="gameBtns">
@@ -34,6 +35,9 @@
 			</div>
 			<div id="details">
 				<p>Purpose:<br> This is a test of implementing peer to peer networking in js</p>
+			</div>
+			<div id="error">
+				<p id="joinError" style="color: red;">Failed to join, lobby full</p>
 			</div>
 		</div>
 	</div>
