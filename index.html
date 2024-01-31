@@ -36,7 +36,8 @@
 		document.addEventListener("mousewheel", function (e) { scroll(e); }, {passive: false});
 		
 		var lastTouchScroll = -9999;
-		
+		var currentWheelDelta = 0;
+
 		function scroll(e){
 			if(e.ctrlKey){return;}
 			
@@ -51,6 +52,7 @@
 				}
 				else{
 					lastTouchScroll = e.timeStamp;
+					currentWheelDelta = e.wheelDeltaY;
 					return;
 				}
 			}
