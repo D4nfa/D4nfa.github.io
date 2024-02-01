@@ -67,7 +67,7 @@ function SetupConn(conn) {
 	connections.push(conn);
 	
 	conn.on("open", () => {
-		dispatchEvent(new Event("connOpen"));
+		dispatchEvent(new CustomEvent("connOpen", {detail: {conn}}));
 	});
 
 	conn.on("data", function (data) {

@@ -26,15 +26,23 @@ function drawScreen() {
 			ctx.closePath();
 			ctx.stroke();
 		}
-		if(selShipLen != -1){
-			//Placement mode
-			drawShip(selShipLen, hoverX, hoverY, selShipRot, 'grey');
-		}
-
-		ships.forEach(ship => {
-			drawShip(ship.len, ship.startX, ship.startY, ship.rot, 'white');
-		});
 	}
+
+	if(selShipLen != -1 && !isPointInShip({x: hoverX, y: hoverY})){
+		//Placement mode
+		drawShip(selShipLen, hoverX, hoverY, selShipRot, 'grey');
+	}
+
+	
+	ships.forEach(ship => {
+		let color = 'white';
+		//CHECK IF IN BUILD MODE
+		if(true)
+		{
+			color = intersects([{x: hoverX, y: hoverY}], ship.spaces) && !localReady ? 'red' : 'white'; 
+		}
+		drawShip(ship.len, ship.startX, ship.startY, ship.rot, color);
+	});
 
 	function drawShip(l, x, y, hv, color){
 		x *= squareSize;
