@@ -29,6 +29,7 @@ function checkUsername() {
 
 function disc() {
 	disconnect();
+	resetGame();
 	disconnected();
 }
 
@@ -79,6 +80,7 @@ addEventListener("connOpen", () => {
 	else {
 		$("#playerJoined").text("Connected to player.");
 	}
+	if(isHost && !gameHasStarted && phase == 'wait') {StartGame();}
 })
 
 addEventListener("connClosed", () => {
@@ -101,7 +103,8 @@ addEventListener("dataRecievedHost", (data) => {
 		case "readyState":
 			onlineReady = data.detail.data.value;
 			addMessageToChat(`${otherUsername} is ${onlineReady ? 'ready' : 'no longer ready'}.`, 'Game', 'Lightgrey')
-			tryStartGame();
+			if(phase == 'wait'){tryStartGame();}
+			if(phase == 'build'){tryBattlePhase();}
 			break;
 	}
 })
@@ -141,6 +144,37 @@ addEventListener("dataRecieved", (data) => {
 		case "startGame":
 			runBuildSetup();
 			break;
+		case "battlePhase":
+			myTurn = data.detail.data.myTurn;
+			runBattleSetup();
+			break;
+		case "shot":
+			didHit(data.detail.data.x, data.detail.data.y);
+			drawScreen();
+			break;
+		case "hitResult":
+
+			var shot = {
+				x: data.detail.data.shot.x,
+				y: data.detail.data.shot.y,
+				hit: data.detail.data.shot.hit
+			}
+			if(shot.hit){
+				addMessageToChat(`You shot at ${shot.x}${Abc[shot.y - 1]} and hit ${otherUsername}'s ship`, 'Game', 'Lightgrey');
+				myTurn = true;
+				if(data.detail.data.shot.sunk){
+					addMessageToChat(`You have sunk ${otherUsername}'s ${data.detail.data.shot.shipName} ship`, 'Game', 'Lightgrey');
+				}
+			}
+			else{
+				addMessageToChat(`You shot at ${shot.x}${Abc[shot.y - 1]} and didn't hit anything`, 'Game', 'Lightgrey');
+			}
+			myShots.push(shot);
+			drawScreen();
+			break;
+		case 'gameover':
+			addMessageToChat(`Winner!<br>You have shot all of ${otherUsername}'s ships and won the game.`, 'Game', 'LightGreen')
+			break;
 		case "error":
 			$("joinError").text((data.detail.data.code == 1 ? "Failed to join lobby, " : "There was an error trying to connect to peer, ") + data.detail.data.msg);
 			$("joinError").removeClass("hidden");
@@ -153,12 +187,15 @@ function changeGrid(gridToShow) {
 		case 'ocean':
 			$('#oceanBtn').prop("disabled", true).addClass("clicked");
 			$('#targetBtn').prop("disabled", false).removeClass("clicked");
+			currGrid = 'ocean';
 			break;
 		case 'target':
 			$('#oceanBtn').prop('disabled', false).removeClass('clicked');
 			$('#targetBtn').prop('disabled', true).addClass('clicked');
+			currGrid = 'target';
 			break;
 	}
+	drawScreen();
 }
 
 function ready(forcedChange) {
@@ -170,30 +207,62 @@ function ready(forcedChange) {
 			type: 'readyState',
 			value: localReady
 		});
+		addMessageToChat(`You are now ${localReady ? 'ready' : 'no longer ready'}.`, 'Game', 'lightgrey');
 	}
-	if(isHost && !gameHasStarted) {tryStartGame();}
-
+	
+	if(isHost && gameHasStarted && !forcedChange && phase == 'build') {
+		tryBattlePhase();
+	}
 }
 
-function tryStartGame() {
+function tryBattlePhase(){
 	if(localReady && onlineReady){
-		runBuildSetup();
+		myTurn = (Math.random()>0.5)? true : false;
+		runBattleSetup();
 		sendData({
-			type: 'startGame'
+			type: 'battlePhase',
+			myTurn: !myTurn
 		})
 	}
+}
+
+function StartGame() {
+	runBuildSetup();
+	sendData({
+		type: 'startGame'
+	})
 }
 
 function runBuildSetup(){
 	phase = 'build';
 	changeGrid('ocean');
 	$(actionHeader).text("Setup Phase");
-	gameHasStarted = true;
 	addMessageToChat("The setup phase has now begun, setup your ships on the grid and press ready.", "Game", 'Lightgrey')
 	$('#readyBtn').prop('disabled', true);
 	$('#readyBtn').addClass('clicked');
+	onlineReady = false;
+	localReady = false;
+	gameHasStarted = true;
+}
+
+function runBattleSetup(){
+	phase = 'battle';
+	$(actionHeader).text("Battle Phase");
+	
+	//Reset and hide ready button
+	$('#readyBtn').prop('disabled', false);
+	$('#readyBtn').removeClass('clicked');
+	$('#readyBtn').addClass('hidden');
+	onlineReady = false;
 	localReady = true;
 	ready(true);
+
+	addMessageToChat(`The battle phase has now begun, ${myTurn ? "you" : otherUsername} will start.`, "Game", 'Lightgrey')
+	drawScreen();
+}
+
+function reset(){
+	resetGame();
 }
 
 changeGrid('ocean');

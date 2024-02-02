@@ -7,6 +7,13 @@ let availableShips = [
 ]
 let ships = [];
 
+let myShots = [];
+let takenShots = [];
+
+let currGrid = 'ocean';
+
+let shipsLeft = 5;
+
 let selShipLen = 2;
 let selShipRot = false;
 
@@ -18,10 +25,12 @@ let onlineReady = false;
 
 let gameHasStarted = false;
 
+let myTurn = false;
+
 let phase = 'wait';
 
 canvas.addEventListener("mousemove", function (e) {
-	if (phase === 'build') {
+	if (phase != 'wait') {
 		let rect = canvas.getBoundingClientRect();
 
 		hoverX = Math.max(1, Math.floor((e.clientX - rect.left) / squareSize));
@@ -72,6 +81,15 @@ canvas.addEventListener("mousedown", function (e) {
 				availableShips.splice(availableShips.indexOf(availableShips.find(o => o.len == selShipLen)), 1);
 			}
 		}
+		else if(phase === 'battle' && myTurn && currGrid === 'target'){
+			if(myShots.find(o => o.x == hoverX && o.y == hoverY)){return;}
+			sendData({
+				type: 'shot',
+				x: hoverX,
+				y: hoverY
+			})
+			myTurn = false;
+		}
 	}
 	else if (e.button === 2) {
 		if(phase === 'build' && !localReady){
@@ -99,11 +117,11 @@ canvas.addEventListener("mousedown", function (e) {
 		selShipLen = -1;
 	}
 
-	if(availableShips.length <= 0){
+	if(phase == 'build' && availableShips.length <= 0){
 		$('#readyBtn').prop('disabled', false);
 		$('#readyBtn').removeClass('clicked');
 	}
-	else{
+	else if(phase == 'build'){
 		$('#readyBtn').prop('disabled', true);
 		$('#readyBtn').addClass('clicked');
 	}
@@ -140,9 +158,85 @@ function isPointInShip(xy) {
 	for (let i = 0; i < ships.length; i++) {
 		let found = ships[i].spaces.find(o => o.x == xy.x && o.y == xy.y);
 		if (found) {
-			return found;
+			return ships[i];
 		}
 	}
+}
+
+function didHit(x, y){
+	let hit = isPointInShip({x: x, y: y});
+	console.log(hit);
+	let shot = {
+		x: x,
+		y: y,
+		hit: false,
+		shipName: undefined,
+		sunk: false
+	}
+	if(hit){
+		shot.shipName = hit.name;
+		shot.hit = true;
+		hit.health--;
+		shot.sunk = hit.health <= 0 ? true : false;
+	}
+	
+	takenShots.push(shot);
+	sendData({
+		type: 'hitResult',
+		shot: shot
+	})
+
+	if(!shot.hit){
+		myTurn = true;
+		addMessageToChat(`${otherUsername} shot at ${x}${Abc[y - 1]} which was a miss, It is now your turn.`, 'Game', 'lightgrey');
+	}
+	else{
+		addMessageToChat(`${otherUsername} shot at ${x}${Abc[y - 1]} which hit your ${shot.shipName} ship, It is ${otherUsername}'s turn again.`, 'Game', 'lightgrey');
+	}
+
+	if(shot.sunk){
+		addMessageToChat(`${otherUsername} has sunk your ${shot.shipName} ship.`, 'Game', 'lightgrey');
+		shipsLeft--;
+	}
+
+	if(shipsLeft <= 0){
+		sendData({
+			type: 'gameover'
+		});
+		addMessageToChat(`GameOver ${otherUsername} has sunk all your ships.`, 'Game', 'Red')
+	}
+}
+
+function resetGame(){
+	availableShips = [
+		{ len: 2, name: 'Destroyer' },
+		{ len: 3, name: 'Submarine' },
+		{ len: 3, name: 'Cruiser' },
+		{ len: 4, name: 'Battleship' },
+		{ len: 5, name: 'Carrier' }
+	]
+	ships = [];
+
+	myShots = [];
+	takenShots = [];
+
+	currGrid = 'ocean';
+
+	shipsLeft = 5;
+
+	selShipLen = 2;
+	selShipRot = false;
+
+	localReady = false;
+	onlineReady = false;
+
+	gameHasStarted = false;
+
+	myTurn = false;
+
+	phase = 'wait';
+
+	drawScreen();
 }
 
 //Game loop

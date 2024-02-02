@@ -19,8 +19,8 @@ $(input).keypress(function(e) {
 
 function addMessageToChat(msg, user, color){
 	var date = new Date();
-
-	$(chat).html($(chat).html() + `${color != undefined ? '<span style="color:' + color + ';">' : ''}${date.getHours() + ':' + date.getMinutes()} - ${user}: ${msg}${color != undefined ? '</span>' : ''}` + "<br>");
+	$(chat).html($(chat).html() + `<span class="chatItem">${color != undefined ? '<span class="chatItem" style="color:' + color + ';">' : ''}${date.getHours() + ':' + date.getMinutes()} - ${user}: ${msg}${color != undefined ? '</span>' : ''}</span>` + "<br>");
+	$(chat).scrollTop($(chat)[0].scrollHeight);
 }
 
 function clearChat(){
