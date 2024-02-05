@@ -257,8 +257,6 @@ function StartGame() {
 }
 
 function runBuildSetup(){
-	
-	console.trace();
 	phase = 'build';
 	changeGrid('ocean');
 	$(actionHeader).text("Setup Phase");
