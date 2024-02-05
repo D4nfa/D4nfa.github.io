@@ -1,4 +1,13 @@
+/* 
+	TODO
+	- Clean up repeating code blocks
+	- Refactoring function variables
+*/
+
 const actionHeader = $("#gameStateHeader");
+
+let localRe = false;
+let onlineRe = false;
 
 function join() {
 	let code = window.prompt("Please enter the connect code");
@@ -29,6 +38,7 @@ function checkUsername() {
 
 function disc() {
 	disconnect();
+	reset();
 	resetGame();
 	disconnected();
 }
@@ -69,6 +79,7 @@ addEventListener("peerInit", (id) => {
 
 addEventListener("connOpen", () => {
 	console.log("connected");
+	clearChat();
 	if (isHost) {
 		$("#playerJoined").text("Player connected.");
 		$("#idText").addClass("hidden");
@@ -80,6 +91,7 @@ addEventListener("connOpen", () => {
 	else {
 		$("#playerJoined").text("Connected to player.");
 	}
+	
 	if(isHost && !gameHasStarted && phase == 'wait') {StartGame();}
 })
 
@@ -88,13 +100,13 @@ addEventListener("connClosed", () => {
 		$("#idText").removeClass("hidden");
 		$("#playerJoined").text("Waiting for player..");
 		otherUsername = undefined;
+		reset();
 		return;
 	}
 	disc();
 })
 
 addEventListener("dataRecievedHost", (data) => {
-	console.log(data)
 	switch (data.detail.data.type) {
 		case "init":
 			otherUsername = data.detail.data.username;
@@ -103,14 +115,13 @@ addEventListener("dataRecievedHost", (data) => {
 		case "readyState":
 			onlineReady = data.detail.data.value;
 			addMessageToChat(`${otherUsername} is ${onlineReady ? 'ready' : 'no longer ready'}.`, 'Game', 'Lightgrey')
-			if(phase == 'wait'){tryStartGame();}
+			//if(phase == 'wait'){tryStartGame();}
 			if(phase == 'build'){tryBattlePhase();}
 			break;
 	}
 })
 
 addEventListener("dataRecievedClient", (data) => {
-	console.log(data)
 	switch (data.detail.data.type) {
 		case "init":
 			otherUsername = data.detail.data.username;
@@ -124,12 +135,15 @@ addEventListener("dataRecievedClient", (data) => {
 			onlineReady = data.detail.data.value;
 			addMessageToChat(`${otherUsername} is ${onlineReady ? 'ready' : 'no longer ready'}.`, 'Game', 'Lightgrey')
 			break;
+		case "rematch":
+			reset();
+			runBuildSetup();
+			break;
 	}
 })
 
 
 addEventListener("dataRecieved", (data) => {
-	console.log(data)
 	switch (data.detail.data.type) {
 		case "chatMessage":
 			addMessageToChat(data.detail.data.msg, otherUsername)
@@ -149,11 +163,12 @@ addEventListener("dataRecieved", (data) => {
 			runBattleSetup();
 			break;
 		case "shot":
-			didHit(data.detail.data.x, data.detail.data.y);
+			if(!myTurn){
+				didHit(data.detail.data.x, data.detail.data.y);
+			}
 			drawScreen();
 			break;
 		case "hitResult":
-
 			var shot = {
 				x: data.detail.data.shot.x,
 				y: data.detail.data.shot.y,
@@ -174,10 +189,18 @@ addEventListener("dataRecieved", (data) => {
 			break;
 		case 'gameover':
 			addMessageToChat(`Winner!<br>You have shot all of ${otherUsername}'s ships and won the game.`, 'Game', 'LightGreen')
+			gameOver();
 			break;
 		case "error":
 			$("joinError").text((data.detail.data.code == 1 ? "Failed to join lobby, " : "There was an error trying to connect to peer, ") + data.detail.data.msg);
 			$("joinError").removeClass("hidden");
+			break;
+		case "rematchState":
+			onlineRe = data.detail.data.value;
+			addMessageToChat(`${otherUsername} has ${onlineRe ? 'requested a rematch' : 'cancelled their rematch request'}.`, 'Game', 'Lightgrey')
+			if(isHost){
+				tryRematch();
+			}
 			break;
 	}
 })
@@ -234,6 +257,8 @@ function StartGame() {
 }
 
 function runBuildSetup(){
+	
+	console.trace();
 	phase = 'build';
 	changeGrid('ocean');
 	$(actionHeader).text("Setup Phase");
@@ -261,8 +286,49 @@ function runBattleSetup(){
 	drawScreen();
 }
 
+function rebtn(forcedChange){
+	localRe = !localRe;
+	$('#rematchBtn').text((localRe ? 'Cancel': 'Rematch'));
+	if(!forcedChange){
+		sendData({
+			type: 'rematchState',
+			value: localRe
+		});
+		addMessageToChat(`You have ${localRe ? 'asked for a rematch' : 'cancelled your rematch request'}.`, 'Game', 'lightgrey');
+	}
+	if(isHost) {tryRematch()}
+}
+
+function tryRematch(){
+	if(localRe && onlineRe){
+		reset();
+		runBuildSetup();
+		sendData({
+			type: 'rematch'
+		})
+	}
+}
+
+function gameOver(){
+	$('#rematchBtn').removeClass('hidden');
+}
+
 function reset(){
 	resetGame();
+
+	$('#rematchBtn').addClass('hidden');
+	$("#readyBtn").removeClass("hidden");
+
+	onlineReady = false;
+	localReady = false;
+
+	onlineRe = false;
+	localRe = false;
+
+	$('#rematchBtn').text('Rematch');
+	$('#readyBtn').text('Ready');
+
+	clearChat();
 }
 
 changeGrid('ocean');

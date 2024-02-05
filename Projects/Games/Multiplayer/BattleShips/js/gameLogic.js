@@ -204,6 +204,7 @@ function didHit(x, y){
 			type: 'gameover'
 		});
 		addMessageToChat(`GameOver ${otherUsername} has sunk all your ships.`, 'Game', 'Red')
+		gameOver();
 	}
 }
 
