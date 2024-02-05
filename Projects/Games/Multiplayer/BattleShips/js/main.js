@@ -2,6 +2,7 @@
 	TODO
 	- Clean up repeating code blocks
 	- Refactoring function variables
+	- Fix chat
 */
 
 const actionHeader = $("#gameStateHeader");
