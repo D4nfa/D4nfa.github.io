@@ -2,7 +2,7 @@
     "GENERAL": {
       "PRJCTTITLTE": "Conway's Game of Life",
       "IMG": "/Images/conwaysGoL.png",
-      "PRJCTLINK":"/Projects/Games/ConwaysGoL",
+      "PRJCTLINK":"/Projects/Games/Zeroplayer/ConwaysGoL",
       "PRJCTID":"CGOL",
       "TAGS": ["HTML", "CSS", "JS"]
     },

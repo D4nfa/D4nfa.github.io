@@ -1,6 +1,6 @@
 [
 	{
-		"link": "Games/ConwaysGoL",
+		"link": "Games/Zeroplayer/ConwaysGoL",
 		"lastUpdated": 1683192602.574849
 	},
 	{
@@ -12,7 +12,7 @@
 		"lastUpdated": 1583192605.955935
 	},
 	{
-		"link": "Games/Boids",
+		"link": "Simulations/Boids",
 		"lastUpdated": 1683192604.435151
 	},
 	{
