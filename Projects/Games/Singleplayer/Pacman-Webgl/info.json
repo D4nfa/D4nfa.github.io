@@ -1,0 +1,18 @@
+{
+	"GENERAL": {
+		"PRJCTTITLTE": "Pacman",
+		"IMG": "/Images/battleships.png",
+		"PRJCTLINK": "/Projects/Games/Singleplayer/Pacman-Webgl",
+		"PRJCTID": "PCMN",
+		"TAGS": ["HTML", "CSS", "JS"]
+	},
+	"DK": {
+		"PRJCTDESC": "En klon af det klassiske spil Pacman, lavet for at lære omkring udvikling med WebGL."
+	},
+	"EN": {
+		"PRJCTDESC": "A clone of the classic game Pacman, made to learn about development with WebGL."
+	},
+	"NL": {
+		"PRJCTDESC": "Een kloon van het klassieke spel Pacman, gemaakt om te leren over ontwikkeling met WebGL."
+	}
+}
