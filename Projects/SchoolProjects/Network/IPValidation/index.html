@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<head>
+	<title localize="TITLE">{TITLE}</title>
+	<link rel="icon" type="image/x-icon" href="https://lilfa.dev/Icons/pageIcon/icon.ico">
+	<link rel="stylesheet" href="style.css"></link>
+	<link rel="stylesheet" href="https://lilfa.dev/Styles/Language.css"></link>
+	<link rel="stylesheet" href="https://lilfa.dev/Styles/home.css"></link>
+	<script type="text/javascript" src="https://lilfa.dev/templates.js"></script>
+	<script type="text/javascript" src="https://lilfa.dev/localization.js"></script>
+	<script src="local.js"></script>
+	<script type="text/javascript" src="script.js" defer></script>
+
+	<link rel="stylesheet" href="https://lilfa.dev/font/font.css"/>
+	<link rel="stylesheet" href="https://lilfa.dev/Styles/general.css">
+</head>
+<body onload="onLoad()" style="background-color: rgb(37, 36, 36);">
+	<div id="fullDiv">
+		<div id="titleDiv">
+			<h1 localize="TITLE">{TITLE}</h1>
+		</div>
+		
+		<div id="content">
+			<div id="items">
+				<div id="IpInputs">
+					<p localize="BINARY"></p>
+					<input type="checkbox" class="check" id="BiDecIp" onchange="DecBiIp()">
+					<input type="number" class="IpInput" id="ip1" onchange="update()" onkeyup="onchange()" value="0">
+					<input type="number" class="IpInput" id="ip2" onchange="update()" onkeyup="onchange()" value="0">
+					<input type="number" class="IpInput" id="ip3" onchange="update()" onkeyup="onchange()" value="0">
+					<input type="number" class="IpInput" id="ip4" onchange="update()" onkeyup="onchange()" value="0">
+				</div>
+				
+				<div id="MaskInputs">
+					<p localize="BINARY"></p>
+					<input type="checkbox" class="check" id="BiDecMsk" onchange="DecBiMask()">
+					<input type="number" class="maskInput" id="mask1" onchange="update()" onkeyup="onchange()" value="0">
+					<input type="number" class="maskInput" id="mask2" onchange="update()" onkeyup="onchange()" value="0">
+					<input type="number" class="maskInput" id="mask3" onchange="update()" onkeyup="onchange()" value="0">
+					<input type="number" class="maskInput" id="mask4" onchange="update()" onkeyup="onchange()" value="0">
+				</div>
+				<div>
+					<p id="output"></p>
+				</div>
+			</div>
+		</div>
+		<span id="langElement"></span>
+		<div id="homeDiv">
+			<img id="homeBtn" src="/Icons/home_Dark.png" alt="" onclick="window.location = '/'">
+		</div>
+	</div>
+	<script type="text/javascript" src="/extensions/prism.js"></script>
+</body>

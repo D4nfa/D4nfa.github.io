@@ -53,7 +53,7 @@ function drawLoop() {
 	// Clear the color buffer with specified clear color
 	gl.clear(gl.COLOR_BUFFER_BIT);
 
-	let recalcedPos = [ triPos[0] / gl.canvas.width, triPos[1] / gl.canvas.height ]
+	let recalcedPos = [ triPos[0] * widthCalc, triPos[1] * heightCalc ]
 	let tri = [
 		recalcedPos[0], recalcedPos[1] + triHeight, 0,
 		recalcedPos[0] + triWidth, recalcedPos[1] - triHeight, 0,
@@ -91,6 +91,9 @@ var r = 1;
 var g = 1;
 var b = 1;
 
+var widthCalc = 0;
+var heightCalc = 0;
+
 function logicLoop() {
 	triPos[0] += triVel[0] * .1;
 	triPos[1] += triVel[1] * .1;
@@ -127,8 +130,6 @@ function logicLoop() {
 		alert("corner hit!")
 	}
 
-	console.log(gl.canvas.height);
-
 	drawLoop();
 }
 
@@ -141,5 +142,8 @@ function resizeCanvas(x, y) {
 	gl.canvas.height = y;
 	triHeight = triSize / gl.canvas.height;
 	triWidth = triSize / gl.canvas.width;
+	heightCalc = 1 / gl.canvas.height;
+	widthCalc = 1 / gl.canvas.width;
+	console.log(widthCalc, heightCalc);
 	gl.viewport(0, 0, gl.canvas.width, gl.canvas.height);
 }

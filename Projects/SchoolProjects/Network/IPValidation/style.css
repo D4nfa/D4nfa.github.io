@@ -1,0 +1,71 @@
+.btn{
+	margin-top: 15px;
+	
+	font-size: medium;
+}
+
+#content{
+	margin: auto;
+	height: 100%;
+	width: 80%;
+}
+
+#items{
+	position: relative;
+	top: 40%;
+	height: 100%;
+}
+
+#items div{
+	height: 10%;
+	
+}
+
+#titleDiv{
+	text-align: center;
+}
+
+#fullDiv{
+	height: 100%;
+}
+
+html{
+	width: 100%;
+	height: 100%;
+	padding: 0px;
+	margin: 0px;
+	color: white;
+	overflow: hidden;
+}
+
+body{
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+
+input{
+	width: 24%;
+	height: 50%;
+	padding: 0px;
+	text-align: center;
+	font-size: large;
+}
+
+label{
+	text-align: center;
+}
+
+.check{
+	width: 5%;
+}
+
+#output{
+	font-size: large;
+	text-align: center;
+}
+
+#IpInputs, #MaskInputs{
+	display: flex;
+	justify-content: center;
+}
