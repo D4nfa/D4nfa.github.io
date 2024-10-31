@@ -4,6 +4,18 @@ class vector2 {
     this.y = y;
   }
 
+  normalized(){
+	let mag = Math.sqrt(this.getMag());
+	if (mag === 0) {
+		return new vector2(0, 0);
+	}
+	return new vector2(this.x / mag, this.y / mag);
+  }
+
+  random(){
+	return new vector2(Math.random() * 2 - 1, Math.random() * 2 - 1);
+  }
+
   add(n) {
     return new vector2(this.x + n, this.y + n);
   }

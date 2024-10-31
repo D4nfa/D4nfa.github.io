@@ -16,7 +16,7 @@ class Boid {
 
     this.accel = this.accel.mult(0);
 
-    let sep = this.seperate(50).mult(sepForce.value);
+    let sep = this.seperate(20).mult(sepForce.value);
     this.accel = this.accel.addVect(sep);
 
     let coh = this.cohesion(50).mult(atractForce.value);
@@ -51,7 +51,9 @@ class Boid {
   }
 
   update() {
-    this.vel = limitVect(this.vel, this.maxVel);
+    //this.vel = limitVect(this.vel, this.maxVel);
+	this.vel = this.vel.addVect(new vector2().random().mult(0.1));
+    this.vel = this.vel.normalized().mult(2);
     this.pos = this.pos.addVect(this.vel);
     this.vel = this.vel.addVect(this.accel);
   }
@@ -109,7 +111,7 @@ class Boid {
     avgPos = avgPos.subVect(this.pos);
 
     avgPos = avgPos.subVect(this.vel);
-
+	
     return limitVect(avgPos, this.maxAccel);
   }
 }

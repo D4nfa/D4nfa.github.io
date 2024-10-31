@@ -9,7 +9,7 @@ const flock = [];
 let tickInterval = setInterval(doTick, 10);
 
 
-spawnBoids(100);
+spawnBoids(500);
 
 function doTick(){
 	clearScreen();
